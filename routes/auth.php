@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\Admin\DeliveryPersonController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -63,6 +64,15 @@ Route::middleware(['auth','role:admin'])->group(function () {
     Route::get('/admin/dashboard', function () {
         return view('dashboard');
     })->name('admin.dashboard');
+
+    Route::resource('admin/delivery-persons', DeliveryPersonController::class)->names([
+        'index' => 'admin.delivery-persons.index',
+        'create' => 'admin.delivery-persons.create',
+        'store' => 'admin.delivery-persons.store',
+        'edit' => 'admin.delivery-persons.edit',
+        'update' => 'admin.delivery-persons.update',
+        'destroy' => 'admin.delivery-persons.destroy',
+    ]);
 });
 
 Route::middleware(['auth','role:customer'])->group(function () {
