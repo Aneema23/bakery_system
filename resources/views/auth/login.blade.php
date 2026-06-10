@@ -450,7 +450,7 @@
                 </svg>
             </div>
             <h2>Welcome Back!</h2>
-            <p>Sign in to continue to Sweet Bakery</p>
+            <p>Sign in to continue to Disna Bakery</p>
         </div>
 
         <div class="login-content">

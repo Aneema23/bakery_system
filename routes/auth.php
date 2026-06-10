@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Admin\DeliveryPersonController;
+use App\Http\Controllers\Admin\AdminDashboardController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -61,9 +62,7 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware(['auth','role:admin'])->group(function () {
-    Route::get('/admin/dashboard', function () {
-        return view('dashboard');
-    })->name('admin.dashboard');
+    Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
     Route::resource('admin/delivery-persons', DeliveryPersonController::class)->names([
         'index' => 'admin.delivery-persons.index',
@@ -77,7 +76,7 @@ Route::middleware(['auth','role:admin'])->group(function () {
 
 Route::middleware(['auth','role:customer'])->group(function () {
     Route::get('/customer/dashboard', function () {
-        return view('dashboard');
+        return view('customer.dashboard');
     })->name('customer.dashboard');
 });
 

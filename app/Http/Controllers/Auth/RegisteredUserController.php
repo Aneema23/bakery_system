@@ -53,6 +53,12 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        // Redirect to appropriate dashboard based on user role
+        return match($user->role) {
+            'admin' => redirect()->route('admin.dashboard', absolute: false),
+            'customer' => redirect()->route('customer.dashboard', absolute: false),
+            'delivery_person' => redirect()->route('delivery.dashboard', absolute: false),
+            default => redirect()->route('dashboard', absolute: false),
+        };
     }
 }
