@@ -362,7 +362,12 @@
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-box"></i> My Orders</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-magic"></i> My Custom Cakes</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-user-edit"></i> Profile Settings</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                                        <i class="fas fa-user-cog"></i> Profile Settings
+                                    </a>
+                                </li>
+                        
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
                                     <form method="POST" action="{{ route('logout') }}">
@@ -446,15 +451,15 @@
                 <div class="row">
                     @php
                         $products = [
-                            ['name' => 'Chocolate Cake', 'desc' => 'Rich chocolate cake with creamy ganache', 'price' => 25.99, 'old_price' => 35.99, 'rating' => 4.5, 'image' => 'https://images.unsplash.com/photo-1578985545062-69928b1c958e?w=400'],
+                            ['name' => 'Chocolate Cake', 'desc' => 'Rich chocolate cake with creamy ganache', 'price' => 25.99, 'old_price' => 35.99, 'rating' => 4.5, 'image' => 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=400'],
                             ['name' => 'Vanilla Cupcake', 'desc' => 'Light vanilla cupcake with buttercream', 'price' => 3.99, 'old_price' => null, 'rating' => 5, 'image' => 'https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=400'],
                             ['name' => 'Butter Croissant', 'desc' => 'Flaky, buttery French croissant', 'price' => 2.99, 'old_price' => 4.99, 'rating' => 4, 'image' => 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400'],
-                            ['name' => 'Red Velvet Cake', 'desc' => 'Classic red velvet with cream cheese frosting', 'price' => 29.99, 'old_price' => null, 'rating' => 5, 'image' => 'https://images.unsplash.com/photo-1559617311-8f529d0b9abe?w=400'],
+                            ['name' => 'Red Velvet Cake', 'desc' => 'Classic red velvet with cream cheese frosting', 'price' => 29.99, 'old_price' => null, 'rating' => 5, 'image' => 'https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=400'],
                             ['name' => 'Iced Coffee', 'desc' => 'Cold brew with vanilla and cream', 'price' => 4.99, 'old_price' => 6.99, 'rating' => 4.5, 'image' => 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400'],
                             ['name' => 'Chocolate Chip Cookie', 'desc' => 'Soft, chewy cookie with dark chocolate', 'price' => 1.99, 'old_price' => null, 'rating' => 4, 'image' => 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=400'],
-                            ['name' => 'Fruit Tart', 'desc' => 'Fresh seasonal fruits on creamy custard', 'price' => 5.99, 'old_price' => 7.99, 'rating' => 4.5, 'image' => 'https://images.unsplash.com/photo-1559617305-6c1bfdd145b6?w=400'],
-                            ['name' => 'Sourdough Bread', 'desc' => 'Artisan sourdough with crispy crust', 'price' => 6.99, 'old_price' => null, 'rating' => 4.5, 'image' => 'https://images.unsplash.com/photo-1585478259715-6e8b1c8a2a5e?w=400'],
-                            ['name' => 'Carrot Cake', 'desc' => 'Moist carrot cake with walnuts & cream cheese', 'price' => 27.99, 'old_price' => 32.99, 'rating' => 5, 'image' => 'https://images.unsplash.com/photo-1589606668078-62bffdb9a8b6?w=400'],
+                            ['name' => 'Fruit Tart', 'desc' => 'Fresh seasonal fruits on creamy custard', 'price' => 5.99, 'old_price' => 7.99, 'rating' => 4.5, 'image' => 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=400'],
+                            ['name' => 'Sourdough Bread', 'desc' => 'Artisan sourdough with crispy crust', 'price' => 6.99, 'old_price' => null, 'rating' => 4.5, 'image' => 'https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=400'],
+                            ['name' => 'Carrot Cake', 'desc' => 'Moist carrot cake with walnuts & cream cheese', 'price' => 27.99, 'old_price' => 32.99, 'rating' => 5, 'image' => 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400'],
                         ];
                     @endphp
                     @foreach($products as $product)

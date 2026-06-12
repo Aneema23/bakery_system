@@ -375,7 +375,11 @@
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-box"></i> My Orders</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-magic"></i> My Custom Cakes</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-user-edit"></i> Profile Settings</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                                        <i class="fas fa-user-cog"></i> Profile Settings
+                                    </a>
+                                </li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
                                     <form method="POST" action="{{ route('logout') }}">
@@ -512,7 +516,7 @@
             <div class="col-md-2 col-sm-4 col-6">
                 <a href="#" class="text-decoration-none">
                     <div class="category-card">
-                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1c958e?w=300" alt="Cakes">
+                        <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=400" alt="Cakes">
                         <div class="info">
                             <h4>Cakes</h4>
                             <p class="text-muted small">24 items</p>
@@ -523,7 +527,7 @@
             <div class="col-md-2 col-sm-4 col-6">
                 <a href="#" class="text-decoration-none">
                     <div class="category-card">
-                        <img src="https://images.unsplash.com/photo-1550617931-3a1f3a3e8d3e?w=300" alt="Pastries">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400" alt="Pastries">
                         <div class="info">
                             <h4>Pastries</h4>
                             <p class="text-muted small">18 items</p>
@@ -584,10 +588,10 @@
         <div class="row">
             @php
                 $featuredProducts = [
-                    ['name' => 'Chocolate Cake', 'desc' => 'Rich chocolate cake with creamy frosting', 'price' => 25.99, 'image' => 'https://images.unsplash.com/photo-1578985545062-69928b1c958e?w=400'],
+                    ['name' => 'Chocolate Cake', 'desc' => 'Rich chocolate cake with creamy frosting', 'price' => 25.99, 'image' => 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=300'],
                     ['name' => 'Vanilla Cupcake', 'desc' => 'Light vanilla cupcake with buttercream', 'price' => 3.99, 'image' => 'https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=400'],
                     ['name' => 'Butter Croissant', 'desc' => 'Flaky, buttery French croissant', 'price' => 2.99, 'image' => 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400'],
-                    ['name' => 'Red Velvet Cake', 'desc' => 'Classic red velvet with cream cheese', 'price' => 29.99, 'image' => 'https://images.unsplash.com/photo-1559617311-8f529d0b9abe?w=400'],
+                    ['name' => 'Red Velvet Cake', 'desc' => 'Classic red velvet with cream cheese', 'price' => 29.99, 'image' => 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=300'],
                 ];
             @endphp
             @foreach($featuredProducts as $product)

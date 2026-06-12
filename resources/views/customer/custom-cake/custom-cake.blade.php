@@ -392,7 +392,12 @@
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-box"></i> My Orders</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-magic"></i> My Custom Cakes</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-user-edit"></i> Profile Settings</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                                        <i class="fas fa-user-cog"></i> Profile Settings
+                                    </a>
+                                </li>
+                        
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
                                     <form method="POST" action="{{ route('logout') }}">
@@ -637,9 +642,6 @@
                     <button class="btn-preview btn-outline-preview" onclick="showFullPreview()">
                         <i class="fas fa-eye"></i> View Complete Design
                     </button>
-                    <button onclick="closeModal()" style="position: absolute; top: -40px; right: 0; background: white; border: none; border-radius: 50%; width: 35px; height: 35px; font-size: 20px; cursor: pointer;">
-                        &times;
-                    </button>
                 </div>
             </div>
         </div>
@@ -809,9 +811,24 @@
             
             const modalHtml = `
                 <div id="previewModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; display: flex; align-items: center; justify-content: center; overflow-y: auto;">
-                    <div style="position: relative; max-width: 550px; width: 90%;">
+                    <div style="position: relative; max-width: 800px; width: 95%; max-height: 85vh ; overflow-y: auto;">
                         ${previewHtml}
-                        <button onclick="closeModal()" style="position: absolute; top: -40px; right: 0; background: white; border: none; border-radius: 50%; width: 35px; height: 35px; font-size: 20px; cursor: pointer;">&times;</button>
+                        <button onclick="closeModal()" 
+                            style="
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                                background: #fff;
+                                border: none;
+                                border-radius: 50%;
+                                width: 40px;
+                                height: 40px;
+                                font-size: 24px;
+                                cursor: pointer;
+                                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                                z-index: 10000;">
+                                &times;
+                        </button>
                     </div>
                 </div>
             `;
