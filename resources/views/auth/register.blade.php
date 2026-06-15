@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Register - Sweet Bakery</title>
+    <title>Register | Disna Cakes — Pastel Bakery</title>
 
     <!-- logo -->
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -20,9 +21,22 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --blush: #FFB5A7;
+            --mint: #C7E9D0;
+            --powder-blue: #B5E2FA;
+            --vanilla: #FFF5E6;
+            --canvas: #FAFAFA;
+            --cream-light: #FFF9F5;
+            --text-warm: #6F4E37;
+            --text-soft: #5E4B3A;
+            --accent-blush-glow: rgba(255, 181, 167, 0.25);
+            --border-soft: #FFE0D6;
+        }
+
         body {
             font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-            background: linear-gradient(135deg, #1a0f0a 0%, #2d1810 50%, #1f120c 100%);
+            background: #ffb5a7;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -31,7 +45,7 @@
             position: relative;
         }
 
-        /* Bakery Pattern Overlay */
+        /* Pastel dream pattern overlay */
         body::before {
             content: '';
             position: absolute;
@@ -39,31 +53,33 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.05"><path fill="%23f59e0b" d="M20,30 L30,20 L40,30 L30,40 Z M50,50 L60,40 L70,50 L60,60 Z M80,70 L90,60 L100,70 L90,80 Z M10,80 L20,70 L30,80 L20,90 Z"/><circle cx="50" cy="30" r="5" fill="%23f59e0b"/><circle cx="80" cy="50" r="3" fill="%23f59e0b"/><circle cx="25" cy="65" r="4" fill="%23f59e0b"/></svg>');
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.06"><path fill="%23FFB5A7" d="M40,30 L50,20 L60,30 L50,40 Z M110,80 L120,70 L130,80 L120,90 Z M160,130 L170,120 L180,130 L170,140 Z M20,150 L30,140 L40,150 L30,160 Z"/><circle cx="90" cy="50" r="8" fill="%23C7E9D0"/><circle cx="150" cy="80" r="6" fill="%23B5E2FA"/><circle cx="40" cy="120" r="7" fill="%23FFB5A7"/><path d="M140 40 Q150 30 160 40" stroke="%23C7E9D0" stroke-width="3" fill="none"/><circle cx="70" cy="160" r="5" fill="%23B5E2FA"/></svg>');
             background-repeat: repeat;
             pointer-events: none;
         }
 
-        /* Main Container */
+        /* Main Container — soft, airy pastel card */
         .register-container {
-            max-width: 500px;
+            max-width: 520px;
             width: 100%;
-            background: rgba(30, 20, 15, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(245, 158, 11, 0.2);
+            background: #FFFFFF;
+            backdrop-filter: blur(2px);
+            border-radius: 38px;
+            box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 181, 167, 0.3);
             overflow: hidden;
             position: relative;
             z-index: 1;
+            transition: transform 0.2s ease;
         }
 
-        /* Header */
+        /* Header — Blush & Vanilla Cream */
         .register-header {
-            background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
-            padding: 32px;
+            background: linear-gradient(115deg, #FFF8F3 0%, #FFF2EA 100%);
+            padding: 34px 28px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            border-bottom: 2px solid rgba(255, 181, 167, 0.25);
         }
 
         .register-header::before {
@@ -73,35 +89,38 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(255, 181, 167, 0.12) 0%, transparent 70%);
+            animation: softFloat 7s infinite ease-in-out;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.1); opacity: 0.5; }
+        @keyframes softFloat {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.08); opacity: 0.7; }
         }
 
         .register-header h2 {
-            color: white;
-            font-size: 28px;
+            font-family: 'Playfair Display', serif;
+            color: #6F4E37;
+            font-size: 32px;
             font-weight: 700;
             margin-bottom: 8px;
             position: relative;
             z-index: 1;
+            letter-spacing: -0.2px;
         }
 
         .register-header p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 14px;
+            color: #8B6F55;
+            font-size: 15px;
+            font-weight: 500;
             position: relative;
             z-index: 1;
         }
 
         .bakery-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.2);
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 181, 167, 0.18);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -109,38 +128,45 @@
             margin: 0 auto 16px;
             position: relative;
             z-index: 1;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 6px 14px -6px rgba(0,0,0,0.05);
         }
 
         .bakery-icon svg {
-            width: 32px;
-            height: 32px;
-            color: white;
+            width: 34px;
+            height: 34px;
+            color: #FFB5A7;
+            stroke: #FFB5A7;
+            stroke-width: 1.7;
+            fill: none;
         }
 
         /* Form Content */
         .register-content {
-            padding: 32px;
+            padding: 32px 34px 38px;
+            background: #FFFFFF;
         }
 
         /* Form Groups */
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .form-group label {
             display: block;
             font-size: 14px;
-            font-weight: 500;
-            color: #fcd34d;
+            font-weight: 600;
+            color: #7C6954;
             margin-bottom: 8px;
+            letter-spacing: -0.2px;
         }
 
         .form-group label .required {
-            color: #ef4444;
+            color: #FFB5A7;
             margin-left: 4px;
         }
 
-        /* Password Field with Eye Icon */
+        /* Input wrapper */
         .password-wrapper {
             position: relative;
             display: flex;
@@ -149,34 +175,36 @@
 
         .form-control {
             width: 100%;
-            padding: 12px 16px;
-            background: rgba(45, 35, 30, 0.8);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            border-radius: 12px;
-            font-size: 14px;
-            color: #fef3c7;
-            transition: all 0.3s;
+            padding: 14px 18px;
+            background: #FEFAF7;
+            border: 1.5px solid #FBE2D8;
+            border-radius: 32px;
+            font-size: 15px;
+            color: #4F3E2E;
+            transition: all 0.2s ease;
             outline: none;
+            font-family: 'Instrument Sans', sans-serif;
         }
 
         .password-wrapper .form-control {
-            padding-right: 45px;
+            padding-right: 52px;
         }
 
         .form-control:focus {
-            border-color: #f59e0b;
-            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
-            background: rgba(45, 35, 30, 1);
+            border-color: #FFB5A7;
+            box-shadow: 0 0 0 4px rgba(255, 181, 167, 0.2);
+            background: #FFFFFF;
         }
 
         .form-control::placeholder {
-            color: rgba(254, 243, 199, 0.4);
+            color: #D8C6B4;
+            font-weight: 400;
         }
 
-        /* Eye Button */
+        /* Eye Button — Pastel Elegance */
         .eye-btn {
             position: absolute;
-            right: 12px;
+            right: 18px;
             background: none;
             border: none;
             cursor: pointer;
@@ -184,22 +212,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fcd34d;
-            transition: all 0.3s;
-            width: 24px;
-            height: 24px;
+            color: #BFA992;
+            transition: all 0.2s;
+            width: 28px;
+            height: 28px;
         }
 
         .eye-btn:hover {
-            color: #f59e0b;
-            transform: scale(1.1);
+            color: #FFB5A7;
+            transform: scale(1.05);
         }
 
         .eye-btn svg {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             stroke: currentColor;
-            stroke-width: 2;
+            stroke-width: 1.8;
             fill: none;
         }
 
@@ -218,33 +246,70 @@
         /* Error Message */
         .error-message {
             font-size: 12px;
-            color: #ef4444;
+            color: #FF9282;
             margin-top: 6px;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
+            font-weight: 500;
         }
 
         .error-message::before {
-            content: '⚠';
-            font-size: 10px;
+            content: '🍥';
+            font-size: 11px;
         }
 
-        /* Button */
+        /* Password Strength Indicator — Mint/Blush */
+        .password-strength {
+            margin-top: 10px;
+            height: 5px;
+            background: #F5EDE6;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .strength-bar {
+            height: 100%;
+            width: 0;
+            transition: width 0.25s ease, background 0.2s;
+            border-radius: 20px;
+        }
+
+        /* Password Match Indicator */
+        .match-indicator {
+            margin-top: 8px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
+        .match-success {
+            color: #8FBC94;
+        }
+
+        .match-error {
+            color: #FFB0A3;
+        }
+
+        /* Register Button — Blush gradient */
         .btn-register {
             width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+            padding: 14px 20px;
+            background: linear-gradient(115deg, #FFB5A7 0%, #FFA191 100%);
             border: none;
-            border-radius: 12px;
+            border-radius: 48px;
             font-size: 16px;
-            font-weight: 600;
-            color: white;
+            font-weight: 700;
+            color: #553E2C;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.25s ease;
             position: relative;
             overflow: hidden;
-            margin-top: 8px;
+            margin-top: 16px;
+            font-family: 'Instrument Sans', sans-serif;
+            box-shadow: 0 6px 16px rgba(255, 181, 167, 0.3);
         }
 
         .btn-register::before {
@@ -255,116 +320,93 @@
             width: 0;
             height: 0;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 245, 230, 0.5);
             transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
+            transition: width 0.5s, height 0.5s;
         }
 
         .btn-register:hover::before {
-            width: 300px;
-            height: 300px;
+            width: 320px;
+            height: 320px;
         }
 
         .btn-register:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+            background: linear-gradient(115deg, #FFC3B7 0%, #FFAE9E 100%);
+            box-shadow: 0 14px 28px -10px rgba(255, 181, 167, 0.55);
         }
 
         .btn-register:active {
-            transform: translateY(0);
+            transform: translateY(1px);
         }
 
-        /* Login Link */
+        /* Login Link — Powder Blue style */
         .login-link {
             text-align: center;
-            margin-top: 24px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(245, 158, 11, 0.2);
+            margin-top: 28px;
+            padding-top: 22px;
+            border-top: 1.5px solid #FBE6DE;
         }
 
         .login-link a {
-            color: #fcd34d;
+            color: #85A6B5;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s;
+            font-weight: 600;
+            transition: all 0.2s;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            background: #FEFCFA;
+            padding: 6px 18px;
+            border-radius: 60px;
         }
 
         .login-link a:hover {
-            color: #f59e0b;
-            gap: 10px;
+            color: #FFB5A7;
+            gap: 12px;
+            background: #FFF6F2;
         }
 
-        /* Decorative Elements */
+        /* Decorative Line */
         .decor-line {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #f59e0b, #ea580c, #f59e0b);
-            animation: slide 2s linear infinite;
-        }
-
-        @keyframes slide {
-            0% { background-position: -100%; }
-            100% { background-position: 200%; }
-        }
-
-        /* Password Strength Indicator */
-        .password-strength {
-            margin-top: 8px;
             height: 4px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 2px;
-            overflow: hidden;
+            background: linear-gradient(90deg, #FFB5A7, #C7E9D0, #B5E2FA, #FFF0E0, #FFB5A7);
+            background-size: 200% 100%;
+            animation: shimmerMove 3.5s linear infinite;
         }
 
-        .strength-bar {
-            height: 100%;
-            width: 0;
-            transition: width 0.3s, background 0.3s;
-            border-radius: 2px;
+        @keyframes shimmerMove {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
         }
 
-        /* Password Match Indicator */
-        .match-indicator {
-            margin-top: 8px;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .match-success {
-            color: #10b981;
-        }
-
-        .match-error {
-            color: #ef4444;
-        }
-
-        /* Responsive */
+        /* Responsive Adjustments */
         @media (max-width: 640px) {
             .register-container {
                 max-width: 100%;
+                border-radius: 32px;
             }
             .register-content {
-                padding: 24px;
+                padding: 28px 24px;
             }
             .register-header {
-                padding: 24px;
+                padding: 28px 20px;
+            }
+            .form-control {
+                padding: 12px 16px;
             }
         }
 
-        /* Animation */
-        @keyframes fadeInUp {
+        /* Fade-in animation */
+        @keyframes fadeSweetUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(24px);
             }
             to {
                 opacity: 1;
@@ -373,34 +415,33 @@
         }
 
         .register-container {
-            animation: fadeInUp 0.6s ease-out;
+            animation: fadeSweetUp 0.55s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
         }
 
         .form-group {
-            animation: fadeInUp 0.6s ease-out;
-            animation-fill-mode: both;
+            animation: fadeSweetUp 0.5s ease-out forwards;
+            opacity: 0;
         }
 
-        .form-group:nth-child(1) { animation-delay: 0.05s; }
-        .form-group:nth-child(2) { animation-delay: 0.1s; }
-        .form-group:nth-child(3) { animation-delay: 0.15s; }
-        .form-group:nth-child(4) { animation-delay: 0.2s; }
-        .form-group:nth-child(5) { animation-delay: 0.25s; }
-        .form-group:nth-child(6) { animation-delay: 0.3s; }
-        .form-group:nth-child(7) { animation-delay: 0.35s; }
+        .form-group:nth-child(1) { animation-delay: 0.03s; }
+        .form-group:nth-child(2) { animation-delay: 0.07s; }
+        .form-group:nth-child(3) { animation-delay: 0.1s; }
+        .form-group:nth-child(4) { animation-delay: 0.14s; }
+        .form-group:nth-child(5) { animation-delay: 0.17s; }
+        .form-group:nth-child(6) { animation-delay: 0.21s; }
+        .form-group:nth-child(7) { animation-delay: 0.25s; }
+        .btn-register { animation: fadeSweetUp 0.5s ease-out 0.3s forwards; opacity: 0; }
+        .login-link { animation: fadeSweetUp 0.5s ease-out 0.35s forwards; opacity: 0; }
     </style>
 </head>
 <body>
     <div class="register-container">
         <div class="register-header">
             <div class="bakery-icon">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0c-.454-.303-.977-.454-1.5-.454"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 20h14"></path>
-                </svg>
+                <img src="{{ asset('images/logo.png') }}" alt="Disna Bakery Logo" style="width: 42px; height: 42px;">
             </div>
-            <h2>Create Account</h2>
-            <p>Join Sweet Bakery and enjoy fresh baked goods</p>
+            <h2>Join the Disna Bakery ✨</h2>
+            <p>create your account & enjoy pastel treats</p>
         </div>
 
         <div class="register-content">
@@ -409,8 +450,8 @@
 
                 <!-- Full Name -->
                 <div class="form-group">
-                    <label>Full Name <span class="required">*</span></label>
-                    <input id="name" class="form-control" type="text" name="name" value="{{ old('name') }}" required autofocus autocomplete="name" placeholder="Enter your full name">
+                    <label>Full name <span class="required">*</span></label>
+                    <input id="name" class="form-control" type="text" name="name" value="{{ old('name') }}" required autofocus autocomplete="name" placeholder="e.g., Disna Gajanayake">
                     @error('name')
                         <div class="error-message">{{ $message }}</div>
                     @enderror
@@ -418,8 +459,8 @@
 
                 <!-- Contact Number -->
                 <div class="form-group">
-                    <label>Contact Number <span class="required">*</span></label>
-                    <input id="contact_number" class="form-control" type="tel" name="contact_number" value="{{ old('contact_number') }}" required autocomplete="tel" placeholder="+1 234 567 8900">
+                    <label>Contact number <span class="required">*</span></label>
+                    <input id="contact_number" class="form-control" type="tel" name="contact_number" value="{{ old('contact_number') }}" required autocomplete="tel" placeholder="+94 77 123 4567">
                     @error('contact_number')
                         <div class="error-message">{{ $message }}</div>
                     @enderror
@@ -427,8 +468,8 @@
 
                 <!-- Email Address -->
                 <div class="form-group">
-                    <label>Email Address <span class="required">*</span></label>
-                    <input id="email" class="form-control" type="email" name="email" value="{{ old('email') }}" required autocomplete="username" placeholder="you@example.com">
+                    <label>Email address <span class="required">*</span></label>
+                    <input id="email" class="form-control" type="email" name="email" value="{{ old('email') }}" required autocomplete="username" placeholder="hello@disna.com">
                     @error('email')
                         <div class="error-message">{{ $message }}</div>
                     @enderror
@@ -437,7 +478,7 @@
                 <!-- Address -->
                 <div class="form-group">
                     <label>Address <span class="required">*</span></label>
-                    <input id="address" class="form-control" type="text" name="address" value="{{ old('address') }}" required autocomplete="street-address" placeholder="Street address, building, unit">
+                    <input id="address" class="form-control" type="text" name="address" value="{{ old('address') }}" required autocomplete="street-address" placeholder="123 Sweet Street, Cake City">
                     @error('address')
                         <div class="error-message">{{ $message }}</div>
                     @enderror
@@ -446,17 +487,17 @@
                 <!-- City -->
                 <div class="form-group">
                     <label>City <span class="required">*</span></label>
-                    <input id="city" class="form-control" type="text" name="city" value="{{ old('city') }}" required autocomplete="address-level2" placeholder="City name">
+                    <input id="city" class="form-control" type="text" name="city" value="{{ old('city') }}" required autocomplete="address-level2" placeholder="Colombo / Kandy / Galle">
                     @error('city')
                         <div class="error-message">{{ $message }}</div>
                     @enderror
                 </div>
 
-                <!-- Password with Eye Icon -->
+                <!-- Password with strength -->
                 <div class="form-group">
-                    <label>Password <span class="required">*</span></label>
+                    <label>Create password <span class="required">*</span></label>
                     <div class="password-wrapper">
-                        <input id="password" class="form-control" type="password" name="password" required autocomplete="new-password" placeholder="Create a password">
+                        <input id="password" class="form-control" type="password" name="password" required autocomplete="new-password" placeholder="••••••••">
                         <button type="button" class="eye-btn" onclick="togglePassword('password')">
                             <svg class="eye-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -476,11 +517,11 @@
                     @enderror
                 </div>
 
-                <!-- Confirm Password with Eye Icon -->
+                <!-- Confirm Password -->
                 <div class="form-group">
-                    <label>Confirm Password <span class="required">*</span></label>
+                    <label>Confirm password <span class="required">*</span></label>
                     <div class="password-wrapper">
-                        <input id="password_confirmation" class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm your password">
+                        <input id="password_confirmation" class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="confirm your password">
                         <button type="button" class="eye-btn" onclick="togglePassword('password_confirmation')">
                             <svg class="eye-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -499,12 +540,12 @@
                 </div>
 
                 <button type="submit" class="btn-register">
-                    Create Account
+                    🧁 create sweet account 🧁
                 </button>
 
                 <div class="login-link">
                     <a href="{{ route('login') }}">
-                        Already have an account? Sign in →
+                        already have an account? sign in →
                     </a>
                 </div>
             </form>
@@ -527,7 +568,7 @@
             }
         }
 
-        // Password strength indicator
+        // Password strength indicator (pastel-friendly)
         const passwordInput = document.getElementById('password');
         const strengthBar = document.getElementById('strengthBar');
 
@@ -545,16 +586,15 @@
                 strengthBar.style.width = width + '%';
                 
                 if (strength <= 1) {
-                    strengthBar.style.background = '#ef4444';
+                    strengthBar.style.background = '#FFB0A3';
                 } else if (strength <= 2) {
-                    strengthBar.style.background = '#f59e0b';
+                    strengthBar.style.background = '#FFCFBA';
                 } else if (strength <= 3) {
-                    strengthBar.style.background = '#fbbf24';
+                    strengthBar.style.background = '#C7E9D0';
                 } else {
-                    strengthBar.style.background = '#10b981';
+                    strengthBar.style.background = '#8FBC94';
                 }
                 
-                // Check password match
                 checkPasswordMatch();
             });
         }
@@ -569,11 +609,9 @@
             
             if (confirmPassword.length > 0) {
                 if (password === confirmPassword) {
-                    matchMessage.innerHTML = '<span class="match-success">✓ Passwords match</span>';
-                    matchMessage.style.color = '#10b981';
+                    matchMessage.innerHTML = '<span class="match-success">✨ passwords match! ✨</span>';
                 } else {
-                    matchMessage.innerHTML = '<span class="match-error">✗ Passwords do not match</span>';
-                    matchMessage.style.color = '#ef4444';
+                    matchMessage.innerHTML = '<span class="match-error">🍬 passwords do not match</span>';
                 }
             } else {
                 matchMessage.innerHTML = '';

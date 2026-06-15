@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Forgot Password - Disna Bakery</title>
+    <title>Reset Password | Disna Cakes — Sweet Pastry</title>
        
     <!-- logo -->
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -20,9 +21,22 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --blush: #FFB5A7;
+            --mint: #C7E9D0;
+            --powder-blue: #B5E2FA;
+            --vanilla: #FFF5E6;
+            --canvas: #FAFAFA;
+            --cream-light: #FFF9F5;
+            --text-warm: #6F4E37;
+            --text-soft: #5E4B3A;
+            --accent-glow: rgba(255, 181, 167, 0.2);
+            --border-blush: #FFDFD6;
+        }
+
         body {
             font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-            background: linear-gradient(135deg, #1a0f0a 0%, #2d1810 50%, #1f120c 100%);
+            background: #FFB5A7;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -31,7 +45,7 @@
             position: relative;
         }
 
-        /* Bakery Pattern Overlay */
+        /* Dreamy pastel pattern overlay */
         body::before {
             content: '';
             position: absolute;
@@ -39,31 +53,33 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.05"><path fill="%23f59e0b" d="M20,30 L30,20 L40,30 L30,40 Z M50,50 L60,40 L70,50 L60,60 Z M80,70 L90,60 L100,70 L90,80 Z M10,80 L20,70 L30,80 L20,90 Z"/><circle cx="50" cy="30" r="5" fill="%23f59e0b"/><circle cx="80" cy="50" r="3" fill="%23f59e0b"/><circle cx="25" cy="65" r="4" fill="%23f59e0b"/></svg>');
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.06"><path fill="%23FFB5A7" d="M40,30 L50,20 L60,30 L50,40 Z M110,80 L120,70 L130,80 L120,90 Z M160,130 L170,120 L180,130 L170,140 Z M20,150 L30,140 L40,150 L30,160 Z"/><circle cx="90" cy="50" r="8" fill="%23C7E9D0"/><circle cx="150" cy="80" r="6" fill="%23B5E2FA"/><circle cx="40" cy="120" r="7" fill="%23FFB5A7"/><path d="M140 40 Q150 30 160 40" stroke="%23C7E9D0" stroke-width="3" fill="none"/><circle cx="70" cy="160" r="5" fill="%23B5E2FA"/></svg>');
             background-repeat: repeat;
             pointer-events: none;
         }
 
-        /* Main Container */
+        /* Main Container — pastel confection card */
         .forgot-container {
-            max-width: 450px;
+            max-width: 480px;
             width: 100%;
-            background: rgba(30, 20, 15, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(245, 158, 11, 0.2);
+            background: #FFFFFF;
+            backdrop-filter: blur(1px);
+            border-radius: 42px;
+            box-shadow: 0 24px 48px -18px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 181, 167, 0.3);
             overflow: hidden;
             position: relative;
             z-index: 1;
+            transition: all 0.25s ease;
         }
 
-        /* Header */
+        /* Header — Blush & Vanilla cream */
         .forgot-header {
-            background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
-            padding: 32px;
+            background: linear-gradient(115deg, #FFF8F3 0%, #FFF2EA 100%);
+            padding: 36px 28px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            border-bottom: 2px solid rgba(255, 181, 167, 0.2);
         }
 
         .forgot-header::before {
@@ -73,177 +89,195 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(255, 181, 167, 0.12) 0%, transparent 70%);
+            animation: gentleDrift 6s infinite ease-in-out;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.1); opacity: 0.5; }
+        @keyframes gentleDrift {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.08); opacity: 0.65; }
         }
 
         .forgot-header h2 {
-            color: white;
-            font-size: 28px;
+            font-family: 'Playfair Display', serif;
+            color: #6F4E37;
+            font-size: 30px;
             font-weight: 700;
             margin-bottom: 8px;
             position: relative;
             z-index: 1;
+            letter-spacing: -0.3px;
         }
 
         .forgot-header p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 14px;
+            color: #8B6F55;
+            font-size: 15px;
+            font-weight: 500;
             position: relative;
             z-index: 1;
         }
 
         .bakery-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.2);
+            width: 72px;
+            height: 72px;
+            background: rgba(255, 181, 167, 0.18);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 16px;
+            margin: 0 auto 18px;
             position: relative;
             z-index: 1;
-            animation: bounce 2s ease-in-out infinite;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 8px 18px -8px rgba(0,0,0,0.05);
+            animation: softBounce 3s infinite ease;
         }
 
-        @keyframes bounce {
+        @keyframes softBounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-5px); }
         }
 
         .bakery-icon svg {
-            width: 32px;
-            height: 32px;
-            color: white;
+            width: 36px;
+            height: 36px;
+            color: #FFB5A7;
+            stroke: #FFB5A7;
+            stroke-width: 1.7;
+            fill: none;
         }
 
         /* Form Content */
         .forgot-content {
-            padding: 32px;
+            padding: 36px 34px 42px;
+            background: #FFFFFF;
         }
 
-        /* Info Message */
+        /* Info Message — Mint & Blush */
         .info-message {
-            background: rgba(245, 158, 11, 0.1);
-            border-left: 3px solid #f59e0b;
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 24px;
+            background: #FEFAF7;
+            border-left: 5px solid #c7e4e9;
+            border-radius: 28px;
+            padding: 18px 20px;
+            margin-bottom: 28px;
             display: flex;
-            gap: 12px;
+            gap: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .info-icon {
             flex-shrink: 0;
-            width: 20px;
-            height: 20px;
-            color: #f59e0b;
+            width: 22px;
+            height: 22px;
+            color: #75c3ed;
         }
 
         .info-text {
             font-size: 14px;
-            color: #fcd34d;
+            color: #7E6954;
             line-height: 1.5;
+            font-weight: 500;
         }
 
-        /* Session Status Alert */
+        /* Session Status */
         .session-status {
-            background: rgba(16, 185, 129, 0.15);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            border-radius: 12px;
-            padding: 12px 16px;
-            margin-bottom: 24px;
-            color: #10b981;
+            background: #EFF9F2;
+            border-left: 4px solid #C7E9D0;
+            border-radius: 24px;
+            padding: 14px 18px;
+            margin-bottom: 26px;
+            color: #5A7C62;
             font-size: 14px;
+            font-weight: 500;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .session-status::before {
-            content: '✓';
+            content: '✨';
             font-weight: bold;
+            font-size: 16px;
         }
 
         /* Form Groups */
         .form-group {
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
         .form-group label {
             display: block;
             font-size: 14px;
-            font-weight: 500;
-            color: #fcd34d;
-            margin-bottom: 8px;
+            font-weight: 600;
+            color: #7C6954;
+            margin-bottom: 10px;
         }
 
         .form-group label .required {
-            color: #ef4444;
+            color: #FFB5A7;
             margin-left: 4px;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 16px;
-            background: rgba(45, 35, 30, 0.8);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            border-radius: 12px;
-            font-size: 14px;
-            color: #fef3c7;
-            transition: all 0.3s;
+            padding: 14px 20px;
+            background: #FEFAF7;
+            border: 1.5px solid #FCE4DA;
+            border-radius: 44px;
+            font-size: 15px;
+            color: #4F3E2E;
+            transition: all 0.2s;
             outline: none;
+            font-family: 'Instrument Sans', sans-serif;
         }
 
         .form-control:focus {
-            border-color: #f59e0b;
-            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
-            background: rgba(45, 35, 30, 1);
+            border-color: #FFB5A7;
+            box-shadow: 0 0 0 4px rgba(255, 181, 167, 0.2);
+            background: #FFFFFF;
         }
 
         .form-control::placeholder {
-            color: rgba(254, 243, 199, 0.4);
+            color: #D8C6B4;
+            font-weight: 400;
         }
 
         /* Error Message */
         .error-message {
             font-size: 12px;
-            color: #ef4444;
-            margin-top: 6px;
+            color: #FF9282;
+            margin-top: 8px;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
+            font-weight: 500;
+            padding-left: 8px;
         }
 
         .error-message::before {
-            content: '⚠';
-            font-size: 10px;
+            content: '🍰';
+            font-size: 11px;
         }
 
-        /* Button */
+        /* Button — Blush Gradient */
         .btn-reset {
             width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+            padding: 14px 20px;
+            background: linear-gradient(115deg, #FFB5A7 0%, #FFA191 100%);
             border: none;
-            border-radius: 12px;
+            border-radius: 60px;
             font-size: 16px;
-            font-weight: 600;
-            color: white;
+            font-weight: 700;
+            color: #553E2C;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.25s ease;
             position: relative;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 12px;
+            box-shadow: 0 8px 18px rgba(255, 181, 167, 0.25);
         }
 
         .btn-reset::before {
@@ -254,27 +288,28 @@
             width: 0;
             height: 0;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 250, 240, 0.5);
             transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
+            transition: width 0.5s, height 0.5s;
         }
 
         .btn-reset:hover::before {
-            width: 300px;
-            height: 300px;
+            width: 320px;
+            height: 320px;
         }
 
         .btn-reset:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+            background: linear-gradient(115deg, #FFC2B6 0%, #FFAE9E 100%);
+            box-shadow: 0 14px 28px -8px rgba(255, 181, 167, 0.5);
         }
 
         .btn-reset:active {
-            transform: translateY(0);
+            transform: translateY(1px);
         }
 
         .btn-reset.loading {
-            opacity: 0.7;
+            opacity: 0.8;
             cursor: not-allowed;
         }
 
@@ -288,12 +323,12 @@
 
         .loading-spinner {
             display: none;
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            width: 22px;
+            height: 22px;
+            border: 2px solid rgba(85, 62, 44, 0.2);
             border-radius: 50%;
-            border-top-color: white;
-            animation: spin 0.8s linear infinite;
+            border-top-color: #553E2C;
+            animation: spin 0.7s linear infinite;
         }
 
         @keyframes spin {
@@ -303,68 +338,75 @@
         /* Footer Links */
         .forgot-footer {
             text-align: center;
-            margin-top: 24px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(245, 158, 11, 0.2);
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1.5px solid #FCE4DA;
         }
 
         .back-link {
-            color: #fcd34d;
+            color: #8FAFBC;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s;
+            font-weight: 600;
+            transition: all 0.2s;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            background: #FEFCFA;
+            padding: 8px 20px;
+            border-radius: 60px;
         }
 
         .back-link:hover {
-            color: #f59e0b;
-            gap: 10px;
+            color: #FFB5A7;
+            gap: 12px;
+            background: #FFF6F2;
         }
 
-        /* Decorative Elements */
+        /* Decorative Line */
         .decor-line {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #f59e0b, #ea580c, #f59e0b);
-            animation: slide 2s linear infinite;
+            height: 4px;
+            background: linear-gradient(90deg, #FFB5A7, #C7E9D0, #B5E2FA, #FFF0E0, #FFB5A7);
+            background-size: 200% 100%;
+            animation: shimmerMove 3.5s linear infinite;
         }
 
-        @keyframes slide {
-            0% { background-position: -100%; }
-            100% { background-position: 200%; }
+        @keyframes shimmerMove {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
         }
 
-        /* Email Sent Success Animation */
+        /* Success Animation — dreamy pastel */
         .success-animation {
             text-align: center;
-            padding: 20px;
+            padding: 20px 10px 10px;
         }
 
         .success-checkmark {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: #10b981;
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 22px;
+            background: #C7E9D0;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: scaleIn 0.5s ease-out;
+            animation: popScale 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+            box-shadow: 0 8px 20px rgba(199, 233, 208, 0.4);
         }
 
         .success-checkmark svg {
-            width: 40px;
-            height: 40px;
-            color: white;
+            width: 48px;
+            height: 48px;
+            color: #4F735A;
+            stroke-width: 1.8;
         }
 
-        @keyframes scaleIn {
+        @keyframes popScale {
             from {
                 transform: scale(0);
                 opacity: 0;
@@ -376,36 +418,43 @@
         }
 
         .success-title {
-            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
             font-weight: 700;
-            color: #10b981;
-            margin-bottom: 8px;
+            color: #6F4E37;
+            margin-bottom: 12px;
         }
 
         .success-message {
-            color: #fcd34d;
-            font-size: 14px;
-            margin-bottom: 24px;
+            color: #8B735E;
+            font-size: 15px;
+            margin-bottom: 28px;
+            line-height: 1.45;
+            font-weight: 500;
         }
 
         /* Responsive */
         @media (max-width: 640px) {
             .forgot-container {
                 max-width: 100%;
+                border-radius: 32px;
             }
             .forgot-content {
-                padding: 24px;
+                padding: 28px 24px;
             }
             .forgot-header {
-                padding: 24px;
+                padding: 28px 20px;
+            }
+            .form-control {
+                padding: 12px 18px;
             }
         }
 
-        /* Animation */
-        @keyframes fadeInUp {
+        /* Fade-in animation */
+        @keyframes fadeSweetUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(24px);
             }
             to {
                 opacity: 1;
@@ -414,23 +463,23 @@
         }
 
         .forgot-container {
-            animation: fadeInUp 0.6s ease-out;
+            animation: fadeSweetUp 0.55s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
         }
 
         .info-message, .session-status {
-            animation: fadeInUp 0.6s ease-out 0.05s both;
+            animation: fadeSweetUp 0.5s ease-out 0.03s both;
         }
 
         .form-group {
-            animation: fadeInUp 0.6s ease-out 0.1s both;
+            animation: fadeSweetUp 0.5s ease-out 0.1s both;
         }
 
         .btn-reset {
-            animation: fadeInUp 0.6s ease-out 0.15s both;
+            animation: fadeSweetUp 0.5s ease-out 0.16s both;
         }
 
         .forgot-footer {
-            animation: fadeInUp 0.6s ease-out 0.2s both;
+            animation: fadeSweetUp 0.5s ease-out 0.22s both;
         }
     </style>
 </head>
@@ -438,17 +487,14 @@
     <div class="forgot-container" id="forgotContainer">
         <div class="forgot-header">
             <div class="bakery-icon">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7.5a4.5 4.5 0 1 0 0 9m-6-9a4.5 4.5 0 1 0 0 9m9-4.5c0 2.5-2 4.5-4.5 4.5m-9-9c0 2.5 2 4.5 4.5 4.5m9-9c-2.5 0-4.5 2-4.5 4.5"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12v3m0 0-2-2m2 2 2-2"></path>
-                </svg>
+                <img src="{{ asset('images/logo.png') }}" alt="Disna Bakery Logo" style="width: 42px; height: 42px;">
             </div>
-            <h2>Forgot Password?</h2>
-            <p>Reset your password easily</p>
+            <h2>sweet reminder ✨</h2>
+            <p>we'll help you bake a new password</p>
         </div>
 
         <div class="forgot-content" id="forgotContent">
-            <!-- Info Message -->
+            <!-- Info Message with pastel tones -->
             <div class="info-message">
                 <div class="info-icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -458,7 +504,7 @@
                     </svg>
                 </div>
                 <div class="info-text">
-                    Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.
+                    No worries, sweet cravings happen! Just enter your email and we’ll send a magic link to reset your password.
                 </div>
             </div>
 
@@ -475,21 +521,21 @@
 
                 <!-- Email Address -->
                 <div class="form-group">
-                    <label>Email Address <span class="required">*</span></label>
-                    <input id="email" class="form-control" type="email" name="email" value="{{ old('email') }}" required autofocus placeholder="Enter your registered email address">
+                    <label>Email address <span class="required">*</span></label>
+                    <input id="email" class="form-control" type="email" name="email" value="{{ old('email') }}" required autofocus placeholder="hello@disna.com">
                     @error('email')
                         <div class="error-message">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <button type="submit" class="btn-reset" id="resetButton">
-                    <span class="btn-text">Send Reset Link</span>
+                    <span class="btn-text">🧁 send reset link 🧁</span>
                     <span class="loading-spinner"></span>
                 </button>
 
                 <div class="forgot-footer">
                     <a class="back-link" href="{{ route('login') }}">
-                        ← Back to Login
+                        ← back to login
                     </a>
                 </div>
             </form>
@@ -500,17 +546,17 @@
             <div class="success-animation">
                 <div class="success-checkmark">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
                     </svg>
                 </div>
-                <div class="success-title">Check Your Email!</div>
+                <div class="success-title">magic link sent ✉️</div>
                 <div class="success-message">
-                    We've sent a password reset link to your email address.<br>
-                    Please check your inbox and follow the instructions.
+                    We've whisked a password reset link to your email.<br>
+                    Check your inbox and follow the steps to create a new password.
                 </div>
-                <div class="forgot-footer" style="border-top: none; margin-top: 0;">
+                <div class="forgot-footer" style="border-top: none; margin-top: 4px;">
                     <a class="back-link" href="{{ route('login') }}">
-                        ← Back to Login
+                        ← return to login
                     </a>
                 </div>
             </div>
@@ -529,54 +575,48 @@
 
         if (form) {
             form.addEventListener('submit', function(e) {
-                // Show loading state immediately for better UX
-                resetButton.classList.add('loading');
+                // Show loading state for better UX (only if form valid)
+                if (resetButton) resetButton.classList.add('loading');
                 
-                // Don't prevent default - let Laravel handle the actual submission
-                // This just shows the loading animation
-                
-                // If there are validation errors, remove loading state after a delay
+                // Tiny delay to avoid flicker if validation errors appear
                 setTimeout(() => {
                     if (document.querySelector('.error-message')) {
-                        resetButton.classList.remove('loading');
+                        if (resetButton) resetButton.classList.remove('loading');
                     }
-                }, 1000);
+                }, 600);
             });
         }
 
-        // If there's a session status (success message), show success animation
+        // If there's a session status (success message), show beautiful success card
         @if (session('status'))
             setTimeout(() => {
                 if (forgotContent && successContent) {
                     forgotContent.style.display = 'none';
                     successContent.style.display = 'block';
-                    
-                    // Adjust container height smoothly
-                    const newHeight = successContent.scrollHeight;
+                    // smooth container transition
                     forgotContainer.style.transition = 'height 0.3s ease';
                 }
-            }, 500);
+            }, 300);
         @endif
 
-        // Email validation helper
+        // Real-time email validation with pastel hint
+        const emailInput = document.getElementById('email');
         function isValidEmail(email) {
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         }
 
-        // Real-time email validation
-        const emailInput = document.getElementById('email');
         if (emailInput) {
             emailInput.addEventListener('input', function() {
                 const email = this.value;
-                const errorDiv = this.parentElement.querySelector('.error-message');
+                let errorDiv = this.parentElement.querySelector('.error-message:not(.server-error)');
                 
                 if (email && !isValidEmail(email)) {
                     if (!errorDiv || !errorDiv.textContent.includes('valid email')) {
                         const newError = document.createElement('div');
                         newError.className = 'error-message';
-                        newError.textContent = 'Please enter a valid email address';
+                        newError.textContent = 'please enter a deliciously valid email';
                         
-                        if (errorDiv) {
+                        if (errorDiv && errorDiv.textContent.includes('valid email')) {
                             errorDiv.remove();
                         }
                         this.parentElement.appendChild(newError);
