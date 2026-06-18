@@ -534,7 +534,7 @@
                     <label class="checkbox-label">
                         <input type="checkbox" name="remember" id="remember_me">
                         <span class="custom-checkbox"></span>
-                        <span class="checkbox-text">keep me signed in</span>
+                        <span class="checkbox-text">Remember me</span>
                     </label>
                 </div>
 
