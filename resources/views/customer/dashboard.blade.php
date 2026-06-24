@@ -413,28 +413,13 @@
                 <div class="welcome-card bg-white dark:bg-gray-800 rounded-3 shadow-sm p-4 mb-4">
                     <div class="d-flex justify-content-between align-items-center flex-wrap">
                         <div>
-                            <h3 class="mb-1 text-dark">Welcome back, {{ Auth::user()->name }}! 🧁</h3>
+                            <h3 class="mb-1 text-dark">Welcome back, {{ Auth::user()->name }}! </h3>
                             <p class="text-muted mb-0">Your sweet journey continues here</p>
                         </div>
                         <div class="mt-2 mt-sm-0">
                             <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">
                                 <i class="fas fa-map-marker-alt"></i> {{ Auth::user()->city ?? 'Add city' }}
                             </span>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row mt-2">
-                        <div class="col-md-4">
-                            <small class="text-muted"><i class="fas fa-envelope"></i> Email</small>
-                            <p class="mb-0 fw-semibold">{{ Auth::user()->email }}</p>
-                        </div>
-                        <div class="col-md-4">
-                            <small class="text-muted"><i class="fas fa-phone"></i> Contact</small>
-                            <p class="mb-0 fw-semibold">{{ Auth::user()->contact_number ?? 'Not provided' }}</p>
-                        </div>
-                        <div class="col-md-4">
-                            <small class="text-muted"><i class="fas fa-home"></i> Address</small>
-                            <p class="mb-0 fw-semibold">{{ Auth::user()->address ?? 'Not provided' }}</p>
                         </div>
                     </div>
                 </div>

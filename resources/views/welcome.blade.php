@@ -137,13 +137,8 @@
             transition: 0.2s;
         }
 
-        .category-card:hover .icon-circle {
-            background: #FFE4DC;
-        }
-
-        .icon-circle i {
-            font-size: 2.2rem;
-            color: #FFA294;
+        .category-card:hover {
+            background: #facbbd;
         }
 
         /* gradient hero background */
@@ -176,6 +171,32 @@
         }
         .footer-link:hover {
             color: #FFB5A7;
+        }
+
+        /* category images */
+        .category-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+        }
+        
+        .category-card:hover .category-img {
+            transform: scale(1.05);
+        }
+        
+        .icon-circle {
+            overflow: hidden; 
+            background: #FFF2EC;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem auto;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
         }
 
         /* stats */
@@ -243,43 +264,8 @@
                         <div style="position: relative; max-width: 420px; width: 100%; margin: 0 auto;">
                             <div style="position: absolute; top: -20px; left: -20px; width: 90px; height: 90px; background: #B5E2FA; border-radius: 50%; opacity: 0.5; z-index: 0;"></div>
                             <div style="position: absolute; bottom: -15px; right: -25px; width: 110px; height: 110px; background: #C7E9D0; border-radius: 60% 40% 50% 50%; opacity: 0.5; z-index: 0;"></div>
-                            <svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block; border-radius: 2rem; background: rgba(255,245,230,0.7); backdrop-filter: blur(2px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1); padding: 0.5rem;">
-                                <!-- base plate -->
-                                <ellipse cx="200" cy="320" rx="170" ry="30" fill="#FFE9DF" />
-                                <!-- bottom tier blush -->
-                                <rect x="70" y="210" width="260" height="75" rx="14" fill="#FFC3B7" />
-                                <rect x="70" y="210" width="260" height="16" rx="8" fill="#FFD9CF" />
-                                <path d="M70 222 Q95 240 120 222 Q145 244 170 222 Q195 238 220 222 Q245 246 270 222 Q295 238 330 222 L330 285 L70 285Z" fill="#FFE2D8" />
-                                <!-- middle tier mint -->
-                                <rect x="105" y="145" width="190" height="68" rx="12" fill="#C7E9D0" />
-                                <rect x="105" y="145" width="190" height="12" rx="6" fill="#E0F3E5" />
-                                <path d="M105 158 Q130 172 155 158 Q180 174 205 158 Q230 170 255 158 L295 158 L295 213 L105 213Z" fill="#EEF9F0" />
-                                <!-- top tier powder blue -->
-                                <rect x="140" y="85" width="120" height="58" rx="10" fill="#B5E2FA" />
-                                <rect x="140" y="85" width="120" height="12" rx="6" fill="#D3F0FF" />
-                                <!-- cream top -->
-                                <path d="M140 96 Q160 112 180 96 Q200 114 220 96 Q240 110 260 96 L260 143 L140 143Z" fill="#FFF9F0" />
-                                <!-- swirly frosting -->
-                                <circle cx="200" cy="90" r="16" fill="#FFE7DC" />
-                                <circle cx="182" cy="98" r="9" fill="#FFFFFF" />
-                                <circle cx="218" cy="98" r="9" fill="#FFFFFF" />
-                                <!-- berries & macaron details -->
-                                <circle cx="170" cy="78" r="8" fill="#F4A261" />
-                                <circle cx="230" cy="78" r="8" fill="#E9B5A0" />
-                                <circle cx="200" cy="73" r="7" fill="#FFA07A" />
-                                <!-- sprinkles color pastel -->
-                                <rect x="162" y="108" width="6" height="3" rx="2" fill="#B5E2FA" transform="rotate(25 165 110)"/>
-                                <rect x="190" y="112" width="6" height="3" rx="2" fill="#FFB5A7" transform="rotate(-15 193 113)"/>
-                                <rect x="215" y="106" width="6" height="3" rx="2" fill="#C7E9D0" transform="rotate(35 218 108)"/>
-                                <rect x="240" y="115" width="6" height="3" rx="2" fill="#FADADD" transform="rotate(-20 243 116)"/>
-                                <!-- cute candle -->
-                                <rect x="196" y="48" width="8" height="28" rx="3" fill="#FFD966" />
-                                <path d="M200 42 L206 51 L194 51Z" fill="#FFB347" />
-                                <ellipse cx="200" cy="40" rx="4" ry="6" fill="#FFD28F" />
-                                <circle cx="200" cy="36" r="2.5" fill="#FFF3BF" />
-                                <!-- hearts -->
-                                <path d="M148 195 A4 4 0 0 1 156 195 A4 4 0 0 1 164 195 Q164 200 156 204 Q148 200 148 195Z" fill="#FFB5A7" opacity="0.8" transform="scale(0.7) translate(65, 70)" />
-                            </svg>
+                            <img src="https://images.unsplash.com/photo-1685956801990-57ef97b17d45?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Delicious Cake" 
+                                style="width:100%; height:auto; display:block; border-radius: 2rem; background: rgba(255,245,230,0.7); backdrop-filter: blur(2px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1); padding: 0.5rem; object-fit: cover; aspect-ratio: 400/380;">
                         </div>
                     </div>
                 </div>
@@ -291,11 +277,18 @@
             <h2 style="font-size: 2.2rem; text-align: center; font-weight: 700; color: #4C3E30;">Sweetest selection</h2>
             <p style="text-align: center; color: #8D7862; margin-bottom: 3rem;">Dreamy treats, pastel perfection</p>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem;">
-                <div class="category-card"><div class="icon-circle"><i class="fas fa-birthday-cake"></i></div><h3 style="font-weight: 600;">Cakes</h3><p style="color:#8f7a64; font-size:0.8rem;">32 designs</p></div>
-                <div class="category-card"><div class="icon-circle"><i class="fas fa-cupcake"></i></div><h3 style="font-weight: 600;">Cupcakes</h3><p style="color:#8f7a64; font-size:0.8rem;">24 flavors</p></div>
-                <div class="category-card"><div class="icon-circle"><i class="fas fa-croissant"></i></div><h3 style="font-weight: 600;">Macarons</h3><p style="color:#8f7a64; font-size:0.8rem;">18 pastels</p></div>
-                <div class="category-card"><div class="icon-circle"><i class="fas fa-cookie-bite"></i></div><h3 style="font-weight: 600;">Cookies</h3><p style="color:#8f7a64; font-size:0.8rem;">12 kinds</p></div>
-            </div>
+                <div class="category-card"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1640506054499-2b040ca19023?w=200&h=200&fit=crop&auto=format" alt="Cakes" class="category-img"></div>
+                    <h3 style="font-weight: 600;">Birthday Cakes</h3><p style="color:#8f7a64; font-size:0.8rem;">32 designs</p>
+                </div>
+                <div class="category-card"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1566864399117-22c449669089?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
+                    <h3 style="font-weight: 600;">CupCakes</h3><p style="color:#8f7a64; font-size:0.8rem;">10 designs</p>
+                </div>
+                <div class="category-card"><div class="icon-circle"><img src="https://plus.unsplash.com/premium_photo-1669245220400-6c04752ec08a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
+                    <h3 style="font-weight: 600;">Cakes</h3><p style="color:#8f7a64; font-size:0.8rem;">32 designs</p>
+                </div>
+                <div class="category-card"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1590080874088-eec64895b423?q=80&w=894&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
+                    <h3 style="font-weight: 600;">Cookies</h3><p style="color:#8f7a64; font-size:0.8rem;">2 designs</p>
+                </div>
         </div>
 
         <!-- Featured Products - modern pastel sweets -->
@@ -321,7 +314,7 @@
         <!-- Custom Cake Banner | Pastel Dream design -->
         <div class="container" style="margin: 3rem auto 4rem auto;">
             <div style="position: relative; border-radius: 2rem; overflow: hidden; box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12); background: #FFF3EB;">
-                <img src="https://images.unsplash.com/photo-1535254973040-9b3922f9e6ec?w=1400&auto=format" style="width:100%; height: auto; object-fit: cover; display: block;" alt="custom cake pastel">
+                <img src="https://images.unsplash.com/photo-1621618625640-c8acf9330149?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%; height: auto; object-fit: cover; display: block;" alt="custom cake pastel">
                 <div style="position: absolute; inset: 0; background: linear-gradient(95deg, rgba(255,245,235,0.75) 0%, rgba(181,226,250,0.3) 100%);"></div>
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; top: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 1rem;">
                     <h2 style="font-size: clamp(1.8rem, 5vw, 2.8rem); color:#FFF; text-shadow: 0 2px 8px rgba(0,0,0,0.2); font-weight: 800;">Dream Cake Studio</h2>
@@ -357,6 +350,5 @@
         </div>
     </footer>
 
-    <!-- small interactive hover for buttons (no extra style clash) -->
 </body>
 </html>
