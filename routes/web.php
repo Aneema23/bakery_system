@@ -36,6 +36,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 });
 
+// Profile routes for authenticated users
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -50,7 +51,7 @@ Route::get('/products', function () {
 //customer custom cake page
 Route::get('/custom-cake', function () {
     return view('customer.custom-cake.custom-cake');
-})->name('custom-cake');
+})->middleware(['auth', 'role:customer'])->name('custom-cake');
 
 //customer order submission
 Route::post('/custom-cake/order', [OrderController::class, 'store'])

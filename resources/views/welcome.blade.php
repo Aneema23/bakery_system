@@ -251,7 +251,7 @@
                         <p style="font-size: 1.1rem; color: #6B5A4B; max-width: 500px; margin: 0 auto 2rem auto; font-weight: 450;">Modern custom cakes, macaron towers & cupcakes — baked fresh with pastel elegance. Order for delivery or pickup.</p>
                         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem;">
                             <a href="#" class="btn-primary"><i class="fas fa-shopping-bag"></i> Explore Menu</a>
-                            <a href="#" class="btn-outline"><i class="fas fa-palette"></i> Design Your Cake</a>
+                            <a href="{{ route('custom-cake') }}" class="btn-outline"><i class="fas fa-palette"></i> Design Your Cake</a>
                         </div>
                         <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
                             <div><div class="stat-number">850+</div><div style="font-size: 0.85rem; color: #7C6956;">Happy Sweet Tooth</div></div>
@@ -300,12 +300,18 @@
                     <!-- Product 1 -->
                     <div class="card" style="background: white;">
                         <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&auto=format" style="width:100%; height:220px; object-fit:cover;" alt="strawberry cake">
-                        <div style="padding: 1.5rem;"><div style="display: flex; justify-content: space-between;"><h3 style="font-weight: 700;">Strawberry Cloud Cake</h3><span style="color:#FFB5A7; font-weight: 800;">$32</span></div><p style="color:#6C5B4A; font-size:0.85rem; margin: 0.5rem 0 1rem;">Layers of vanilla sponge, fresh strawberries & whipped cream</p><button class="btn-primary" style="width:100%; justify-content: center;"><i class="fas fa-cart-plus"></i> Order now</button></div>
+                        <div style="padding: 1.5rem;"><div style="display: flex; justify-content: space-between;"><h3 style="font-weight: 700;">Strawberry Cloud Cake</h3></div><p style="color:#6C5B4A; font-size:0.85rem; margin: 0.5rem 0 1rem;">Soft vanilla sponge layered with fresh strawberries and whipped cream</p><button class="btn-primary" style="width:100%; justify-content: center;"><i class="fas fa-cake"></i> View</button></div>
                     </div>
-                    <!-- Product 2 macaron tower -->
-                    <div class="card"><img src="https://images.unsplash.com/photo-1572495641004-2e9c0efc6ae0?w=500&auto=format" style="width:100%; height:220px; object-fit:cover;" alt="macaron set"><div style="padding:1.5rem;"><div style="display: flex; justify-content: space-between;"><h3 style="font-weight: 700;">Macaron Gift Box</h3><span style="color:#FFB5A7; font-weight: 800;">$24</span></div><p style="color:#6C5B4A; font-size:0.85rem; margin:0.5rem 0 1rem;">12 assorted pastel macarons, pistachio, rose, vanilla</p><button class="btn-primary" style="width:100%; justify-content: center;"><i class="fas fa-cart-plus"></i> Order now</button></div></div>
-                    <!-- Product 3 pastel cupcake -->
-                    <div class="card"><img src="https://images.unsplash.com/photo-1614707267537-b85a3260d2dc?w=500&auto=format" style="width:100%; height:220px; object-fit:cover;" alt="cupcake"><div style="padding:1.5rem;"><div style="display: flex; justify-content: space-between;"><h3 style="font-weight: 700;">Unicorn Cupcake</h3><span style="color:#FFB5A7; font-weight: 800;">$4.5</span></div><p style="color:#6C5B4A; font-size:0.85rem; margin:0.5rem 0 1rem;">Lavender buttercream, edible glitter & sprinkles</p><button class="btn-primary" style="width:100%; justify-content: center;"><i class="fas fa-cart-plus"></i> Order now</button></div></div>
+                    <!-- Product 2 -->
+                    <div class="card" style="background: white;">
+                        <img src="https://images.unsplash.com/photo-1621868402792-a5c9fa6866a3?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%; height:220px; object-fit:cover;" alt="strawberry cake">
+                        <div style="padding: 1.5rem;"><div style="display: flex; justify-content: space-between;"><h3 style="font-weight: 700;">Chocolate Cake</h3></div><p style="color:#6C5B4A; font-size:0.85rem; margin: 0.5rem 0 1rem;">Rich chocolate layered with smooth chocolate ganache and topped with decadent chocolate shavings</p><button class="btn-primary" style="width:100%; justify-content: center;"><i class="fas fa-cake"></i> View</button></div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="card" style="background: white;">
+                        <img src="https://images.unsplash.com/photo-1741812553483-7b15e74aeb07?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%; height:220px; object-fit:cover;" alt="strawberry cake">
+                        <div style="padding: 1.5rem;"><div style="display: flex; justify-content: space-between;"><h3 style="font-weight: 700;">Blueberry Cake</h3></div><p style="color:#6C5B4A; font-size:0.85rem; margin: 0.5rem 0 1rem;">  Light vanilla sponge filled with sweet blueberry compote and smooth cream, topped with fresh berries</p><button class="btn-primary" style="width:100%; justify-content: center;"><i class="fas fa-cake"></i> View</button></div>
+                    </div>
                 </div>
                 <div style="text-align: center; margin-top: 2.5rem;"><a href="#" class="btn-outline" style="font-weight: 500;">View full menu →</a></div>
             </div>
@@ -315,11 +321,11 @@
         <div class="container" style="margin: 3rem auto 4rem auto;">
             <div style="position: relative; border-radius: 2rem; overflow: hidden; box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12); background: #FFF3EB;">
                 <img src="https://images.unsplash.com/photo-1621618625640-c8acf9330149?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%; height: auto; object-fit: cover; display: block;" alt="custom cake pastel">
-                <div style="position: absolute; inset: 0; background: linear-gradient(95deg, rgba(255,245,235,0.75) 0%, rgba(181,226,250,0.3) 100%);"></div>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.3));"></div>
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; top: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 1rem;">
                     <h2 style="font-size: clamp(1.8rem, 5vw, 2.8rem); color:#FFF; text-shadow: 0 2px 8px rgba(0,0,0,0.2); font-weight: 800;">Dream Cake Studio</h2>
                     <p style="color: white; max-width: 480px; margin: 0.5rem 0 1.5rem; font-weight: 500; text-shadow: 0 1px 4px rgba(0,0,0,0.1);">Choose pastel glaze, edible flowers, and custom shapes</p>
-                    <a href="#" style="background: #FFB5A7; color: #412F22; padding: 0.8rem 2rem; border-radius: 60px; font-weight: 700; display: inline-flex; gap: 10px; align-items: center; box-shadow: 0 6px 14px rgba(0,0,0,0.1); transition: 0.2s;"><i class="fas fa-magic"></i> Customize now <i class="fas fa-arrow-right"></i></a>
+                    <a href="{{ route('custom-cake') }}" style="background: #FFB5A7; color: #412F22; padding: 0.8rem 2rem; border-radius: 60px; font-weight: 700; display: inline-flex; gap: 10px; align-items: center; box-shadow: 0 6px 14px rgba(0,0,0,0.1); transition: 0.2s;"><i class="fas fa-magic"></i> Customize now <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
