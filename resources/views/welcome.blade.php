@@ -17,9 +17,10 @@
 
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background-color: #FAFAFA; /* Pure Canvas background */
-            color: #3b2c1f; /* deep warm tone that works with pastels */
+            background-color: #FAFAFA;
+            color: #3b2c1f;
             scroll-behavior: smooth;
+            padding-top: 80px; /* Prevents content from hiding behind fixed header */
         }
 
         * {
@@ -30,10 +31,10 @@
 
         /* Pastel Color Palette Override */
         :root {
-            --blush: #FFB5A7;       /* Strawberry Cream (primary accent) */
-            --mint: #C7E9D0;        /* Soft Mint Green */
-            --powder-blue: #B5E2FA; /* Macaron Blue */
-            --vanilla: #FFF5E6;     /* Creamy Vanilla (light cream) */
+            --blush: #FFB5A7;
+            --mint: #C7E9D0;
+            --powder-blue: #B5E2FA;
+            --vanilla: #FFF5E6;
             --canvas: #FAFAFA;
             --dark-accent: #5E4B3A;
             --text-soft: #4a3a2c;
@@ -46,6 +47,27 @@
         h1, h2, h3, .logo-text, .brand-name {
             font-family: 'Playfair Display', serif;
             letter-spacing: -0.01em;
+        }
+
+        /* ===== FIXED HEADER ===== */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(242, 226, 212, 0.5);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.98);
         }
 
         .container {
@@ -68,6 +90,7 @@
             align-items: center;
             gap: 8px;
             cursor: pointer;
+            text-decoration: none;
         }
 
         .btn-primary:hover {
@@ -87,6 +110,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            text-decoration: none;
         }
 
         .btn-outline:hover {
@@ -135,10 +159,24 @@
             align-items: center;
             justify-content: center;
             transition: 0.2s;
+            overflow: hidden;
         }
 
-        .category-card:hover {
+        .category-card:hover .icon-circle {
             background: #facbbd;
+        }
+
+        /* category images */
+        .category-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card:hover .category-img {
+            transform: scale(1.05);
         }
 
         /* gradient hero background */
@@ -146,6 +184,7 @@
             background: linear-gradient(125deg, #FFF9F5 0%, #FEF3EE 40%, #F2FAF4 100%);
             position: relative;
             isolation: isolate;
+            margin-top: 1rem; /* Adds space below fixed header */
         }
 
         /* mint & blue decorative elements */
@@ -168,35 +207,10 @@
         .footer-link {
             color: #75624E;
             transition: color 0.2s;
+            text-decoration: none;
         }
         .footer-link:hover {
             color: #FFB5A7;
-        }
-
-        /* category images */
-        .category-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-        transition: transform 0.3s ease;
-        }
-        
-        .category-card:hover .category-img {
-            transform: scale(1.05);
-        }
-        
-        .icon-circle {
-            overflow: hidden; 
-            background: #FFF2EC;
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1rem auto;
-            border-radius: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.2s;
         }
 
         /* stats */
@@ -209,6 +223,10 @@
 
         /* responsive */
         @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
             .container {
                 padding: 0 1.25rem;
             }
@@ -216,30 +234,37 @@
                 font-size: 1.6rem;
             }
         }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 65px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header with blush / vanilla vibe -->
-    <header class="container" style="padding-top: 1rem; padding-bottom: 0.5rem;">
-        <nav style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-            <!-- Logo + Brand -->
-            <div style="display: flex; align-items: center; gap: 12px;">
+    <header>
+        <div class="container">
+            <nav style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <!-- Logo + Brand -->
+                <div style="display: flex; align-items: center; gap: 12px;">
                     <img src="{{ asset('images/logo.png') }}" alt="Disna Cakes Logo" style="width: 40px; height: 40px;">
-                <span class="logo-text" style="font-weight: 700; font-size: 1.6rem; color: #6F4E37; letter-spacing: -0.3px;">Disna Cakes</span>
-            </div>
-            <!-- Auth buttons -->
-            <div style="display: flex; gap: 1rem; align-items: center;">
-                <div style="border-left: 2px solid #FFD9CF; height: 32px;"></div>
-                <a href="{{ route('login') }}" style="background: #FFB5A7; color: #3E2C21; font-weight: 600; padding: 0.5rem 1.4rem; border-radius: 40px; font-size: 0.9rem; transition: 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.02);"><i class="fas fa-user" style="margin-right: 6px;"></i> Login</a>
-                <a href="{{ route('register') }}" style="background: #B5E2FA; color: #3E2C21; font-weight: 600; padding: 0.5rem 1.4rem; border-radius: 40px; font-size: 0.9rem; transition: 0.2s;"><i class="fas fa-user-plus" style="margin-right: 6px;"></i> Register</a>
-            </div>
-        </nav>
+                    <span class="logo-text" style="font-weight: 700; font-size: 1.6rem; color: #6F4E37; letter-spacing: -0.3px;">Disna Cakes</span>
+                </div>
+                <!-- Auth buttons -->
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <div style="border-left: 2px solid #FFD9CF; height: 32px;"></div>
+                    <a href="{{ route('login') }}" style="background: #FFB5A7; color: #3E2C21; font-weight: 600; padding: 0.5rem 1.4rem; border-radius: 40px; font-size: 0.9rem; transition: 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.02); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;"><i class="fas fa-user"></i> Login</a>
+                    <a href="{{ route('register') }}" style="background: #B5E2FA; color: #3E2C21; font-weight: 600; padding: 0.5rem 1.4rem; border-radius: 40px; font-size: 0.9rem; transition: 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;"><i class="fas fa-user-plus"></i> Register</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <!-- HERO SECTION with new pastel identity -->
-        <div class="hero-gradient-bg" style="position: relative; overflow: hidden;">
+        <!-- HERO SECTION - Moved down with margin-top -->
+        <div class="hero-gradient-bg" style="position: relative; overflow: hidden; margin-top: 0.5rem;">
             <!-- floating macaron shapes -->
             <div style="position: absolute; top: 12%; left: -2%; width: 100px; height: 100px; background: #C7E9D0; border-radius: 80% 20% 70% 30% / 60% 50% 50% 40%; opacity: 0.25; filter: blur(30px); pointer-events: none;"></div>
             <div style="position: absolute; bottom: 0%; right: 0%; width: 180px; height: 180px; background: #FFB5A7; border-radius: 60% 40% 50% 50% / 45% 55% 45% 55%; opacity: 0.2; filter: blur(40px);"></div>
@@ -250,7 +275,7 @@
                         <h1 style="font-size: clamp(2.4rem, 7vw, 3.6rem); font-weight: 800; color: #594337; margin-bottom: 1rem; line-height: 1.2;">Whipped with Love <br><span style="color: #FFB5A7;">& Dreamy Frosting</span></h1>
                         <p style="font-size: 1.1rem; color: #6B5A4B; max-width: 500px; margin: 0 auto 2rem auto; font-weight: 450;">Modern custom cakes, macaron towers & cupcakes — baked fresh with pastel elegance. Order for delivery or pickup.</p>
                         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem;">
-                            <a href="#" class="btn-primary"><i class="fas fa-shopping-bag"></i> Explore Menu</a>
+                            <a href="{{ route('menu') }}" class="btn-primary"><i class="fas fa-shopping-bag"></i> Explore Menu</a>
                             <a href="{{ route('custom-cake') }}" class="btn-outline"><i class="fas fa-palette"></i> Design Your Cake</a>
                         </div>
                         <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
@@ -259,7 +284,7 @@
                             <div><div class="stat-number">24/7</div><div style="font-size: 0.85rem; color: #7C6956;">Order Online</div></div>
                         </div>
                     </div>
-                    <!-- Hero illustration: custom layered cake SVG with pastel macaron vibe -->
+                    <!-- Hero illustration -->
                     <div style="flex: 1; display: flex; justify-content: center; width: 100%;">
                         <div style="position: relative; max-width: 420px; width: 100%; margin: 0 auto;">
                             <div style="position: absolute; top: -20px; left: -20px; width: 90px; height: 90px; background: #B5E2FA; border-radius: 50%; opacity: 0.5; z-index: 0;"></div>
@@ -272,23 +297,24 @@
             </div>
         </div>
 
-        <!-- Shop by Category (Pastel twist) -->
+        <!-- Shop by Category -->
         <div class="container" style="padding: 4rem 1.5rem;">
             <h2 style="font-size: 2.2rem; text-align: center; font-weight: 700; color: #4C3E30;">Sweetest selection</h2>
             <p style="text-align: center; color: #8D7862; margin-bottom: 3rem;">Dreamy treats, pastel perfection</p>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem;">
-                <div class="category-card"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1640506054499-2b040ca19023?w=200&h=200&fit=crop&auto=format" alt="Cakes" class="category-img"></div>
+                <div class="category-card"  onclick="window.location.href='{{ route('menu') }}#cakes-section'"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1640506054499-2b040ca19023?w=200&h=200&fit=crop&auto=format" alt="Cakes" class="category-img"></div>
                     <h3 style="font-weight: 600;">Birthday Cakes</h3><p style="color:#8f7a64; font-size:0.8rem;">32 designs</p>
                 </div>
-                <div class="category-card"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1566864399117-22c449669089?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
+                <div class="category-card"  onclick="window.location.href='{{ route('menu') }}#cupcakes-section'"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1566864399117-22c449669089?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
                     <h3 style="font-weight: 600;">CupCakes</h3><p style="color:#8f7a64; font-size:0.8rem;">10 designs</p>
                 </div>
-                <div class="category-card"><div class="icon-circle"><img src="https://plus.unsplash.com/premium_photo-1669245220400-6c04752ec08a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
+                <div class="category-card"  onclick="window.location.href='{{ route('menu') }}#cakes-section'"><div class="icon-circle"><img src="https://plus.unsplash.com/premium_photo-1669245220400-6c04752ec08a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
                     <h3 style="font-weight: 600;">Cakes</h3><p style="color:#8f7a64; font-size:0.8rem;">32 designs</p>
                 </div>
-                <div class="category-card"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1590080874088-eec64895b423?q=80&w=894&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
+                <div class="category-card" onclick="window.location.href='{{ route('menu') }}#cakes-section'"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1590080874088-eec64895b423?q=80&w=894&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
                     <h3 style="font-weight: 600;">Cookies</h3><p style="color:#8f7a64; font-size:0.8rem;">2 designs</p>
                 </div>
+            </div>
         </div>
 
         <!-- Featured Products - modern pastel sweets -->
@@ -300,20 +326,23 @@
                     <!-- Product 1 -->
                     <div class="card" style="background: white;">
                         <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&auto=format" style="width:100%; height:220px; object-fit:cover;" alt="strawberry cake">
-                        <div style="padding: 1.5rem;"><div style="display: flex; justify-content: space-between;"><h3 style="font-weight: 700;">Strawberry Cloud Cake</h3></div><p style="color:#6C5B4A; font-size:0.85rem; margin: 0.5rem 0 1rem;">Soft vanilla sponge layered with fresh strawberries and whipped cream</p><button class="btn-primary" style="width:100%; justify-content: center;"><i class="fas fa-cake"></i> View</button></div>
+                        <div style="padding: 1.5rem;"><div style="display: flex; justify-content: space-between;"><h3 style="font-weight: 700;">Strawberry Cloud Cake</h3></div><p style="color:#6C5B4A; font-size:0.85rem; margin: 0.5rem 0 1rem;">Soft vanilla sponge layered with fresh strawberries and whipped cream</p>
+                        <button class="btn-primary" style="width:100%; justify-content: center;" onclick="window.location.href='{{ route('menu') }}#cakes-section'"><i class="fas fa-cake"></i> View</button></div>
                     </div>
                     <!-- Product 2 -->
                     <div class="card" style="background: white;">
-                        <img src="https://images.unsplash.com/photo-1621868402792-a5c9fa6866a3?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%; height:220px; object-fit:cover;" alt="strawberry cake">
-                        <div style="padding: 1.5rem;"><div style="display: flex; justify-content: space-between;"><h3 style="font-weight: 700;">Chocolate Cake</h3></div><p style="color:#6C5B4A; font-size:0.85rem; margin: 0.5rem 0 1rem;">Rich chocolate layered with smooth chocolate ganache and topped with decadent chocolate shavings</p><button class="btn-primary" style="width:100%; justify-content: center;"><i class="fas fa-cake"></i> View</button></div>
+                        <img src="https://images.unsplash.com/photo-1621868402792-a5c9fa6866a3?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%; height:220px; object-fit:cover;" alt="chocolate cake">
+                        <div style="padding: 1.5rem;"><div style="display: flex; justify-content: space-between;"><h3 style="font-weight: 700;">Chocolate Cake</h3></div><p style="color:#6C5B4A; font-size:0.85rem; margin: 0.5rem 0 1rem;">Rich chocolate layered with smooth chocolate ganache and topped with decadent chocolate shavings</p>
+                        <button class="btn-primary" style="width:100%; justify-content: center;" onclick="window.location.href='{{ route('menu') }}#cakes-section'"><i class="fas fa-cake"></i> View</button></div>
                     </div>
                     <!-- Product 3 -->
                     <div class="card" style="background: white;">
-                        <img src="https://images.unsplash.com/photo-1741812553483-7b15e74aeb07?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%; height:220px; object-fit:cover;" alt="strawberry cake">
-                        <div style="padding: 1.5rem;"><div style="display: flex; justify-content: space-between;"><h3 style="font-weight: 700;">Blueberry Cake</h3></div><p style="color:#6C5B4A; font-size:0.85rem; margin: 0.5rem 0 1rem;">  Light vanilla sponge filled with sweet blueberry compote and smooth cream, topped with fresh berries</p><button class="btn-primary" style="width:100%; justify-content: center;"><i class="fas fa-cake"></i> View</button></div>
+                        <img src="https://images.unsplash.com/photo-1741812553483-7b15e74aeb07?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%; height:220px; object-fit:cover;" alt="blueberry cake">
+                        <div style="padding: 1.5rem;"><div style="display: flex; justify-content: space-between;"><h3 style="font-weight: 700;">Blueberry Cake</h3></div><p style="color:#6C5B4A; font-size:0.85rem; margin: 0.5rem 0 1rem;">Light vanilla sponge filled with sweet blueberry compote and smooth cream, topped with fresh berries</p>
+                        <button class="btn-primary" style="width:100%; justify-content: center;" onclick="window.location.href='{{ route('menu') }}#cakes-section'"><i class="fas fa-cake"></i> View</button></div>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 2.5rem;"><a href="#" class="btn-outline" style="font-weight: 500;">View full menu →</a></div>
+                <div style="text-align: center; margin-top: 2.5rem;"><a href="{{ route('menu') }}" class="btn-outline" style="font-weight: 500;">View full menu →</a></div>
             </div>
         </div>
 
@@ -325,7 +354,7 @@
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; top: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 1rem;">
                     <h2 style="font-size: clamp(1.8rem, 5vw, 2.8rem); color:#FFF; text-shadow: 0 2px 8px rgba(0,0,0,0.2); font-weight: 800;">Dream Cake Studio</h2>
                     <p style="color: white; max-width: 480px; margin: 0.5rem 0 1.5rem; font-weight: 500; text-shadow: 0 1px 4px rgba(0,0,0,0.1);">Choose pastel glaze, edible flowers, and custom shapes</p>
-                    <a href="{{ route('custom-cake') }}" style="background: #FFB5A7; color: #412F22; padding: 0.8rem 2rem; border-radius: 60px; font-weight: 700; display: inline-flex; gap: 10px; align-items: center; box-shadow: 0 6px 14px rgba(0,0,0,0.1); transition: 0.2s;"><i class="fas fa-magic"></i> Customize now <i class="fas fa-arrow-right"></i></a>
+                    <a href="{{ route('custom-cake') }}" style="background: #FFB5A7; color: #412F22; padding: 0.8rem 2rem; border-radius: 60px; font-weight: 700; display: inline-flex; gap: 10px; align-items: center; box-shadow: 0 6px 14px rgba(0,0,0,0.1); transition: 0.2s; text-decoration: none;"><i class="fas fa-magic"></i> Customize now <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -335,9 +364,9 @@
             <div class="container">
                 <h2 style="text-align: center; font-size: 2rem; font-weight: 700; color:#4C3E30;">❤️ Sweet words</h2>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                    <div class="card" style="padding: 1.6rem;"><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><p style="margin: 1rem 0; color: #685A48;">“The macaron box was gorgeous! Tastes like Paris in pastel. Highly recommend for gifts.”</p><p style="font-weight: 600;">— Mia L.</p></div>
-                    <div class="card" style="padding: 1.6rem;"><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><p style="margin: 1rem 0; color: #685A48;">“My custom birthday cake with blush drip and mint accents was incredible. Thank you Disna!”</p><p style="font-weight: 600;">— Chloe R.</p></div>
-                    <div class="card" style="padding: 1.6rem;"><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><p style="margin: 1rem 0; color: #685A48;">“Super fast delivery & cupcakes were so light and airy. My new favorite bakery!”</p><p style="font-weight: 600;">— Daniel K.</p></div>
+                    <div class="card" style="padding: 1.6rem;"><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><p style="margin: 1rem 0; color: #685A48;">"The macaron box was gorgeous! Tastes like Paris in pastel. Highly recommend for gifts."</p><p style="font-weight: 600;">— Mia L.</p></div>
+                    <div class="card" style="padding: 1.6rem;"><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><p style="margin: 1rem 0; color: #685A48;">"My custom birthday cake with blush drip and mint accents was incredible. Thank you Disna!"</p><p style="font-weight: 600;">— Chloe R.</p></div>
+                    <div class="card" style="padding: 1.6rem;"><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><p style="margin: 1rem 0; color: #685A48;">"Super fast delivery & cupcakes were so light and airy. My new favorite bakery!"</p><p style="font-weight: 600;">— Daniel K.</p></div>
                 </div>
             </div>
         </div>
@@ -355,6 +384,18 @@
             <div style="text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #EBDBCA; color: #A48C72;">© 2025 Disna Cakes — where every bite is a pastel dream.</div>
         </div>
     </footer>
+
+    <script>
+        // Add shadow effect on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 
 </body>
 </html>

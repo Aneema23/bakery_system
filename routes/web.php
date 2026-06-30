@@ -9,6 +9,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Menu page
+Route::get('/menu', function () {
+    return view('menu');
+})->name('menu');
+
 // Dashboard routing based on user role
 Route::middleware(['auth', 'verified'])->group(function () {
     // Admin Dashboard
