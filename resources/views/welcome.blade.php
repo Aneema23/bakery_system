@@ -302,17 +302,20 @@
             <h2 style="font-size: 2.2rem; text-align: center; font-weight: 700; color: #4C3E30;">Sweetest selection</h2>
             <p style="text-align: center; color: #8D7862; margin-bottom: 3rem;">Dreamy treats, pastel perfection</p>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem;">
-                <div class="category-card"  onclick="window.location.href='{{ route('menu') }}#cakes-section'"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1640506054499-2b040ca19023?w=200&h=200&fit=crop&auto=format" alt="Cakes" class="category-img"></div>
-                    <h3 style="font-weight: 600;">Birthday Cakes</h3><p style="color:#8f7a64; font-size:0.8rem;">32 designs</p>
+                <div class="category-card"  onclick="window.location.href='{{ route('menu') }}?category=birthday-cakes'"><div class="icon-circle"><img src="https://plus.unsplash.com/premium_photo-1663839412026-51a44cfadfb8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
+                    <h3 style="font-weight: 600;">Birthday Cakes</h3><p style="color:#8f7a64; font-size:0.8rem;">10 designs</p>
                 </div>
-                <div class="category-card"  onclick="window.location.href='{{ route('menu') }}#cupcakes-section'"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1566864399117-22c449669089?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
+                <div class="category-card"  onclick="window.location.href='{{ route('menu') }}?category=cupcakes'"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1566864399117-22c449669089?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
                     <h3 style="font-weight: 600;">CupCakes</h3><p style="color:#8f7a64; font-size:0.8rem;">10 designs</p>
                 </div>
-                <div class="category-card"  onclick="window.location.href='{{ route('menu') }}#cakes-section'"><div class="icon-circle"><img src="https://plus.unsplash.com/premium_photo-1669245220400-6c04752ec08a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
-                    <h3 style="font-weight: 600;">Cakes</h3><p style="color:#8f7a64; font-size:0.8rem;">32 designs</p>
+                <div class="category-card"  onclick="window.location.href='{{ route('menu') }}?category=cakes'"><div class="icon-circle"><img src="https://plus.unsplash.com/premium_photo-1669245220400-6c04752ec08a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
+                    <h3 style="font-weight: 600;">Cakes</h3><p style="color:#8f7a64; font-size:0.8rem;">12 designs</p>
                 </div>
-                <div class="category-card" onclick="window.location.href='{{ route('menu') }}#cakes-section'"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1590080874088-eec64895b423?q=80&w=894&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
+                <div class="category-card" onclick="window.location.href='{{ route('menu') }}?category=cookies'"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1590080874088-eec64895b423?q=80&w=894&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
                     <h3 style="font-weight: 600;">Cookies</h3><p style="color:#8f7a64; font-size:0.8rem;">2 designs</p>
+                </div>
+                <div class="category-card" onclick="window.location.href='{{ route('menu') }}?category=specials'"><div class="icon-circle"><img src="https://images.unsplash.com/photo-1629389861081-43cc4f172b0c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cakes" class="category-img"></div>
+                    <h3 style="font-weight: 600;">Specials</h3><p style="color:#8f7a64; font-size:0.8rem;">5 designs</p>
                 </div>
             </div>
         </div>
@@ -326,7 +329,7 @@
                     <!-- Product 1 -->
                     <div class="card" style="background: white;">
                         <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&auto=format" style="width:100%; height:220px; object-fit:cover;" alt="strawberry cake">
-                        <div style="padding: 1.5rem;"><div style="display: flex; justify-content: space-between;"><h3 style="font-weight: 700;">Strawberry Cloud Cake</h3></div><p style="color:#6C5B4A; font-size:0.85rem; margin: 0.5rem 0 1rem;">Soft vanilla sponge layered with fresh strawberries and whipped cream</p>
+                        <div style="padding: 1.5rem;"><div style="display: flex; justify-content: space-between;"><h3 style="font-weight: 700;">Strawberry Cream Cake</h3></div><p style="color:#6C5B4A; font-size:0.85rem; margin: 0.5rem 0 1rem;">Soft vanilla sponge layered with fresh strawberries and whipped cream</p>
                         <button class="btn-primary" style="width:100%; justify-content: center;" onclick="window.location.href='{{ route('menu') }}#cakes-section'"><i class="fas fa-cake"></i> View</button></div>
                     </div>
                     <!-- Product 2 -->
