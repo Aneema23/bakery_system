@@ -190,7 +190,7 @@
         .menu-item-price {
             font-weight: 700;
             color: #FFB5A7;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             white-space: nowrap;
             margin-left: 1rem;
         }
@@ -705,51 +705,217 @@
                         <div class="line"></div>
                     </div>
                     <div class="menu-grid">
+                        <!-- Cake Item 1 -->
                         <div class="menu-item" data-category="cakes">
-                            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&auto=format" alt="Strawberry Cloud Cake" class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1621868402792-a5c9fa6866a3?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Chocolate Cake" class="menu-item-image">
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
-                                    <h3>Strawberry Cloud Cake</h3>
-                                    <span class="menu-item-price">$32</span>
+                                    <h3>Chocolate Cake</h3>
+                                    <span class="menu-item-price">Rs.3500</span>
                                 </div>
-                                <p class="menu-item-description">Layers of vanilla sponge, fresh strawberries & whipped cream</p>
+                                <p class="menu-item-description">Moist chocolate sponge layered with rich chocolate ganache and finished with smooth chocolate frosting</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">Best Seller</span>
-                                    <button class="menu-item-cart" onclick="openModal('Strawberry Cloud Cake', 32, 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&auto=format', 'Layers of vanilla sponge, fresh strawberries & whipped cream', 'Best Seller', '⭐ 4.9', '🍓 Fresh Strawberries', '🎂 Vanilla Sponge')">
+                                    <button class="menu-item-cart" onclick="openModal('Chocolate Cake (I kg)', 3500, 'https://images.unsplash.com/photo-1621868402792-a5c9fa6866a3?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Indulge in our rich Chocolate Cake made with moist chocolate sponge layers, silky chocolate ganache, and premium cocoa. Perfect for birthdays, celebrations, or any chocolate lover.', '⭐ Best Seller', '⭐ 4.9', ' 🍫 Chocolate Ganache', '🎂 Chocolate Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Cake Item 2 -->
                         <div class="menu-item" data-category="cakes">
-                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&auto=format" alt="Chocolate Dream Cake" class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1609577737938-fb2139fa4c78?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Vanila Butter Cake" class="menu-item-image">
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
-                                    <h3>Chocolate Dream Cake</h3>
-                                    <span class="menu-item-price">$35</span>
+                                    <h3>Vanila Butter Cake</h3>
+                                    <span class="menu-item-price">Rs.3000</span>
                                 </div>
-                                <p class="menu-item-description">Rich chocolate ganache, dark chocolate sponge, berry filling</p>
+                                <p class="menu-item-description">Soft vanilla sponge filled with creamy vanilla buttercream, finished with a classic smooth frosting.</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Best Seller</span>
+                                    <button class="menu-item-cart" onclick="openModal('Vanila Butter Cake (I kg)', 3000 , 'https://images.unsplash.com/photo-1609577737938-fb2139fa4c78?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
+                                    'Our classic Vanilla Butter Cake features soft vanilla sponge layered with creamy buttercream frosting. A timeless choice for birthdays and family celebrations.', '👨‍👩‍👧 Family Favorite', '⭐ 4.8', '🧈 Vanilla Buttercream', '🎂 Chocolate Sponge')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cake Item 3 -->
+                        <div class="menu-item" data-category="cakes">
+                            <img src="https://images.pexels.com/photos/30131920/pexels-photo-30131920.jpeg" alt="Red Velvet Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Red Velvet Cake</h3>
+                                    <span class="menu-item-price">Rs.5000</span>
+                                </div>
+                                <p class="menu-item-description">Soft red velvet sponge layered with rich cream cheese frosting and decorated with elegant red velvet crumbs</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Best Seller</span>
+                                    <button class="menu-item-cart" onclick="openModal('Red Velvet Cake (I kg)', 5000, 'https://images.pexels.com/photos/30131920/pexels-photo-30131920.jpeg', 'Soft and velvety red sponge layered with rich cream cheese frosting and beautifully decorated with red velvet crumbs. A luxurious 1kg celebration cake.', '❤️ Premium', '⭐ 4.9', '🧀 Cream Cheese Frosting', '🎂 Red Velvet Sponge')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cake Item 4 -->
+                        <div class="menu-item" data-category="cakes">
+                            <img src="https://images.unsplash.com/photo-1589119908995-c6837fa14848?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D alt="Stawberry Cream Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Stawberry Cream Cake</h3>
+                                    <span class="menu-item-price">Rs.5500</span>
+                                </div>
+                                <p class="menu-item-description">Light vanilla sponge layered with fresh strawberry filling and whipped cream, topped with juicy strawberries.</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">Popular</span>
-                                    <button class="menu-item-cart" onclick="openModal('Chocolate Dream Cake', 35, 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&auto=format', 'Rich chocolate ganache, dark chocolate sponge, berry filling', 'Popular', '⭐ 4.8', '🍫 Dark Chocolate', '🎂 Chocolate Sponge')">
+                                    <button class="menu-item-cart" onclick="openModal('Stawberry Cream Cake (I kg)', 5500, 'https://images.unsplash.com/photo-1589119908995-c6837fa14848?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Fresh strawberries layered with fluffy whipped cream and soft vanilla sponge. This refreshing 1kg cake is perfect for birthdays and special occasions.', '🍓 Seasonal Favorite', '⭐ 4.9', '🍓 Fresh Cream', '🎂 Vanilla Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Cake Item 5 -->
                         <div class="menu-item" data-category="cakes">
-                            <img src="https://images.unsplash.com/photo-1535254973040-9b3922f9e6ec?w=600&auto=format" alt="Pastel Dream Cake" class="menu-item-image">
+                            <img src="https://images.pexels.com/photos/2147857/pexels-photo-2147857.jpeg" alt="Coffee Mocha Cake" class="menu-item-image">
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
-                                    <h3>Pastel Dream Cake</h3>
-                                    <span class="menu-item-price">$38</span>
+                                    <h3>Coffee Mocha Cake</h3>
+                                    <span class="menu-item-price">Rs.5200</span>
                                 </div>
-                                <p class="menu-item-description">Blush pink buttercream, edible flowers & vanilla sponge</p>
+                                <p class="menu-item-description">Coffee-infused sponge layered with silky mocha buttercream and finished with a dusting of cocoa powder.</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Popular</span>
+                                    <button class="menu-item-cart" onclick="openModal('Coffee Mocha Cake (I kg)', 5200, 'https://images.pexels.com/photos/2147857/pexels-photo-2147857.jpeg', 'Rich coffee-infused sponge layered with smooth mocha buttercream and finished with cocoa powder. A perfect 1kg cake for coffee lovers.', '☕ Coffee Lovers', '⭐ 4.9', '☕ Mocha Buttercream', '🎂 Coffee Sponge')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cake Item 6 -->
+                        <div class="menu-item" data-category="cakes">
+                            <img src="https://images.pexels.com/photos/24206908/pexels-photo-24206908.jpeg" alt="Caranel Crunch Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Caranel Crunch Cake</h3>
+                                    <span class="menu-item-price">Rs.5800</span>
+                                </div>
+                                <p class="menu-item-description">Soft vanilla sponge layered with salted caramel cream and crunchy caramel pieces for the perfect sweet crunch.</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Popular</span>
+                                    <button class="menu-item-cart" onclick="openModal('Caranel Crunch Cake (I kg)', 5800, 'https://images.pexels.com/photos/24206908/pexels-photo-24206908.jpeg', 'Soft vanilla sponge layered with salted caramel cream and crunchy caramel pieces for the perfect sweet crunch.', '✨ Chef''s Special', '⭐ 4.9', '🍮 Salted Caramel', '🎂 Vanilla Sponge')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cake Item 7 -->
+                        <div class="menu-item" data-category="cakes">
+                            <img src="https://images.unsplash.com/photo-1741812553483-7b15e74aeb07?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blueberry Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Blueberry Cake</h3>
+                                    <span class="menu-item-price">Rs.6500</span>
+                                </div>
+                                <p class="menu-item-description">Fluffy vanilla sponge filled with blueberry compote and fresh cream, topped with premium blueberries.</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Best Seller</span>
+                                    <button class="menu-item-cart" onclick="openModal('Blueberry Cake (I kg)', 6500, 'https://images.unsplash.com/photo-1741812553483-7b15e74aeb07?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Fluffy vanilla sponge filled with blueberry compote and fresh cream, topped with premium blueberries.', '🫐 Premium', '⭐ 4.9', '🫐 Blueberry Cream', '🎂 Vanilla Sponge')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cake Item 8 -->
+                        <div class="menu-item" data-category="cakes">
+                            <img src="https://images.pexels.com/photos/37934621/pexels-photo-37934621.jpeg" alt="Tiramisu Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Tiramisu Cake</h3>
+                                    <span class="menu-item-price">Rs.6800</span>
+                                </div>
+                                <p class="menu-item-description">Coffee-soaked sponge layered with mascarpone cream and finished with a generous dusting of cocoa powder.</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">Custom</span>
-                                    <button class="menu-item-cart" onclick="openModal('Pastel Dream Cake', 38, 'https://images.unsplash.com/photo-1535254973040-9b3922f9e6ec?w=600&auto=format', 'Blush pink buttercream, edible flowers & vanilla sponge', 'Custom', '⭐ 4.9', '🌸 Edible Flowers', '🎂 Vanilla Sponge')">
+                                    <button class="menu-item-cart" onclick="openModal('Tiramisu Cake (I kg)', 6800, 'https://images.pexels.com/photos/37934621/pexels-photo-37934621.jpeg', 'Inspired by the famous Italian dessert, this 1kg cake features coffee-soaked sponge layered with mascarpone cream and finished with cocoa powder.'', '✨ Chef''s Special', '⭐ 5.0', '☕ Mascarpone Cream', '🎂 Coffee Sponge')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cake Item 9 -->
+                        <div class="menu-item" data-category="cakes">
+                            <img src="https://images.pexels.com/photos/8802102/pexels-photo-8802102.jpeg" alt="Black Forest Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Black Forest Cake</h3>
+                                    <span class="menu-item-price">Rs.5000</span>
+                                </div>
+                                <p class="menu-item-description">Rich chocolate sponge layered with whipped cream and cherries, finished with chocolate shavings.</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Custom</span>
+                                    <button class="menu-item-cart" onclick="openModal('Black Forest Cake (I kg)', 5000, 'https://images.pexels.com/photos/8802102/pexels-photo-8802102.jpeg', 'Classic Black Forest Cake made with moist chocolate sponge, whipped cream, sweet cherries, and chocolate shavings.', '🍒 Classic', '⭐ 4.8', '🍒 Whipped Cream', '🎂 Chocolate Sponge')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cake Item 10 -->
+                        <div class="menu-item" data-category="cakes">
+                            <img src="https://images.pexels.com/photos/4110001/pexels-photo-4110001.jpeg" alt="White Forest Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>White Forest Cake</h3>
+                                    <span class="menu-item-price">Rs. 5000</span>
+                                </div>
+                                <p class="menu-item-description">Soft vanilla sponge layered with fresh cream and cherries, decorated with white chocolate curls.</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Custom</span>
+                                    <button class="menu-item-cart" onclick="openModal('White Forest Cake (I kg)', 5000, 'https://images.pexels.com/photos/4110001/pexels-photo-4110001.jpeg', 'Delicate vanilla sponge layered with fresh whipped cream, cherries, and white chocolate curls for a light and elegant dessert.', '🤍 New Arrival', '⭐ 4.8', '🤍 Fresh Cream', '🎂 Vanilla Sponge')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Cake Item 11 -->
+                        <div class="menu-item" data-category="cakes">
+                            <img src="https://images.unsplash.com/photo-1617305855058-336d24456869?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lava Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Lava Cake</h3>
+                                    <span class="menu-item-price">Rs. 3000</span>
+                                </div>
+                                <p class="menu-item-description">Rich chocolate cake with a warm molten chocolate center, finished with smooth chocolate ganache.</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Custom</span>
+                                    <button class="menu-item-cart" onclick="openModal('Lava Cake (250g - 4pcs)', 3000, 'https://images.unsplash.com/photo-1617305855058-336d24456869?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Rich chocolate cake with a warm molten chocolate center, finished with smooth chocolate ganache.', '🍫 Hot Favorite', '⭐ 4.9', '🍫 Molten Chocolate', '🎂 Chocolate Sponge')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cake Item 12 -->
+                        <div class="menu-item" data-category="cakes">
+                            <img src="https://images.pexels.com/photos/37010324/pexels-photo-37010324.jpeg" alt="Date Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Date Cake</h3>
+                                    <span class="menu-item-price">Rs. 2500</span>
+                                </div>
+                                <p class="menu-item-description">Moist date sponge blended with premium dates and finished with a light caramel glaze</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Custom</span>
+                                    <button class="menu-item-cart" onclick="openModal('Date Cake (1 kg)', 2500, 'https://images.pexels.com/photos/37010324/pexels-photo-37010324.jpeg', 'Moist date sponge blended with premium dates and finished with a light caramel glaze', '🌴 Healthy Choice', '⭐ 4.7', '🍯 Dates', '🎂 Date Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -765,51 +931,180 @@
                         <div class="line"></div>
                     </div>
                     <div class="menu-grid">
+                        <!-- Cupcake Item 1 -->
                         <div class="menu-item" data-category="cupcakes">
-                            <img src="https://images.unsplash.com/photo-1614707267537-b85a3260d2dc?w=600&auto=format" alt="Unicorn Cupcake" class="menu-item-image">
+                            <img src="https://plus.unsplash.com/premium_photo-1663840297386-8a3e38271ac6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Vanilla Cupcake" class="menu-item-image">
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
-                                    <h3>Unicorn Cupcake</h3>
-                                    <span class="menu-item-price">$4.5</span>
+                                    <h3>Vanilla Cupcake</h3>
+                                    <span class="menu-item-price">Rs.350</span>
                                 </div>
                                 <p class="menu-item-description">Lavender buttercream, edible glitter & rainbow sprinkles</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">Kid's Fav</span>
-                                    <button class="menu-item-cart" onclick="openModal('Unicorn Cupcake', 4.5, 'https://images.unsplash.com/photo-1614707267537-b85a3260d2dc?w=600&auto=format', 'Lavender buttercream, edible glitter & rainbow sprinkles', 'Kid\'s Fav', '⭐ 4.7', '🌈 Rainbow Sprinkles', '🧁 Vanilla Cupcake')">
+                                    <button class="menu-item-cart" onclick="openModal('Vanilla Cupcake', 350, 'https://plus.unsplash.com/premium_photo-1663840297386-8a3e38271ac6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Lavender buttercream, edible glitter & rainbow sprinkles', 'Kid\'s Fav', '⭐ 4.7', '🌈 Rainbow Sprinkles', '🧁 Vanilla Cupcake')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Cupcake Item 2 -->
                         <div class="menu-item" data-category="cupcakes">
-                            <img src="https://images.unsplash.com/photo-1587397846735-9eec5c6a0f4d?w=600&auto=format" alt="Red Velvet Cupcake" class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1610851467358-e2a4a5804335?q=80&w=1099&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Red Velvet Cupcake" class="menu-item-image">
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
                                     <h3>Red Velvet Cupcake</h3>
-                                    <span class="menu-item-price">$4.0</span>
+                                    <span class="menu-item-price">Rs.450</span>
                                 </div>
                                 <p class="menu-item-description">Classic red velvet with cream cheese frosting</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">Classic</span>
-                                    <button class="menu-item-cart" onclick="openModal('Red Velvet Cupcake', 4.0, 'https://images.unsplash.com/photo-1587397846735-9eec5c6a0f4d?w=600&auto=format', 'Classic red velvet with cream cheese frosting', 'Classic', '⭐ 4.8', '🧀 Cream Cheese', '🧁 Red Velvet')">
+                                    <button class="menu-item-cart" onclick="openModal('Red Velvet Cupcake', 450, 'https://images.unsplash.com/photo-1610851467358-e2a4a5804335?q=80&w=1099&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Classic red velvet with cream cheese frosting', 'Classic', '⭐ 4.8', '🧀 Cream Cheese', '🧁 Red Velvet')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Cupcake Item 3 -->
                         <div class="menu-item" data-category="cupcakes">
-                            <img src="https://images.unsplash.com/photo-1568301587685-1b73c55b1f9c?w=600&auto=format" alt="S'mores Cupcake" class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1649793950107-610f06f3660c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Chocolate Cupcake" class="menu-item-image">
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
-                                    <h3>S'mores Cupcake</h3>
-                                    <span class="menu-item-price">$4.5</span>
+                                    <h3>Chocolate Cupcake</h3>
+                                    <span class="menu-item-price">Rs.400</span>
                                 </div>
                                 <p class="menu-item-description">Chocolate cupcake, marshmallow frosting, graham cracker</p>
                                 <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Kid's Fav</span>
+                                    <button class="menu-item-cart" onclick="openModal('Chocolate Cupcake', 400, 'https://images.unsplash.com/photo-1649793950107-610f06f3660c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Chocolate cupcake, marshmallow frosting, graham cracker', 'New', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Chocolate Cupcake')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cupcake Item 4 -->
+                        <div class="menu-item" data-category="cupcakes">
+                            <img src="https://images.unsplash.com/photo-1732966283172-033d29bf02ca?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lemon Cupcake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Lemon Cupcake</h3>
+                                    <span class="menu-item-price">Rs.350</span>
+                                </div>
+                                <p class="menu-item-description">Lemon cupcake, vanilla frosting, graham cracker</p>
+                                <div class="menu-item-footer">
                                     <span class="menu-item-tag">New</span>
-                                    <button class="menu-item-cart" onclick="openModal('S\'mores Cupcake', 4.5, 'https://images.unsplash.com/photo-1568301587685-1b73c55b1f9c?w=600&auto=format', 'Chocolate cupcake, marshmallow frosting, graham cracker', 'New', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Chocolate Cupcake')">
+                                    <button class="menu-item-cart" onclick="openModal('Lemon Cupcake', 350, 'https://images.unsplash.com/photo-1732966283172-033d29bf02ca?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Lemon cupcake, vanilla frosting, graham cracker', 'New', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Lemon Cupcake')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cupcake Item 5 -->
+                        <div class="menu-item" data-category="cupcakes">
+                            <img src="https://images.unsplash.com/photo-1563778084459-859099e48677?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Strawberry Cupcake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Strawberry Cupcake</h3>
+                                    <span class="menu-item-price">Rs.400</span>
+                                </div>
+                                <p class="menu-item-description">Strawberry cupcake, vanilla frosting, graham cracker</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Kid's Fav</span>
+                                    <button class="menu-item-cart" onclick="openModal('Strawberry Cupcake', 400, 'https://images.unsplash.com/photo-1563778084459-859099e48677?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Strawberry cupcake, vanilla frosting, graham cracker', 'Kid's Fav', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Strawberry Cupcake')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cupcake Item 6 -->
+                        <div class="menu-item" data-category="cupcakes">
+                            <img src="https://images.unsplash.com/photo-1618308386974-892a721e816d?q=80&w=717&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cookies & Cream Cupcake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Cookies & Cream Cupcake</h3>
+                                    <span class="menu-item-price">Rs.450</span>
+                                </div>
+                                <p class="menu-item-description">Cookies & Cream cupcake, vanilla frosting, graham cracker</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Kid's Fav</span>
+                                    <button class="menu-item-cart" onclick="openModal('Cookies & Cream Cupcake', 450, 'https://images.unsplash.com/photo-1618308386974-892a721e816d?q=80&w=717&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Cookies & Cream cupcake, vanilla frosting, graham cracker', 'New', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Cookies & Cream Cupcake')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cupcake Item 7 -->
+                        <div class="menu-item" data-category="cupcakes">
+                            <img src="https://images.unsplash.com/photo-1693464318938-ea7092d5c818?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Salted Caramel Cupcake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Salted Caramel Cupcake</h3>
+                                    <span class="menu-item-price">Rs.450</span>
+                                </div>
+                                <p class="menu-item-description">Salted caramel cupcake, salted caramel frosting, graham cracker</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">New</span>
+                                    <button class="menu-item-cart" onclick="openModal('Salted Caramel Cupcake', 450, 'https://images.unsplash.com/photo-1693464318938-ea7092d5c818?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Salted caramel cupcake, salted caramel frosting, graham cracker', 'New', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Salted Caramel Cupcake')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cupcake Item 8 -->
+                        <div class="menu-item" data-category="cupcakes">
+                            <img src="https://images.unsplash.com/photo-1680580735621-4371027734eb?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rainbow Sprinkle Cupcake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Rainbow Sprinkle Cupcake</h3>
+                                    <span class="menu-item-price">Rs.400</span>
+                                </div>
+                                <p class="menu-item-description">Rainbow sprinkle cupcake, rainbow sprinkle frosting, graham cracker</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Kid's Fav</span>
+                                    <button class="menu-item-cart" onclick="openModal('Rainbow Sprinkle Cupcake', 400, 'https://images.unsplash.com/photo-1680580735621-4371027734eb?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Rainbow sprinkle cupcake, rainbow sprinkle frosting, graham cracker', 'Kid's Fav', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Rainbow Sprinkle Cupcake')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cupcake Item 9 -->
+                        <div class="menu-item" data-category="cupcakes">
+                            <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nutella Cupcake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Nutella Cupcake</h3>
+                                    <span class="menu-item-price">Rs.500</span>
+                                </div>
+                                <p class="menu-item-description">Nutella cupcake, marshmallow frosting, graham cracker</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Classic</span>
+                                    <button class="menu-item-cart" onclick="openModal('Nutella Cupcake', 500, 'https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Nutella cupcake, marshmallow frosting, graham cracker', 'Kid's Fav', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Nutella Cupcake')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cupcake Item 10 -->
+                        <div class="menu-item" data-category="cupcakes">
+                            <img src="https://images.unsplash.com/photo-1606188074044-fcd750f6996a?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coffee Cupcake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Coffee Cupcake</h3>
+                                    <span class="menu-item-price">Rs.400</span>
+                                </div>
+                                <p class="menu-item-description">Chocolate cupcake, marshmallow frosting, graham cracker</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Classic</span>
+                                    <button class="menu-item-cart" onclick="openModal('Coffee Cupcake', 400, 'https://images.unsplash.com/photo-1606188074044-fcd750f6996a?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Chocolate cupcake, marshmallow frosting, graham cracker', 'Classic', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Chocolate Cupcake')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -825,34 +1120,180 @@
                         <div class="line"></div>
                     </div>
                     <div class="menu-grid">
+                        <!-- Birthday Cake Item 1 -->
                         <div class="menu-item" data-category="birthday-cakes">
-                            <img src="https://images.unsplash.com/photo-1572495641004-2e9c0efc6ae0?w=600&auto=format" alt="Macaron Gift Box" class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1622576890453-8e50b6f7d5b0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rainbow Birthday Cake" class="menu-item-image">
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
-                                    <h3>Macaron Gift Box</h3>
-                                    <span class="menu-item-price">$24</span>
+                                    <h3>Rainbow Birthday Cake</h3>
+                                    <span class="menu-item-price">Rs.7500</span>
                                 </div>
                                 <p class="menu-item-description">12 assorted pastel macarons: pistachio, rose, vanilla, chocolate</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Best Seller</span>
-                                    <button class="menu-item-cart" onclick="openModal('Macaron Gift Box', 24, 'https://images.unsplash.com/photo-1572495641004-2e9c0efc6ae0?w=600&auto=format', '12 assorted pastel macarons: pistachio, rose, vanilla, chocolate', 'Best Seller', '⭐ 4.9', '🎁 Gift Ready', '🌈 6 Flavors')">
+                                    <span class="menu-item-tag">Premium</span>
+                                    <button class="menu-item-cart" onclick="openModal('Rainbow Birthday Cake', 7500, 'https://images.unsplash.com/photo-1622576890453-8e50b6f7d5b0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '12 assorted pastel macarons: pistachio, rose, vanilla, chocolate', 'Best Seller', '⭐ 4.9', '🎁 Gift Ready', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Birthday Cake Item 2 -->
                         <div class="menu-item" data-category="birthday-cakes">
-                            <img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&auto=format" alt="Macaron Tower" class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Princess Cake" class="menu-item-image">
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
-                                    <h3>Macaron Tower</h3>
-                                    <span class="menu-item-price">$45</span>
+                                    <h3>Princess Cake</h3>
+                                    <span class="menu-item-price">Rs.9500</span>
                                 </div>
                                 <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">Premium</span>
-                                    <button class="menu-item-cart" onclick="openModal('Macaron Tower', 45, 'https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&auto=format', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <button class="menu-item-cart" onclick="openModal('Princess Cake', 9500, 'https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Birthday Cake Item 3 -->
+                        <div class="menu-item" data-category="birthday-cakes">
+                            <img src="https://images.unsplash.com/photo-1637724562261-5777b67c59b2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Superhero Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Superhero Cake </h3>
+                                    <span class="menu-item-price">Rs.9000</span>
+                                </div>
+                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Premium</span>
+                                    <button class="menu-item-cart" onclick="openModal('Superhero Cake', 9000, 'https://images.unsplash.com/photo-1637724562261-5777b67c59b2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Birthday Cake Item 4 -->
+                        <div class="menu-item" data-category="birthday-cakes">
+                            <img src="https://images.unsplash.com/photo-1697157202877-622683269d7c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Unicorn Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Unicorn Cake</h3>
+                                    <span class="menu-item-price">Rs.10 500</span>
+                                </div>
+                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Premium</span>
+                                    <button class="menu-item-cart" onclick="openModal('Unicorn Cake', 10500, 'https://images.unsplash.com/photo-1697157202877-622683269d7c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Birthday Cake Item 5 -->
+                        <div class="menu-item" data-category="birthday-cakes">
+                            <img src="https://images.unsplash.com/photo-1671686400734-d9d0a4934f5a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Frozen Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Frozen Cake</h3>
+                                    <span class="menu-item-price">Rs.10 000</span>
+                                </div>
+                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Premium</span>
+                                    <button class="menu-item-cart" onclick="openModal('Frozen Cake', 10000, 'https://images.unsplash.com/photo-1671686400734-d9d0a4934f5a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Birthday Cake Item 6 -->
+                        <div class="menu-item" data-category="birthday-cakes">
+                            <img src="https://images.unsplash.com/photo-1695275673485-8d3ef4965615?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dinosour Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Dinosour Cake</h3>
+                                    <span class="menu-item-price">Rs.9500</span>
+                                </div>
+                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Premium</span>
+                                    <button class="menu-item-cart" onclick="openModal('Dinosour Cake', 9500, 'https://images.unsplash.com/photo-1695275673485-8d3ef4965615?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Birthday Cake Item 7 -->
+                        <div class="menu-item" data-category="birthday-cakes">
+                            <img src="https://images.pexels.com/photos/4005315/pexels-photo-4005315.jpeg" alt="Sports Theme Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Sports Theme Cake</h3>
+                                    <span class="menu-item-price">Rs.8500</span>
+                                </div>
+                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Premium</span>
+                                    <button class="menu-item-cart" onclick="openModal('Sports Theme Cake', 8500, 'https://images.pexels.com/photos/4005315/pexels-photo-4005315.jpeg', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Birthday Cake Item 8 -->
+                        <div class="menu-item" data-category="birthday-cakes">
+                            <img src="https://images.unsplash.com/photo-1591519060886-27dd11ad7f5a?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Number Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Number Cake</h3>
+                                    <span class="menu-item-price">Rs.8000</span>
+                                </div>
+                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Premium</span>
+                                    <button class="menu-item-cart" onclick="openModal('Number Cake', 8000, 'https://images.unsplash.com/photo-1591519060886-27dd11ad7f5a?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Birthday Cake Item 9 -->
+                        <div class="menu-item" data-category="birthday-cakes">
+                            <img src="https://images.pexels.com/photos/13321665/pexels-photo-13321665.jpeg" alt="Barbie Theme Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Barbie Theme Cake</h3>
+                                    <span class="menu-item-price">Rs.11 000</span>
+                                </div>
+                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Premium</span>
+                                    <button class="menu-item-cart" onclick="openModal('Barbie Theme Cake', 11000, 'https://images.pexels.com/photos/13321665/pexels-photo-13321665.jpeg', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Birthday Cake Item 10 -->
+                        <div class="menu-item" data-category="birthday-cakes">
+                            <img src="https://images.unsplash.com/photo-1627274273203-84de3a4a49cf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Macaron Tower" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Photo Printed Cake</h3>
+                                    <span class="menu-item-price">Rs.8500</span>
+                                </div>
+                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Premium</span>
+                                    <button class="menu-item-cart" onclick="openModal('Photo Printed Cake', 8500, 'https://images.unsplash.com/photo-1627274273203-84de3a4a49cf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -868,34 +1309,36 @@
                         <div class="line"></div>
                     </div>
                     <div class="menu-grid">
+                        <!-- Cookies Item 1 -->
                         <div class="menu-item" data-category="cookies">
                             <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&auto=format" alt="Chocolate Chip Cookies" class="menu-item-image">
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
                                     <h3>Chocolate Chip Cookies</h3>
-                                    <span class="menu-item-price">$12</span>
+                                    <span class="menu-item-price">Rs.1200</span>
                                 </div>
                                 <p class="menu-item-description">Classic soft-baked cookies with premium chocolate chips (6 pack)</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Classic</span>
-                                    <button class="menu-item-cart" onclick="openModal('Chocolate Chip Cookies', 12, 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&auto=format', 'Classic soft-baked cookies with premium chocolate chips (6 pack)', 'Classic', '⭐ 4.7', '🍫 Premium Chips', '🍪 6 Pack')">
+                                    <span class="menu-item-tag">Premium</span>
+                                    <button class="menu-item-cart" onclick="openModal('Chocolate Chip Cookies', 1200, 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&auto=format', 'Classic soft-baked cookies with premium chocolate chips (6 pack)', 'Classic', '⭐ 4.7', '🍫 Premium Chips', '🍪 6 Pack')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
-
+                        
+                        <!-- Cookie Item 2 -->
                         <div class="menu-item" data-category="cookies">
-                            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&auto=format" alt="White Chocolate Macadamia" class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1600625649542-f668edc636dc?q=80&w=895&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Butter Cookies" class="menu-item-image">
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
-                                    <h3>Macadamia Cookies</h3>
-                                    <span class="menu-item-price">$14</span>
+                                    <h3>Butter Cookies</h3>
+                                    <span class="menu-item-price">Rs.1000</span>
                                 </div>
                                 <p class="menu-item-description">White chocolate & macadamia nut cookies (6 pack)</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Premium</span>
-                                    <button class="menu-item-cart" onclick="openModal('Macadamia Cookies', 14, 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&auto=format', 'White chocolate & macadamia nut cookies (6 pack)', 'Premium', '⭐ 4.8', '🥜 Macadamia Nuts', '🍪 6 Pack')">
+                                    <span class="menu-item-tag">Classic</span>
+                                    <button class="menu-item-cart" onclick="openModal('Butter Cookies', 1000, 'https://images.unsplash.com/photo-1600625649542-f668edc636dc?q=80&w=895&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'White chocolate & macadamia nut cookies (6 pack)', 'Premium', '⭐ 4.8', '🥜 Macadamia Nuts', '🍪 6 Pack')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -911,34 +1354,90 @@
                         <div class="line"></div>
                     </div>
                     <div class="menu-grid">
+                        <!-- Specials Item 1 -->
                         <div class="menu-item" data-category="specials">
-                            <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=600&auto=format" alt="Custom Cake" class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wedding Cake" class="menu-item-image">
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
-                                    <h3>Custom Design Cake</h3>
-                                    <span class="menu-item-price">From $50</span>
+                                    <h3>Wedding Cake</h3>
+                                    <span class="menu-item-price">From Rs.10 000</span>
                                 </div>
                                 <p class="menu-item-description">Fully customizable cake with your choice of flavors and design</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">Custom</span>
-                                    <button class="menu-item-cart" onclick="openModal('Custom Design Cake', 'From $50', 'https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=600&auto=format', 'Fully customizable cake with your choice of flavors and design', 'Custom', '⭐ 5.0', '🎨 Your Design', '✨ Custom Order')">
+                                    <button class="menu-item-cart" onclick="openModal('Wedding Cake', 'From Rs.10,000', 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Fully customizable cake with your choice of flavors and design', 'Custom', '⭐ 5.0', '🎨 Your Design', '✨ Custom Order')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Specials Item 2 -->
                         <div class="menu-item" data-category="specials">
-                            <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=600&auto=format" alt="Cake Pop Box" class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1627935817583-a8d4531ccc62?q=80&w=1089&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Anniversary Cake" class="menu-item-image">
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
-                                    <h3>Cake Pop Box</h3>
-                                    <span class="menu-item-price">$18</span>
+                                    <h3>Anniversary Cake</h3>
+                                    <span class="menu-item-price">From Rs.3000</span>
                                 </div>
                                 <p class="menu-item-description">6 cake pops in assorted flavors with pastel coatings</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Kids Fav</span>
-                                    <button class="menu-item-cart" onclick="openModal('Cake Pop Box', 18, 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=600&auto=format', '6 cake pops in assorted flavors with pastel coatings', 'Kids Fav', '⭐ 4.6', '🌈 Assorted Colors', '🍭 6 Pops')">
+                                    <span class="menu-item-tag">Custom</span>
+                                    <button class="menu-item-cart" onclick="openModal('Anniversary Cake', 'From Rs.3,000', 'https://images.unsplash.com/photo-1627935817583-a8d4531ccc62?q=80&w=1089&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '6 cake pops in assorted flavors with pastel coatings', 'Custom', '⭐ 4.6', '🌈 Assorted Colors', '🍭 6 Pops')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Specials Item 3 -->
+                        <div class="menu-item" data-category="specials">
+                            <img src="https://images.unsplash.com/photo-1655049117535-541607305230?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gender Reveal Cake" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Gender Reveal Cake</h3>
+                                    <span class="menu-item-price">From Rs.3,000</span>
+                                </div>
+                                <p class="menu-item-description">6 cake pops in assorted flavors with pastel coatings</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Custom</span>
+                                    <button class="menu-item-cart" onclick="openModal('Gender Reveal Cake', 'From Rs.3,000', 'https://images.unsplash.com/photo-1655049117535-541607305230?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '6 cake pops in assorted flavors with pastel coatings', 'Custom', '⭐ 4.6', '🌈 Assorted Colors', '🍭 6 Pops')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Specials Item 4 -->
+                        <div class="menu-item" data-category="specials">
+                            <img src="https://images.unsplash.com/photo-1755690042574-cd32f542d9f0?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bento" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Bento Cake</h3>
+                                    <span class="menu-item-price">From Rs.1,000</span>
+                                </div>
+                                <p class="menu-item-description">6 cake pops in assorted flavors with pastel coatings</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Custom</span>
+                                    <button class="menu-item-cart" onclick="openModal('Bento', 'From Rs.1,000', 'https://images.unsplash.com/photo-1755690042574-cd32f542d9f0?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '6 cake pops in assorted flavors with pastel coatings', 'Custom', '⭐ 4.6', '🌈 Assorted Colors', '🍭 6 Pops')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Specials Item 5 -->
+                        <div class="menu-item" data-category="specials">
+                            <img src="https://images.unsplash.com/photo-1586195830864-e4d9688815c8?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cake Pop Box" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Cake Pop Box</h3>
+                                    <span class="menu-item-price">Rs.2500</span>
+                                </div>
+                                <p class="menu-item-description">6 cake pops in assorted flavors with pastel coatings</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-tag">Custom</span>
+                                    <button class="menu-item-cart" onclick="openModal('Cake Pop Box', 'Rs.2500', 'https://images.unsplash.com/photo-1586195830864-e4d9688815c8?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '6 cake pops in assorted flavors with pastel coatings', 'Kids Fav', '⭐ 4.6', '🌈 Assorted Colors', '🍭 6 Pops')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -976,7 +1475,7 @@
             <div class="modal-body">
                 <div class="modal-body-top">
                     <h2 id="modalTitle">Product Name</h2>
-                    <span class="modal-price" id="modalPrice">$0</span>
+                    <span class="modal-price" id="modalPrice">Rs.0</span>
                 </div>
                 
                 <div class="modal-rating">
@@ -991,16 +1490,13 @@
                 <p class="modal-description" id="modalDescription">Product description</p>
                 
                 <div class="modal-details">
-                    <div class="modal-detail-item">
-                        <i class="fas fa-tag"></i>
+                    <div class="modal-detail-item">   
                         <span id="modalTagDisplay">Best Seller</span>
                     </div>
-                    <div class="modal-detail-item">
-                        <i class="fas fa-utensils"></i>
+                    <div class="modal-detail-item"> 
                         <span id="modalFlavor">Vanilla</span>
                     </div>
                     <div class="modal-detail-item">
-                        <i class="fas fa-box"></i>
                         <span id="modalSize">Standard</span>
                     </div>
                     <div class="modal-detail-item">
@@ -1033,13 +1529,13 @@
             
             document.getElementById('modalImage').src = image;
             document.getElementById('modalTitle').textContent = name;
-            document.getElementById('modalPrice').textContent = typeof price === 'string' ? price : '$' + price;
+            document.getElementById('modalPrice').textContent = typeof price === 'string' ? price : 'Rs.' + price;
             document.getElementById('modalDescription').textContent = description;
             document.getElementById('modalBadge').textContent = tag;
-            document.getElementById('modalRating').textContent = rating || '⭐ 4.8';
+            document.getElementById('modalRating').textContent = rating;
             document.getElementById('modalTagDisplay').textContent = tag;
-            document.getElementById('modalFlavor').textContent = detail1 || 'Delicious';
-            document.getElementById('modalSize').textContent = detail2 || 'Standard';
+            document.getElementById('modalFlavor').textContent = detail1 ;
+            document.getElementById('modalSize').textContent = detail2 ;
             
             document.getElementById('modalOverlay').classList.add('active');
             document.body.style.overflow = 'hidden';
