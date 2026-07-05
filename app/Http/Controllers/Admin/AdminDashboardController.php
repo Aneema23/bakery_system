@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\View\View;
 
+use App\Models\Category;
+
 class AdminDashboardController extends Controller
 {
     /**
@@ -20,6 +22,8 @@ class AdminDashboardController extends Controller
         $newUsersThisMonth = User::where('created_at', '>=', now()->startOfMonth())->count();
 
         $customers = User::where('role', 'customer')->get();
+
+        $categories = Category::all();
 
         $totalOrders = 0;
         $pendingOrders = 0;
@@ -50,8 +54,10 @@ class AdminDashboardController extends Controller
 
             'recentOrders' => $recentOrders,
 
-            // ✅ ADD THIS
             'customers' => $customers,
+
+            'customers' => $customers,
+            'categories' => $categories,
         ]);
     }
 }

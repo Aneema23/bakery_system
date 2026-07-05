@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Customer\OrderController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -57,6 +58,9 @@ Route::get('/products', function () {
 Route::get('/custom-cake', function () {
     return view('customer.custom-cake.custom-cake');
 })->middleware(['auth', 'role:customer'])->name('custom-cake');
+
+// Admin category management routes
+Route::resource('categories', CategoryController::class);
 
 //customer order submission
 Route::post('/custom-cake/order', [OrderController::class, 'store'])

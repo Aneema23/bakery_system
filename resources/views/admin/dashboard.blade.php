@@ -446,7 +446,7 @@
 
     <!-- Main Content -->
     <div class="main-content" id="mainContent">
-        <!-- ========== TOP NAVBAR - WITH BREEZE DROPDOWN ========= -->
+        <!-- TOP NAVBAR - WITH BREEZE DROPDOWN -->
         <div class="top-navbar d-flex justify-content-between align-items-center">
             <div>
                 <button class="btn btn-outline-secondary d-md-none" onclick="toggleSidebar()" style="border-color: #f59e0b; color: #f59e0b;">
@@ -454,6 +454,7 @@
                 </button>
                 <h4 class="d-inline-block ms-2" id="pageTitle">Dashboard</h4>
             </div>
+
             <div class="dropdown-container">
                 <button class="dropdown-toggle-btn" id="userDropdownToggle">
                     <i class="fas fa-user-circle"></i>
@@ -476,8 +477,7 @@
                 </div>
             </div>
         </div>
-        <!-- ========== END OF NAVBAR WITH BREEZE DROPDOWN ========= -->
-
+        
         <!-- DASHBOARD SECTION -->
         <div id="dashboardSection">
             <div class="row g-4">
@@ -539,7 +539,178 @@
         </div>
 
         <!-- categories section -->
-        <div id="categoriesSection" style="display: none;"><div class="data-table"><div class="d-flex justify-content-between mb-4"><h5><i class="fas fa-tags text-gold"></i> Categories</h5><button class="btn btn-warning-custom" onclick="showCategoryModal()">+ Add Category</button></div><div class="table-responsive"><table class="table"><thead><tr><th>ID</th><th>Category</th><th>Description</th><th>Products</th><th>Actions</th></tr></thead><tbody><tr><td>1</td><td>Cakes</td><td>Celebration & specialty cakes</td><td>24</td><td><button class="btn btn-sm btn-warning-custom"><i class="fas fa-edit"></i></button> <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button></td></tr><tr><td>2</td><td>Pastries</td><td>Fresh baked flaky pastries</td><td>18</td><td><button class="btn btn-sm btn-warning-custom"><i class="fas fa-edit"></i></button> <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button></td></tr><tr><td>3</td><td>Cupcakes</td><td>Gourmet cupcakes</td><td>32</td><td><button class="btn btn-sm btn-warning-custom"><i class="fas fa-edit"></i></button> <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button></td></tr></tbody></table></div></div></div>
+        <div id="categoriesSection" style="display: none;">
+            <div class="data-table">
+                <div class="d-flex justify-content-between mb-4">
+                    <h5><i class="fas fa-tags text-gold"></i> Categories</h5>
+
+                    @if (session('success'))
+                        <div class="alert alert-success mb-0 py-2 px-3" style="border-radius: 999px;">
+                            <i class="fas fa-check-circle me-2"></i>{{ session('success') }}
+                        </div>
+                    @endif
+                    <!-- OPEN MODAL -->
+                    <button type="button"
+                        class="btn btn-warning-custom"
+                        data-bs-toggle="modal"
+                        data-bs-target="#categoryModal">
+                        + Add Category
+                    </button>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                                <th>Products</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @forelse($categories as $category)
+                                <tr>
+                                    <td>{{ $category->id }}</td>
+                                    <td>{{ $category->name }}</td>
+                                    <td>{{ $category->description }}</td>
+                                    <td>0</td>
+                                    <td>
+                                        <!-- EDIT BUTTON -->
+                                        <button class="btn btn-sm btn-warning-custom"
+                                            onclick="editCategory(
+                                                {{ $category->id }},
+                                                '{{ $category->name }}',
+                                                '{{ $category->description }}'
+                                            )"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#editCategoryModal">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+
+                                        <!-- DELETE -->
+                                        <form action="{{ route('categories.destroy', $category->id) }}"
+                                            method="POST"
+                                            style="display:inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+
+                            @empty
+                                <tr>
+                                    <td colspan="5" class="text-center">
+                                        No Categories Found
+                                    </td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Category Modal -->
+        <div class="modal fade" id="categoryModal" tabindex="-1">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <form method="POST" action="{{ route('categories.store') }}">
+                    @csrf
+
+                    <div class="modal-header">
+                        <h5>Add Category</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <input type="text"
+                            name="name"
+                            class="form-control mb-2"
+                            placeholder="Category Name"
+                            required>
+
+                        <textarea name="description"
+                            class="form-control"
+                            placeholder="Description"></textarea>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+
+                        <button type="submit"
+                            class="btn btn-warning-custom">
+                            Save
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+        <!-- Edit Category Modal -->
+         <div class="modal fade" id="editCategoryModal" tabindex="-1">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <form method="POST" id="editCategoryForm">
+                    @csrf
+                    @method('PUT')
+
+                    <div class="modal-header">
+                        <h5>Edit Category</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <input type="hidden" id="edit_id">
+
+                        <input type="text"
+                            name="name"
+                            id="edit_name"
+                            class="form-control mb-2">
+
+                        <textarea name="description"
+                            id="edit_description"
+                            class="form-control"></textarea>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+
+                        <button type="submit"
+                            class="btn btn-warning-custom">
+                            Update
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
 
         <!-- orders section -->
         <div id="ordersSection" style="display: none;"><div class="data-table"><h5><i class="fas fa-shopping-cart text-gold"></i> All Orders</h5><div class="table-responsive"><table class="table"><thead><tr><th>Order #</th><th>Customer</th><th>Date</th><th>Total</th><th>Status</th><th>Update Status</th></tr></thead><tbody><tr><td>#ORD-101</td><td>John Doe</td><td>2024-11-20</td><td>$45.00</td><td><span class="badge-status bg-warning text-dark">Pending</span></td><td><select class="form-select form-select-sm" style="width:130px;" onchange="updateOrderStatus(this, 'ORD-101')"><option>Pending</option><option>Processing</option><option>Delivered</option></select></td></tr><tr><td>#ORD-102</td><td>Jane Smith</td><td>2024-11-19</td><td>$32.50</td><td><span class="badge-status bg-success">Delivered</span></td><td><select class="form-select form-select-sm" style="width:130px;" onchange="updateOrderStatus(this, 'ORD-102')"><option>Pending</option><option>Processing</option><option selected>Delivered</option></select></td></tr></tbody></table></div></div></div>
@@ -682,6 +853,16 @@
     window.approveCustomCake = () => alert('✨ Custom cake order approved! Customer will be notified.');
     window.updateOrderStatus = (select, orderId) => alert(`✅ Order ${orderId} status → ${select.value}`);
     window.viewOrder = (id) => alert(`🔍 View order details: ${id}`);
+
+    // Edit Category Function
+    function editCategory(id, name, description) {
+
+        document.getElementById('edit_name').value = name;
+        document.getElementById('edit_description').value = description;
+
+        document.getElementById('editCategoryForm').action =
+            "/categories/" + id;
+    }
 </script>
 </body>
 </html>
