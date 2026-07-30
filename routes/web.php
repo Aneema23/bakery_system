@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Customer\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -50,9 +51,9 @@ Route::middleware('auth')->group(function () {
 });
 
 //customer products page
-Route::get('/products', function () {
-    return view('customer.products.products');
-})->name('products');
+Route::get('/custom-products', function () {
+    return view('customer.custom-products.custom-products');
+})->name('custom-products.customer');
 
 //customer custom cake page
 Route::get('/custom-cake', function () {
@@ -61,6 +62,9 @@ Route::get('/custom-cake', function () {
 
 // Admin category management routes
 Route::resource('categories', CategoryController::class);
+
+// Admin product management routes
+Route::resource('products', ProductController::class);
 
 //customer order submission
 Route::post('/custom-cake/order', [OrderController::class, 'store'])

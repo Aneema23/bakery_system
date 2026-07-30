@@ -15,7 +15,7 @@ class CategoryController extends Controller
     {
         $categories = Category::withCount('products')->get();
 
-        return view('admin.dashboard.categoriesSection', compact('categories'));
+        return view('admin.dashboard', compact('categories'));
     }
 
     /**
@@ -41,8 +41,9 @@ class CategoryController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('admin.dashboard.categoriesSection')
-        ->with('success', 'Category Added Successfully');
+        return redirect()->route('admin.dashboard')
+        ->with('success', 'Category Added Successfully')
+        ->with('activeSection', 'categories');
     }
 
     /**
@@ -66,14 +67,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-         $category->update([
+        $category->update([
         'name' => $request->name,
         'description' => $request->description,
     ]);
 
     return redirect()
         ->route('admin.dashboard')
-        ->with('success', 'Category updated successfully ✨');
+        ->with('success', 'Category updated successfully ✨')
+        ->with('activeSection', 'categories');
     }
 
     /**
@@ -84,7 +86,8 @@ class CategoryController extends Controller
         $category->delete();
 
     return redirect()
-        ->route('admin.dashboard.categoriesSection')
-        ->with('success', 'Category deleted successfully 🗑️');
+        ->route('admin.dashboard')
+        ->with('success', 'Category deleted successfully 🗑️')
+        ->with('activeSection', 'categories');
     }
 }

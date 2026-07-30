@@ -372,10 +372,10 @@
                         <a class="nav-link" href="{{ route('customer.dashboard') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('products') }}">Products</a>
+                        <a class="nav-link" href="{{ route('custom-products.customer') }}">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Custom Cake</a>
+                        <a class="nav-link active" href="{{ route('custom-cake') }}">Custom Cake</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link cart-badge" href="#">

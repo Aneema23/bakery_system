@@ -715,8 +715,8 @@
                                 </div>
                                 <p class="menu-item-description">Moist chocolate sponge layered with rich chocolate ganache and finished with smooth chocolate frosting</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Best Seller</span>
-                                    <button class="menu-item-cart" onclick="openModal('Chocolate Cake (I kg)', 3500, 'https://images.unsplash.com/photo-1621868402792-a5c9fa6866a3?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Indulge in our rich Chocolate Cake made with moist chocolate sponge layers, silky chocolate ganache, and premium cocoa. Perfect for birthdays, celebrations, or any chocolate lover.', '⭐ Best Seller', '⭐ 4.9', ' 🍫 Chocolate Ganache', '🎂 Chocolate Sponge')">
+                                    <span class="menu-item-tag">1 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Chocolate Cake', 3500, 'https://images.unsplash.com/photo-1621868402792-a5c9fa6866a3?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Indulge in our rich Chocolate Cake made with moist chocolate sponge layers, silky chocolate ganache, and premium cocoa. Perfect for birthdays, celebrations, or any chocolate lover.', '⭐ Best Seller', '⭐ 4.9', ' 🍫 Chocolate Ganache', '🎂 Chocolate Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -733,8 +733,8 @@
                                 </div>
                                 <p class="menu-item-description">Soft vanilla sponge filled with creamy vanilla buttercream, finished with a classic smooth frosting.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Best Seller</span>
-                                    <button class="menu-item-cart" onclick="openModal('Vanila Butter Cake (I kg)', 3000 , 'https://images.unsplash.com/photo-1609577737938-fb2139fa4c78?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
+                                    <span class="menu-item-tag">1 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Vanila Butter Cake', 3000 , 'https://images.unsplash.com/photo-1609577737938-fb2139fa4c78?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
                                     'Our classic Vanilla Butter Cake features soft vanilla sponge layered with creamy buttercream frosting. A timeless choice for birthdays and family celebrations.', '👨‍👩‍👧 Family Favorite', '⭐ 4.8', '🧈 Vanilla Buttercream', '🎂 Chocolate Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
@@ -752,8 +752,8 @@
                                 </div>
                                 <p class="menu-item-description">Soft red velvet sponge layered with rich cream cheese frosting and decorated with elegant red velvet crumbs</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Best Seller</span>
-                                    <button class="menu-item-cart" onclick="openModal('Red Velvet Cake (I kg)', 5000, 'https://images.pexels.com/photos/30131920/pexels-photo-30131920.jpeg', 'Soft and velvety red sponge layered with rich cream cheese frosting and beautifully decorated with red velvet crumbs. A luxurious 1kg celebration cake.', '❤️ Premium', '⭐ 4.9', '🧀 Cream Cheese Frosting', '🎂 Red Velvet Sponge')">
+                                    <span class="menu-item-tag">1 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Red Velvet Cake', 5000, 'https://images.pexels.com/photos/30131920/pexels-photo-30131920.jpeg', 'Soft and velvety red sponge layered with rich cream cheese frosting and beautifully decorated with red velvet crumbs. A luxurious 1kg celebration cake.', '❤️ Premium', '⭐ 4.9', '🧀 Cream Cheese Frosting', '🎂 Red Velvet Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -770,8 +770,8 @@
                                 </div>
                                 <p class="menu-item-description">Light vanilla sponge layered with fresh strawberry filling and whipped cream, topped with juicy strawberries.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Popular</span>
-                                    <button class="menu-item-cart" onclick="openModal('Stawberry Cream Cake (I kg)', 5500, 'https://images.unsplash.com/photo-1589119908995-c6837fa14848?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Fresh strawberries layered with fluffy whipped cream and soft vanilla sponge. This refreshing 1kg cake is perfect for birthdays and special occasions.', '🍓 Seasonal Favorite', '⭐ 4.9', '🍓 Fresh Cream', '🎂 Vanilla Sponge')">
+                                    <span class="menu-item-tag">1 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Stawberry Cream Cake', 5500, 'https://images.unsplash.com/photo-1589119908995-c6837fa14848?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Fresh strawberries layered with fluffy whipped cream and soft vanilla sponge. This refreshing 1kg cake is perfect for birthdays and special occasions.', '🍓 Seasonal Favorite', '⭐ 4.9', '🍓 Fresh Cream', '🎂 Vanilla Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -788,8 +788,8 @@
                                 </div>
                                 <p class="menu-item-description">Coffee-infused sponge layered with silky mocha buttercream and finished with a dusting of cocoa powder.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Popular</span>
-                                    <button class="menu-item-cart" onclick="openModal('Coffee Mocha Cake (I kg)', 5200, 'https://images.pexels.com/photos/2147857/pexels-photo-2147857.jpeg', 'Rich coffee-infused sponge layered with smooth mocha buttercream and finished with cocoa powder. A perfect 1kg cake for coffee lovers.', '☕ Coffee Lovers', '⭐ 4.9', '☕ Mocha Buttercream', '🎂 Coffee Sponge')">
+                                    <span class="menu-item-tag">1 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Coffee Mocha Cake', 5200, 'https://images.pexels.com/photos/2147857/pexels-photo-2147857.jpeg', 'Rich coffee-infused sponge layered with smooth mocha buttercream and finished with cocoa powder. A perfect 1kg cake for coffee lovers.', '☕ Coffee Lovers', '⭐ 4.9', '☕ Mocha Buttercream', '🎂 Coffee Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -806,8 +806,8 @@
                                 </div>
                                 <p class="menu-item-description">Soft vanilla sponge layered with salted caramel cream and crunchy caramel pieces for the perfect sweet crunch.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Popular</span>
-                                    <button class="menu-item-cart" onclick="openModal('Caranel Crunch Cake (I kg)', 5800, 'https://images.pexels.com/photos/24206908/pexels-photo-24206908.jpeg', 'Soft vanilla sponge layered with salted caramel cream and crunchy caramel pieces for the perfect sweet crunch.', '✨ Chef''s Special', '⭐ 4.9', '🍮 Salted Caramel', '🎂 Vanilla Sponge')">
+                                    <span class="menu-item-tag">1 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Caranel Crunch Cake', 5800, 'https://images.pexels.com/photos/24206908/pexels-photo-24206908.jpeg', 'Soft vanilla sponge layered with salted caramel cream and crunchy caramel pieces for the perfect sweet crunch.', '✨ Chef''s Special', '⭐ 4.9', '🍮 Salted Caramel', '🎂 Vanilla Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -824,8 +824,8 @@
                                 </div>
                                 <p class="menu-item-description">Fluffy vanilla sponge filled with blueberry compote and fresh cream, topped with premium blueberries.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Best Seller</span>
-                                    <button class="menu-item-cart" onclick="openModal('Blueberry Cake (I kg)', 6500, 'https://images.unsplash.com/photo-1741812553483-7b15e74aeb07?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Fluffy vanilla sponge filled with blueberry compote and fresh cream, topped with premium blueberries.', '🫐 Premium', '⭐ 4.9', '🫐 Blueberry Cream', '🎂 Vanilla Sponge')">
+                                    <span class="menu-item-tag">1 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Blueberry Cake', 6500, 'https://images.unsplash.com/photo-1741812553483-7b15e74aeb07?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Fluffy vanilla sponge filled with blueberry compote and fresh cream, topped with premium blueberries.', '🫐 Premium', '⭐ 4.9', '🫐 Blueberry Cream', '🎂 Vanilla Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -842,8 +842,8 @@
                                 </div>
                                 <p class="menu-item-description">Coffee-soaked sponge layered with mascarpone cream and finished with a generous dusting of cocoa powder.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Custom</span>
-                                    <button class="menu-item-cart" onclick="openModal('Tiramisu Cake (I kg)', 6800, 'https://images.pexels.com/photos/37934621/pexels-photo-37934621.jpeg', 'Inspired by the famous Italian dessert, this 1kg cake features coffee-soaked sponge layered with mascarpone cream and finished with cocoa powder.'', '✨ Chef''s Special', '⭐ 5.0', '☕ Mascarpone Cream', '🎂 Coffee Sponge')">
+                                    <span class="menu-item-tag">1 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Tiramisu Cake', 6800, 'https://images.pexels.com/photos/37934621/pexels-photo-37934621.jpeg', 'Inspired by the famous Italian dessert, this 1kg cake features coffee-soaked sponge layered with mascarpone cream and finished with cocoa powder.'', '✨ Chef''s Special', '⭐ 5.0', '☕ Mascarpone Cream', '🎂 Coffee Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -860,8 +860,8 @@
                                 </div>
                                 <p class="menu-item-description">Rich chocolate sponge layered with whipped cream and cherries, finished with chocolate shavings.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Custom</span>
-                                    <button class="menu-item-cart" onclick="openModal('Black Forest Cake (I kg)', 5000, 'https://images.pexels.com/photos/8802102/pexels-photo-8802102.jpeg', 'Classic Black Forest Cake made with moist chocolate sponge, whipped cream, sweet cherries, and chocolate shavings.', '🍒 Classic', '⭐ 4.8', '🍒 Whipped Cream', '🎂 Chocolate Sponge')">
+                                    <span class="menu-item-tag">1 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Black Forest Cake', 5000, 'https://images.pexels.com/photos/8802102/pexels-photo-8802102.jpeg', 'Classic Black Forest Cake made with moist chocolate sponge, whipped cream, sweet cherries, and chocolate shavings.', '🍒 Classic', '⭐ 4.8', '🍒 Whipped Cream', '🎂 Chocolate Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -878,8 +878,8 @@
                                 </div>
                                 <p class="menu-item-description">Soft vanilla sponge layered with fresh cream and cherries, decorated with white chocolate curls.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Custom</span>
-                                    <button class="menu-item-cart" onclick="openModal('White Forest Cake (I kg)', 5000, 'https://images.pexels.com/photos/4110001/pexels-photo-4110001.jpeg', 'Delicate vanilla sponge layered with fresh whipped cream, cherries, and white chocolate curls for a light and elegant dessert.', '🤍 New Arrival', '⭐ 4.8', '🤍 Fresh Cream', '🎂 Vanilla Sponge')">
+                                    <span class="menu-item-tag">1 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('White Forest Cake', 5000, 'https://images.pexels.com/photos/4110001/pexels-photo-4110001.jpeg', 'Delicate vanilla sponge layered with fresh whipped cream, cherries, and white chocolate curls for a light and elegant dessert.', '🤍 New Arrival', '⭐ 4.8', '🤍 Fresh Cream', '🎂 Vanilla Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -896,8 +896,8 @@
                                 </div>
                                 <p class="menu-item-description">Rich chocolate cake with a warm molten chocolate center, finished with smooth chocolate ganache.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Custom</span>
-                                    <button class="menu-item-cart" onclick="openModal('Lava Cake (250g - 4pcs)', 3000, 'https://images.unsplash.com/photo-1617305855058-336d24456869?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Rich chocolate cake with a warm molten chocolate center, finished with smooth chocolate ganache.', '🍫 Hot Favorite', '⭐ 4.9', '🍫 Molten Chocolate', '🎂 Chocolate Sponge')">
+                                    <span class="menu-item-tag">250g - 4pcs</span>
+                                    <button class="menu-item-cart" onclick="openModal('Lava Cake', 3000, 'https://images.unsplash.com/photo-1617305855058-336d24456869?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Rich chocolate cake with a warm molten chocolate center, finished with smooth chocolate ganache.', '🍫 Hot Favorite', '⭐ 4.9', '🍫 Molten Chocolate', '🎂 Chocolate Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -914,8 +914,8 @@
                                 </div>
                                 <p class="menu-item-description">Moist date sponge blended with premium dates and finished with a light caramel glaze</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Custom</span>
-                                    <button class="menu-item-cart" onclick="openModal('Date Cake (1 kg)', 2500, 'https://images.pexels.com/photos/37010324/pexels-photo-37010324.jpeg', 'Moist date sponge blended with premium dates and finished with a light caramel glaze', '🌴 Healthy Choice', '⭐ 4.7', '🍯 Dates', '🎂 Date Sponge')">
+                                    <span class="menu-item-tag">1 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Date Cake', 2500, 'https://images.pexels.com/photos/37010324/pexels-photo-37010324.jpeg', 'Moist date sponge blended with premium dates and finished with a light caramel glaze', '🌴 Healthy Choice', '⭐ 4.7', '🍯 Dates', '🎂 Date Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -941,7 +941,7 @@
                                 </div>
                                 <p class="menu-item-description">Lavender buttercream, edible glitter & rainbow sprinkles</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Kid's Fav</span>
+                                    <span class="menu-item-tag">4 pcs</span>
                                     <button class="menu-item-cart" onclick="openModal('Vanilla Cupcake', 350, 'https://plus.unsplash.com/premium_photo-1663840297386-8a3e38271ac6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Lavender buttercream, edible glitter & rainbow sprinkles', 'Kid\'s Fav', '⭐ 4.7', '🌈 Rainbow Sprinkles', '🧁 Vanilla Cupcake')">
                                         <i class="fas fa-eye"></i>
                                     </button>
@@ -959,7 +959,7 @@
                                 </div>
                                 <p class="menu-item-description">Classic red velvet with cream cheese frosting</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Classic</span>
+                                    <span class="menu-item-tag">4 pcs</span>
                                     <button class="menu-item-cart" onclick="openModal('Red Velvet Cupcake', 450, 'https://images.unsplash.com/photo-1610851467358-e2a4a5804335?q=80&w=1099&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Classic red velvet with cream cheese frosting', 'Classic', '⭐ 4.8', '🧀 Cream Cheese', '🧁 Red Velvet')">
                                         <i class="fas fa-eye"></i>
                                     </button>
@@ -977,7 +977,7 @@
                                 </div>
                                 <p class="menu-item-description">Chocolate cupcake, marshmallow frosting, graham cracker</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Kid's Fav</span>
+                                    <span class="menu-item-tag">4 pcs</span>
                                     <button class="menu-item-cart" onclick="openModal('Chocolate Cupcake', 400, 'https://images.unsplash.com/photo-1649793950107-610f06f3660c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Chocolate cupcake, marshmallow frosting, graham cracker', 'New', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Chocolate Cupcake')">
                                         <i class="fas fa-eye"></i>
                                     </button>
@@ -995,8 +995,8 @@
                                 </div>
                                 <p class="menu-item-description">Lemon cupcake, vanilla frosting, graham cracker</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">New</span>
-                                    <button class="menu-item-cart" onclick="openModal('Lemon Cupcake', 350, 'https://images.unsplash.com/photo-1732966283172-033d29bf02ca?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Lemon cupcake, vanilla frosting, graham cracker', 'New', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Lemon Cupcake')">
+                                    <span class="menu-item-tag">4 pcs</span>
+                                    <button class="menu-item-cart" onclick="openModal('Lemon Cupcake', 350, 'https://images.unsplash.com/photo-1732966283172-033d29bf02ca?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Lemon cupcake, vanilla frosting, graham cracker', '4 pcs', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Lemon Cupcake')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1013,8 +1013,8 @@
                                 </div>
                                 <p class="menu-item-description">Strawberry cupcake, vanilla frosting, graham cracker</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Kid's Fav</span>
-                                    <button class="menu-item-cart" onclick="openModal('Strawberry Cupcake', 400, 'https://images.unsplash.com/photo-1563778084459-859099e48677?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Strawberry cupcake, vanilla frosting, graham cracker', 'Kid's Fav', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Strawberry Cupcake')">
+                                    <span class="menu-item-tag">4 pcs</span>
+                                    <button class="menu-item-cart" onclick="openModal('Strawberry Cupcake', 400, 'https://images.unsplash.com/photo-1563778084459-859099e48677?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Strawberry cupcake, vanilla frosting, graham cracker', '4 pcs', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Strawberry Cupcake')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1031,8 +1031,8 @@
                                 </div>
                                 <p class="menu-item-description">Cookies & Cream cupcake, vanilla frosting, graham cracker</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Kid's Fav</span>
-                                    <button class="menu-item-cart" onclick="openModal('Cookies & Cream Cupcake', 450, 'https://images.unsplash.com/photo-1618308386974-892a721e816d?q=80&w=717&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Cookies & Cream cupcake, vanilla frosting, graham cracker', 'New', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Cookies & Cream Cupcake')">
+                                    <span class="menu-item-tag">4 pcs</span>
+                                    <button class="menu-item-cart" onclick="openModal('Cookies & Cream Cupcake', 450, 'https://images.unsplash.com/photo-1618308386974-892a721e816d?q=80&w=717&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Cookies & Cream cupcake, vanilla frosting, graham cracker', '4 pcs', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Cookies & Cream Cupcake')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1049,8 +1049,8 @@
                                 </div>
                                 <p class="menu-item-description">Salted caramel cupcake, salted caramel frosting, graham cracker</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">New</span>
-                                    <button class="menu-item-cart" onclick="openModal('Salted Caramel Cupcake', 450, 'https://images.unsplash.com/photo-1693464318938-ea7092d5c818?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Salted caramel cupcake, salted caramel frosting, graham cracker', 'New', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Salted Caramel Cupcake')">
+                                    <span class="menu-item-tag">4 pcs</span>
+                                    <button class="menu-item-cart" onclick="openModal('Salted Caramel Cupcake', 450, 'https://images.unsplash.com/photo-1693464318938-ea7092d5c818?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Salted caramel cupcake, salted caramel frosting, graham cracker', '4 pcs', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Salted Caramel Cupcake')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1067,8 +1067,8 @@
                                 </div>
                                 <p class="menu-item-description">Rainbow sprinkle cupcake, rainbow sprinkle frosting, graham cracker</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Kid's Fav</span>
-                                    <button class="menu-item-cart" onclick="openModal('Rainbow Sprinkle Cupcake', 400, 'https://images.unsplash.com/photo-1680580735621-4371027734eb?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Rainbow sprinkle cupcake, rainbow sprinkle frosting, graham cracker', 'Kid's Fav', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Rainbow Sprinkle Cupcake')">
+                                    <span class="menu-item-tag">4 pcs</span>
+                                    <button class="menu-item-cart" onclick="openModal('Rainbow Sprinkle Cupcake', 400, 'https://images.unsplash.com/photo-1680580735621-4371027734eb?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Rainbow sprinkle cupcake, rainbow sprinkle frosting, graham cracker', '4 pcs', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Rainbow Sprinkle Cupcake')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1085,8 +1085,8 @@
                                 </div>
                                 <p class="menu-item-description">Nutella cupcake, marshmallow frosting, graham cracker</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Classic</span>
-                                    <button class="menu-item-cart" onclick="openModal('Nutella Cupcake', 500, 'https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Nutella cupcake, marshmallow frosting, graham cracker', 'Kid's Fav', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Nutella Cupcake')">
+                                    <span class="menu-item-tag">4 pcs</span>
+                                    <button class="menu-item-cart" onclick="openModal('Nutella Cupcake', 500, 'https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Nutella cupcake, marshmallow frosting, graham cracker', '4 pcs', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Nutella Cupcake')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1103,8 +1103,8 @@
                                 </div>
                                 <p class="menu-item-description">Chocolate cupcake, marshmallow frosting, graham cracker</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Classic</span>
-                                    <button class="menu-item-cart" onclick="openModal('Coffee Cupcake', 400, 'https://images.unsplash.com/photo-1606188074044-fcd750f6996a?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Chocolate cupcake, marshmallow frosting, graham cracker', 'Classic', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Chocolate Cupcake')">
+                                    <span class="menu-item-tag">4 pcs</span>
+                                    <button class="menu-item-cart" onclick="openModal('Coffee Cupcake', 400, 'https://images.unsplash.com/photo-1606188074044-fcd750f6996a?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Chocolate cupcake, marshmallow frosting, graham cracker', '4 pcs', '⭐ 4.6', '🔥 Toasted Marshmallow', '🧁 Chocolate Cupcake')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1130,7 +1130,7 @@
                                 </div>
                                 <p class="menu-item-description">12 assorted pastel macarons: pistachio, rose, vanilla, chocolate</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Premium</span>
+                                    <span class="menu-item-tag">2 kg</span>
                                     <button class="menu-item-cart" onclick="openModal('Rainbow Birthday Cake', 7500, 'https://images.unsplash.com/photo-1622576890453-8e50b6f7d5b0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '12 assorted pastel macarons: pistachio, rose, vanilla, chocolate', 'Best Seller', '⭐ 4.9', '🎁 Gift Ready', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
@@ -1148,8 +1148,8 @@
                                 </div>
                                 <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Premium</span>
-                                    <button class="menu-item-cart" onclick="openModal('Princess Cake', 9500, 'https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <span class="menu-item-tag">2 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Princess Cake', 9500, 'https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', '2 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1166,8 +1166,8 @@
                                 </div>
                                 <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Premium</span>
-                                    <button class="menu-item-cart" onclick="openModal('Superhero Cake', 9000, 'https://images.unsplash.com/photo-1637724562261-5777b67c59b2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <span class="menu-item-tag">2 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Superhero Cake', 9000, 'https://images.unsplash.com/photo-1637724562261-5777b67c59b2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', '2 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1184,8 +1184,8 @@
                                 </div>
                                 <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Premium</span>
-                                    <button class="menu-item-cart" onclick="openModal('Unicorn Cake', 10500, 'https://images.unsplash.com/photo-1697157202877-622683269d7c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <span class="menu-item-tag">2 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Unicorn Cake', 10500, 'https://images.unsplash.com/photo-1697157202877-622683269d7c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', '2 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1202,8 +1202,8 @@
                                 </div>
                                 <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Premium</span>
-                                    <button class="menu-item-cart" onclick="openModal('Frozen Cake', 10000, 'https://images.unsplash.com/photo-1671686400734-d9d0a4934f5a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <span class="menu-item-tag">3 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Frozen Cake', 10000, 'https://images.unsplash.com/photo-1671686400734-d9d0a4934f5a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', '2 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1220,8 +1220,8 @@
                                 </div>
                                 <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Premium</span>
-                                    <button class="menu-item-cart" onclick="openModal('Dinosour Cake', 9500, 'https://images.unsplash.com/photo-1695275673485-8d3ef4965615?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <span class="menu-item-tag">3 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Dinosour Cake', 9500, 'https://images.unsplash.com/photo-1695275673485-8d3ef4965615?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', '2 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1238,7 +1238,7 @@
                                 </div>
                                 <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Premium</span>
+                                    <span class="menu-item-tag">2 kg</span>
                                     <button class="menu-item-cart" onclick="openModal('Sports Theme Cake', 8500, 'https://images.pexels.com/photos/4005315/pexels-photo-4005315.jpeg', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
@@ -1256,7 +1256,7 @@
                                 </div>
                                 <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Premium</span>
+                                    <span class="menu-item-tag">2 kg</span>
                                     <button class="menu-item-cart" onclick="openModal('Number Cake', 8000, 'https://images.unsplash.com/photo-1591519060886-27dd11ad7f5a?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
@@ -1274,7 +1274,7 @@
                                 </div>
                                 <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Premium</span>
+                                    <span class="menu-item-tag">3 kg</span>
                                     <button class="menu-item-cart" onclick="openModal('Barbie Theme Cake', 11000, 'https://images.pexels.com/photos/13321665/pexels-photo-13321665.jpeg', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
@@ -1292,7 +1292,7 @@
                                 </div>
                                 <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Premium</span>
+                                    <span class="menu-item-tag">2 kg</span>
                                     <button class="menu-item-cart" onclick="openModal('Photo Printed Cake', 8500, 'https://images.unsplash.com/photo-1627274273203-84de3a4a49cf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
@@ -1317,10 +1317,10 @@
                                     <h3>Chocolate Chip Cookies</h3>
                                     <span class="menu-item-price">Rs.1200</span>
                                 </div>
-                                <p class="menu-item-description">Classic soft-baked cookies with premium chocolate chips (6 pack)</p>
+                                <p class="menu-item-description">Classic soft-baked cookies with premium chocolate chips</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Premium</span>
-                                    <button class="menu-item-cart" onclick="openModal('Chocolate Chip Cookies', 1200, 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&auto=format', 'Classic soft-baked cookies with premium chocolate chips (6 pack)', 'Classic', '⭐ 4.7', '🍫 Premium Chips', '🍪 6 Pack')">
+                                    <span class="menu-item-tag">10 pcs</span>
+                                    <button class="menu-item-cart" onclick="openModal('Chocolate Chip Cookies', 1200, 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&auto=format', 'Classic soft-baked cookies with premium chocolate chips', 'Classic', '⭐ 4.7', '🍫 Premium Chips', '🍪 6 Pack')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1335,10 +1335,10 @@
                                     <h3>Butter Cookies</h3>
                                     <span class="menu-item-price">Rs.1000</span>
                                 </div>
-                                <p class="menu-item-description">White chocolate & macadamia nut cookies (6 pack)</p>
+                                <p class="menu-item-description">White chocolate & macadamia nut cookies </p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Classic</span>
-                                    <button class="menu-item-cart" onclick="openModal('Butter Cookies', 1000, 'https://images.unsplash.com/photo-1600625649542-f668edc636dc?q=80&w=895&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'White chocolate & macadamia nut cookies (6 pack)', 'Premium', '⭐ 4.8', '🥜 Macadamia Nuts', '🍪 6 Pack')">
+                                    <span class="menu-item-tag">10 pcs</span>
+                                    <button class="menu-item-cart" onclick="openModal('Butter Cookies', 1000, 'https://images.unsplash.com/photo-1600625649542-f668edc636dc?q=80&w=895&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'White chocolate & macadamia nut cookies', 'Premium', '⭐ 4.8', '🥜 Macadamia Nuts', '🍪 6 Pack')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1362,10 +1362,10 @@
                                     <h3>Wedding Cake</h3>
                                     <span class="menu-item-price">From Rs.10 000</span>
                                 </div>
-                                <p class="menu-item-description">Fully customizable cake with your choice of flavors and design</p>
+                                <p class="menu-item-description">Elegant multi-tier wedding cake customized with your preferred flavors, colors, and decorations to make your special day unforgettable.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Custom</span>
-                                    <button class="menu-item-cart" onclick="openModal('Wedding Cake', 'From Rs.10,000', 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Fully customizable cake with your choice of flavors and design', 'Custom', '⭐ 5.0', '🎨 Your Design', '✨ Custom Order')">
+                                    <span class="menu-item-tag">3 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Wedding Cake', 'From Rs.10,000', 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Elegant multi-tier wedding cake customized with your preferred flavors, colors, and decorations to make your special day unforgettable.', 'Custom', '⭐ 5.0', '🎨 Your Design', '✨ Custom Order')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1380,10 +1380,10 @@
                                     <h3>Anniversary Cake</h3>
                                     <span class="menu-item-price">From Rs.3000</span>
                                 </div>
-                                <p class="menu-item-description">6 cake pops in assorted flavors with pastel coatings</p>
+                                <p class="menu-item-description">Celebrate your special moments with a beautifully decorated anniversary cake, personalized with your favorite flavor and heartfelt message.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Custom</span>
-                                    <button class="menu-item-cart" onclick="openModal('Anniversary Cake', 'From Rs.3,000', 'https://images.unsplash.com/photo-1627935817583-a8d4531ccc62?q=80&w=1089&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '6 cake pops in assorted flavors with pastel coatings', 'Custom', '⭐ 4.6', '🌈 Assorted Colors', '🍭 6 Pops')">
+                                    <span class="menu-item-tag">2 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Anniversary Cake', 'From Rs.3,000', 'https://images.unsplash.com/photo-1627935817583-a8d4531ccc62?q=80&w=1089&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Celebrate your special moments with a beautifully decorated anniversary cake, personalized with your favorite flavor and heartfelt message.', 'Custom', '⭐ 4.6', '🌈 Assorted Colors', '🍭 6 Pops')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1398,10 +1398,10 @@
                                     <h3>Gender Reveal Cake</h3>
                                     <span class="menu-item-price">From Rs.3,000</span>
                                 </div>
-                                <p class="menu-item-description">6 cake pops in assorted flavors with pastel coatings</p>
+                                <p class="menu-item-description">A fun surprise cake featuring a hidden pink or blue filling, perfect for revealing your baby's gender with family and friends.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Custom</span>
-                                    <button class="menu-item-cart" onclick="openModal('Gender Reveal Cake', 'From Rs.3,000', 'https://images.unsplash.com/photo-1655049117535-541607305230?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '6 cake pops in assorted flavors with pastel coatings', 'Custom', '⭐ 4.6', '🌈 Assorted Colors', '🍭 6 Pops')">
+                                    <span class="menu-item-tag">2 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Gender Reveal Cake', 'From Rs.3,000', 'https://images.unsplash.com/photo-1655049117535-541607305230?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'A fun surprise cake featuring a hidden pink or blue filling, perfect for revealing your baby\'s gender with family and friends.', 'Custom', '⭐ 4.6', '🌈 Assorted Colors', '🍭 6 Pops')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1416,10 +1416,10 @@
                                     <h3>Bento Cake</h3>
                                     <span class="menu-item-price">From Rs.1,000</span>
                                 </div>
-                                <p class="menu-item-description">6 cake pops in assorted flavors with pastel coatings</p>
+                                <p class="menu-item-description">A cute mini cake perfect for birthdays, gifts, or personal celebrations, available in a variety of flavors and custom designs.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Custom</span>
-                                    <button class="menu-item-cart" onclick="openModal('Bento', 'From Rs.1,000', 'https://images.unsplash.com/photo-1755690042574-cd32f542d9f0?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '6 cake pops in assorted flavors with pastel coatings', 'Custom', '⭐ 4.6', '🌈 Assorted Colors', '🍭 6 Pops')">
+                                    <span class="menu-item-tag">500 g</span>
+                                    <button class="menu-item-cart" onclick="openModal('Bento', 'From Rs.1,000', 'https://images.unsplash.com/photo-1755690042574-cd32f542d9f0?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'A cute mini cake perfect for birthdays, gifts, or personal celebrations, available in a variety of flavors and custom designs.', 'Custom', '⭐ 4.6', '🌈 Assorted Colors', '🍭 6 Pops')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1434,10 +1434,10 @@
                                     <h3>Cake Pop Box</h3>
                                     <span class="menu-item-price">Rs.2500</span>
                                 </div>
-                                <p class="menu-item-description">6 cake pops in assorted flavors with pastel coatings</p>
+                                <p class="menu-item-description">A delicious assortment of handcrafted cake pops coated in chocolate and colorful decorations, perfect for parties and gifting.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">Custom</span>
-                                    <button class="menu-item-cart" onclick="openModal('Cake Pop Box', 'Rs.2500', 'https://images.unsplash.com/photo-1586195830864-e4d9688815c8?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '6 cake pops in assorted flavors with pastel coatings', 'Kids Fav', '⭐ 4.6', '🌈 Assorted Colors', '🍭 6 Pops')">
+                                    <span class="menu-item-tag">18 pcs</span>
+                                    <button class="menu-item-cart" onclick="openModal('Cake Pop Box', 'Rs.2500', 'https://images.unsplash.com/photo-1586195830864-e4d9688815c8?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'A delicious assortment of handcrafted cake pops coated in chocolate and colorful decorations, perfect for parties and gifting.', 'Kids Fav', '⭐ 4.6', '🌈 Assorted Colors', '🍭 6 Pops')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1573,7 +1573,7 @@
             }
             
             // If logged in, redirect to product page
-            window.location.href = "{{ route('products') }}/" + encodeURIComponent(currentProduct.name);
+            window.location.href = "{{ route('products.index') }}/" + encodeURIComponent(currentProduct.name);
         }
 
         // ===== LOGIN STATUS CHECK =====

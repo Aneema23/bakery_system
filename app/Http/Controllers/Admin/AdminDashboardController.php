@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\View\View;
 
 use App\Models\Category;
+use App\Models\Product;
 
 class AdminDashboardController extends Controller
 {
@@ -58,6 +59,8 @@ class AdminDashboardController extends Controller
 
             'customers' => $customers,
             'categories' => $categories,
+
+            'products' => Product::all(),
         ]);
     }
 }
