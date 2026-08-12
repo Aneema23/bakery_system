@@ -310,12 +310,49 @@
             background: #1e1712;
             border: 1px solid #f59e0b;
             border-radius: 28px;
+            color: #f5e6da;
         }
         .modal-header {
             border-bottom-color: rgba(245,158,11,0.3);
         }
         .modal-footer {
             border-top-color: rgba(245,158,11,0.2);
+        }
+        #productModal .modal-header,
+        #editProductModal .modal-header {
+            background: #2a1d16;
+        }
+        #productModal label,
+        #editProductModal label {
+            display: block;
+            margin-bottom: 0.4rem;
+            color: #fcd34d;
+            font-weight: 600;
+        }
+        #productModal .form-control,
+        #productModal .form-select,
+        #editProductModal .form-control,
+        #editProductModal .form-select {
+            background-color: #34271f;
+            border-color: #806044;
+            color: #fff7ed;
+        }
+        #productModal .form-control::placeholder,
+        #editProductModal .form-control::placeholder {
+            color: #d8c2ad;
+            opacity: 1;
+        }
+        #productModal .form-control:focus,
+        #productModal .form-select:focus,
+        #editProductModal .form-control:focus,
+        #editProductModal .form-select:focus {
+            background-color: #3d2d23;
+            color: #fff7ed;
+        }
+        #productModal option,
+        #editProductModal option {
+            background: #34271f;
+            color: #fff7ed;
         }
         button.close-btn-light {
             background: none;
@@ -820,7 +857,7 @@
                         <h5><i class="fas fa-cake-candles text-gold"></i>Product Management</h5>
 
                         @if (session('success'))
-                            <div id="successAlert" class="alert alert-success mb-0 py-2 px-3" style="border-radius: 999px;">
+                            <div class="success-alert alert alert-success mb-0 py-2 px-3" style="border-radius: 999px;">
                                 <i class="fas fa-check-circle me-2"></i>
                                 {{ session('success') }}
                             </div>
@@ -904,7 +941,7 @@
                             @csrf
                             <div class="modal-header">
                                 <h5>Add Product</h5>
-                                <button class="btn-close" data-bs-dismiss="modal"></button>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body"> <div class="mb-3">
                                 <label>Category</label>
@@ -947,7 +984,8 @@
 
                             <div class="mt-3">
                                 <label>Image</label>
-                                <input id="edit_image" type="file" name="image" class="form-control">
+                                <input id="edit_image" type="file" name="image" accept="image/*" class="form-control">
+                                <input type="url" name="image_url" class="form-control mt-2" placeholder="Or paste an image URL">
                             </div>
                             </div>
 
@@ -974,19 +1012,28 @@
                             </div>
 
                             <div class="modal-body">
+                                <label for="edit_category">Category</label>
                                 <select name="category_id" id="edit_category" class="form-select mb-3">
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}">  {{ $category->name }} </option>
                                     @endforeach
                                 </select>
 
-                                <input id="edit_product_name" type="text" name="name" class="form-control mb-3"><textarea id="edit_product_description" name="description" class="form-control mb-3"></textarea>
+                                <label for="edit_product_name">Name</label>
+                                <input id="edit_product_name" type="text" name="name" class="form-control mb-3">
+                                <label for="edit_product_description">Description</label>
+                                <textarea id="edit_product_description" name="description" class="form-control mb-3"></textarea>
+                                <label for="edit_price">Price</label>
                                 <input id="edit_price" type="number" step="0.01" name="price" class="form-control mb-3">
+                                <label for="edit_stock">Stock</label>
                                 <input id="edit_stock" type="number" name="stock" class="form-control mb-3">
+                                <label for="edit_status">Status</label>
                                 <select id="edit_status" name="status" class="form-select mb-3">
                                     <option>Active</option> <option>Inactive</option>
                                 </select>
-                                <input type="file" name="image" class="form-control">
+                                <label for="edit_product_image">Image</label>
+                                <input id="edit_product_image" type="file" name="image" accept="image/*" class="form-control">
+                                <input type="url" name="image_url" class="form-control mt-2" placeholder="Or paste a new image URL">
                             </div>
 
                             <div class="modal-footer">
@@ -1011,7 +1058,7 @@
                     <div class="d-flex justify-content-between mb-4 flex-wrap gap-2">
                         <h5><i class="fas fa-tags text-gold"></i> Categories</h5>
                         @if (session('success'))
-                            <div id="successAlert" class="alert alert-success mb-0 py-2 px-3" style="border-radius: 999px;">
+                            <div class="success-alert alert alert-success mb-0 py-2 px-3" style="border-radius: 999px;">
                                 <i class="fas fa-check-circle me-2"></i>
                                 {{ session('success') }}
                             </div>
@@ -1166,29 +1213,6 @@
                 </div>
             </div>
         </div>       
-    </div>
-
-    <!-- Product Modal -->
-    <div class="modal fade" id="productModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-dark border-warning">
-                    <h5 class="modal-title text-gold"><i class="fas fa-plus-circle"></i> New Product</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <input class="form-control mb-3" placeholder="Product Name">
-                    <select class="form-select mb-3"><option>Cakes</option><option>Pastries</option><option>Cupcakes</option></select>
-                    <input class="form-control mb-3" placeholder="Price">
-                    <input class="form-control mb-3" placeholder="Stock">
-                    <textarea class="form-control" rows="2" placeholder="Description"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button class="btn btn-warning-custom" onclick="alert('✅ Product saved!')">Save</button>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -1350,14 +1374,13 @@
 
         // Auto-hide success alert
         document.addEventListener("DOMContentLoaded", function () {
-            const alert = document.getElementById("successAlert");
-            if (alert) {
+            document.querySelectorAll('.success-alert').forEach(function (alert) {
                 setTimeout(function () {
                     alert.style.transition = "opacity 0.5s ease";
                     alert.style.opacity = "0";
                     setTimeout(function () { alert.remove(); }, 500);
                 }, 3000);
-            }
+            });
 
             // Show the intended section when redirected from CRUD actions
             @if(session('activeSection') === 'categories')

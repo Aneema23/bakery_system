@@ -57,6 +57,33 @@
             opacity: 0.9;
         }
 
+        .navbar .dropdown-menu {
+            z-index: 1100;
+            min-width: 220px;
+            margin-top: 0.6rem;
+            padding: 0.5rem;
+            background: #fffaf4;
+            border: 1px solid #eadfd4;
+            border-radius: 12px;
+            box-shadow: 0 14px 30px rgba(51, 35, 31, 0.2);
+        }
+
+        .navbar .dropdown-item {
+            padding: 0.65rem 0.75rem;
+            color: #60453a;
+            border-radius: 8px;
+        }
+
+        .navbar .dropdown-item:hover,
+        .navbar .dropdown-item:focus {
+            background: #fff0e6;
+            color: #bd6545;
+        }
+
+        .navbar .dropdown-divider {
+            border-color: #eadfd4;
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3');
@@ -344,7 +371,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <i class="fas fa-birthday-cake"></i> Disna Bakery
+                <img src="{{ asset('images/logo.png') }}" alt="Disna Bakery" width="40"> Disna Bakery
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -360,14 +387,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('custom-cake') }}">Custom Cake</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link cart-badge" href="#">
-                            <i class="fas fa-shopping-cart"></i> Cart
-                            <span class="cart-count">{}</span>
-                        </a>
-                    </li>
                     
-                    @auth
+                     @auth
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
                                 <i class="fas fa-user-circle"></i> {{ Auth::user()->name }}
@@ -380,6 +401,7 @@
                                         <i class="fas fa-user-cog"></i> Profile Settings
                                     </a>
                                 </li>
+                        
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
                                     <form method="POST" action="{{ route('logout') }}">
@@ -605,7 +627,7 @@
         <div class="custom-cake-banner">
             <h2>🎂 Design Your Own Cake</h2>
             <p>Choose size, flavor, add a message, and upload your design!</p>
-            <a href="#" class="btn-customize">Customize Now →</a>
+            <a href="{{ route('custom-cake') }}" class="btn-customize">Customize Now →</a>
         </div>
     </div>
 

@@ -52,7 +52,9 @@ Route::middleware('auth')->group(function () {
 
 //customer products page
 Route::get('/custom-products', function () {
-    return view('customer.custom-products.custom-products');
+    $categories = collect();
+
+    return view('customer.custom-products.custom-products', compact('categories'));
 })->name('custom-products.customer');
 
 //customer custom cake page

@@ -29,14 +29,21 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name'=>'required|max:255',
-            'description'=>'nullable',
-            'price'=>'required|numeric',
-            'category_id'=>'required|exists:categories,id'
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'nullable',
+            'price' => 'required|numeric',
+            'category_id' => 'required|exists:categories,id',
+            'stock' => 'nullable|integer|min:0',
+            'status' => 'required|in:Active,Inactive',
+            'image' => 'nullable|image|max:5120',
+            'image_url' => 'nullable|url|max:2048',
         ]);
 
-        Product::create($request->all());
+        $validated['image'] = $this->resolveImage($request);
+        unset($validated['image_url']);
+
+        Product::create($validated);
 
         return redirect()->route('admin.dashboard')
         ->with('success', 'Product Added Successfully ✨')
@@ -64,16 +71,28 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->validate([
-            'name'=>'required|max:255',
-            'description'=>'nullable',
-            'price'=>'required|numeric',
-            'category_id'=>'required|exists:categories,id'
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'nullable',
+            'price' => 'required|numeric',
+            'category_id' => 'required|exists:categories,id',
+            'stock' => 'nullable|integer|min:0',
+            'status' => 'required|in:Active,Inactive',
+            'image' => 'nullable|image|max:5120',
+            'image_url' => 'nullable|url|max:2048',
         ]);
 
         $product = Product::findOrFail($id);
 
-        $product->update($request->all());
+        $image = $this->resolveImage($request);
+        if ($image) {
+            $validated['image'] = $image;
+        } else {
+            unset($validated['image']);
+        }
+        unset($validated['image_url']);
+
+        $product->update($validated);
 
         return redirect()->route('admin.dashboard')
             ->with('success','Product Updated Successfully ✨')
@@ -92,5 +111,16 @@ class ProductController extends Controller
         return redirect()->route('admin.dashboard')
             ->with('success', 'Product Deleted Successfully 🗑️')
             ->with('activeSection', 'products');
+    }
+
+    private function resolveImage(Request $request): ?string
+    {
+        if ($request->filled('image_url')) {
+            return $request->input('image_url');
+        }
+
+        return $request->hasFile('image')
+            ? $request->file('image')->store('products', 'public')
+            : null;
     }
 }
