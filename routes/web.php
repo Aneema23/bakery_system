@@ -6,6 +6,8 @@ use App\Http\Controllers\Customer\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Models\Category;
+use App\Models\Product;
 
 Route::get('/', function () {
     return view('welcome');
@@ -52,9 +54,10 @@ Route::middleware('auth')->group(function () {
 
 //customer products page
 Route::get('/custom-products', function () {
-    $categories = collect();
+    $categories = Category::with('products')->get();
+    $products = Product::with('category')->get();
 
-    return view('customer.custom-products.custom-products', compact('categories'));
+    return view('customer.custom-products.custom-products', compact('categories', 'products'));
 })->name('custom-products.customer');
 
 //customer custom cake page

@@ -1147,378 +1147,277 @@
 
         <!-- MENU CONTAINER -->
         <div id="menuContainer">
-        <!-- CAKES -->
-        <div class="menu-category" data-category="cakes">
-            <div class="menu-category-title"><h2>🎂 Cakes</h2><div class="line"></div></div>
+         @foreach($categories as $category)
+          <div class="menu-category" data-category="{{ \Illuminate\Support\Str::slug($category->name) }}">
+            <div class="menu-category-title"><h2>{{ $category->name }}</h2><div class="line"></div></div>
             <div class="menu-grid">
-            <div class="menu-item" data-category="cakes" data-name="Chocolate Cake" data-price="3500" data-img="https://images.unsplash.com/photo-1621868402792-a5c9fa6866a3?w=400&auto=format" data-desc="Moist chocolate sponge with rich ganache" data-tag="1 kg" data-rating="4.9">
-                <img src="https://images.unsplash.com/photo-1621868402792-a5c9fa6866a3?w=400&auto=format" class="menu-item-image" />
+              @foreach($category->products as $product)
+              <div class="menu-item" data-category="{{ \Illuminate\Support\Str::slug($category->name) }}" data-name="{{ $product->name }}" data-price="{{ $product->price }}" data-img="{{ $product->image }}" data-desc="{{ $product->description }}" data-tag="{{ $product->size ?? '1 pc' }}" data-rating="{{ $product->rating ?? '4.8' }}">
+                <img src="{{ $product->image ? $product->image : asset('images/default-product.jpg') }}" class="menu-item-image" />
                 <div class="menu-item-content">
-                <div class="menu-item-header"><h3>Chocolate Cake</h3><span class="menu-item-price">Rs.3500</span></div>
-                <p class="menu-item-description">Moist chocolate sponge layered with rich chocolate ganache</p>
-                <div class="menu-item-footer"><span class="menu-item-tag">1 kg</span><button type="button" class="menu-item-cart" onclick="quickView(this)" aria-label="Order Chocolate Cake" title="Order this product"><i class="fas fa-cart-plus" aria-hidden="true"></i></button></div>
+                <div class="menu-item-header"><h3>{{ $product->name }}</h3><span class="menu-item-price">Rs.{{ $product->price }}</span></div>
+                <p class="menu-item-description">{{ $product->description }}</p>
+                <div class="menu-item-footer"><span class="menu-item-tag">{{ $product->size ?? '1 pc' }}</span><button type="button" class="menu-item-cart" onclick="quickView(this)" data-product-id="{{ $product->id }}" aria-label="Order {{ $product->name }}" title="Order this product"><i class="fas fa-cart-plus" aria-hidden="true"></i></button></div>
                 </div>
+              </div>
+              @endforeach
             </div>
-            <div class="menu-item" data-category="cakes" data-name="Vanilla Butter Cake" data-price="3000" data-img="https://images.unsplash.com/photo-1609577737938-fb2139fa4c78?w=400&auto=format" data-desc="Soft vanilla sponge with creamy buttercream" data-tag="1 kg" data-rating="4.8">
-                <img src="https://images.unsplash.com/photo-1609577737938-fb2139fa4c78?w=400&auto=format" class="menu-item-image" />
-                <div class="menu-item-content">
-                <div class="menu-item-header"><h3>Vanilla Butter Cake</h3><span class="menu-item-price">Rs.3000</span></div>
-                <p class="menu-item-description">Soft vanilla sponge with creamy buttercream</p>
-                <div class="menu-item-footer"><span class="menu-item-tag">1 kg</span><button type="button" class="menu-item-cart" onclick="quickView(this)" aria-label="Order Vanilla Butter Cake" title="Order this product"><i class="fas fa-cart-plus" aria-hidden="true"></i></button></div>
-                </div>
-            </div>
-            <div class="menu-item" data-category="cakes" data-name="Red Velvet Cake" data-price="5000" data-img="https://images.pexels.com/photos/30131920/pexels-photo-30131920.jpeg?w=400&auto=format" data-desc="Red velvet with cream cheese frosting" data-tag="1 kg" data-rating="4.9">
-                <img src="https://images.pexels.com/photos/30131920/pexels-photo-30131920.jpeg?w=400&auto=format" class="menu-item-image" />
-                <div class="menu-item-content">
-                <div class="menu-item-header"><h3>Red Velvet Cake</h3><span class="menu-item-price">Rs.5000</span></div>
-                <p class="menu-item-description">Red velvet with cream cheese frosting</p>
-                <div class="menu-item-footer"><span class="menu-item-tag">1 kg</span><button type="button" class="menu-item-cart" onclick="quickView(this)" aria-label="Order Red Velvet Cake" title="Order this product"><i class="fas fa-cart-plus" aria-hidden="true"></i></button></div>
-                </div>
-            </div>
-            <div class="menu-item" data-category="cakes" data-name="Strawberry Cream Cake" data-price="5500" data-img="https://images.unsplash.com/photo-1589119908995-c6837fa14848?w=400&auto=format" data-desc="Fresh strawberries & whipped cream" data-tag="1 kg" data-rating="4.9">
-                <img src="https://images.unsplash.com/photo-1589119908995-c6837fa14848?w=400&auto=format" class="menu-item-image" />
-                <div class="menu-item-content">
-                <div class="menu-item-header"><h3>Strawberry Cream Cake</h3><span class="menu-item-price">Rs.5500</span></div>
-                <p class="menu-item-description">Fresh strawberries & whipped cream</p>
-                <div class="menu-item-footer"><span class="menu-item-tag">1 kg</span><button type="button" class="menu-item-cart" onclick="quickView(this)" aria-label="Order Strawberry Cream Cake" title="Order this product"><i class="fas fa-cart-plus" aria-hidden="true"></i></button></div>
-                </div>
-            </div>
-            </div>
-        </div>
-        <!-- CUPCAKES -->
-        <div class="menu-category" data-category="cupcakes">
-            <div class="menu-category-title"><h2>🧁 Cupcakes</h2><div class="line"></div></div>
-            <div class="menu-grid">
-            <div class="menu-item" data-category="cupcakes" data-name="Vanilla Cupcake" data-price="350" data-img="https://plus.unsplash.com/premium_photo-1663840297386-8a3e38271ac6?w=400&auto=format" data-desc="Lavender buttercream & rainbow sprinkles" data-tag="4 pcs" data-rating="4.7">
-                <img src="https://plus.unsplash.com/premium_photo-1663840297386-8a3e38271ac6?w=400&auto=format" class="menu-item-image" />
-                <div class="menu-item-content">
-                <div class="menu-item-header"><h3>Vanilla Cupcake</h3><span class="menu-item-price">Rs.350</span></div>
-                <p class="menu-item-description">Lavender buttercream & rainbow sprinkles</p>
-                <div class="menu-item-footer"><span class="menu-item-tag">4 pcs</span><button type="button" class="menu-item-cart" onclick="quickView(this)" aria-label="Order Vanilla Cupcake" title="Order this product"><i class="fas fa-cart-plus" aria-hidden="true"></i></button></div>
-                </div>
-            </div>
-            <div class="menu-item" data-category="cupcakes" data-name="Red Velvet Cupcake" data-price="450" data-img="https://images.unsplash.com/photo-1610851467358-e2a4a5804335?w=400&auto=format" data-desc="Cream cheese frosting" data-tag="4 pcs" data-rating="4.8">
-                <img src="https://images.unsplash.com/photo-1610851467358-e2a4a5804335?w=400&auto=format" class="menu-item-image" />
-                <div class="menu-item-content">
-                <div class="menu-item-header"><h3>Red Velvet Cupcake</h3><span class="menu-item-price">Rs.450</span></div>
-                <p class="menu-item-description">Cream cheese frosting</p>
-                <div class="menu-item-footer"><span class="menu-item-tag">4 pcs</span><button type="button" class="menu-item-cart" onclick="quickView(this)" aria-label="Order Red Velvet Cupcake" title="Order this product"><i class="fas fa-cart-plus" aria-hidden="true"></i></button></div>
-                </div>
-            </div>
-            <div class="menu-item" data-category="cupcakes" data-name="Chocolate Cupcake" data-price="400" data-img="https://images.unsplash.com/photo-1649793950107-610f06f3660c?w=400&auto=format" data-desc="Marshmallow frosting" data-tag="4 pcs" data-rating="4.6">
-                <img src="https://images.unsplash.com/photo-1649793950107-610f06f3660c?w=400&auto=format" class="menu-item-image" />
-                <div class="menu-item-content">
-                <div class="menu-item-header"><h3>Chocolate Cupcake</h3><span class="menu-item-price">Rs.400</span></div>
-                <p class="menu-item-description">Marshmallow frosting</p>
-                <div class="menu-item-footer"><span class="menu-item-tag">4 pcs</span><button type="button" class="menu-item-cart" onclick="quickView(this)" aria-label="Order Chocolate Cupcake" title="Order this product"><i class="fas fa-cart-plus" aria-hidden="true"></i></button></div>
-                </div>
-            </div>
-            </div>
-        </div>
-        <!-- BIRTHDAY -->
-        <div class="menu-category" data-category="birthday-cakes">
-            <div class="menu-category-title"><h2>🌈 Birthday Cakes</h2><div class="line"></div></div>
-            <div class="menu-grid">
-            <div class="menu-item" data-category="birthday-cakes" data-name="Rainbow Cake" data-price="7500" data-img="https://images.unsplash.com/photo-1622576890453-8e50b6f7d5b0?w=400&auto=format" data-desc="Colorful layers with vanilla buttercream" data-tag="2 kg" data-rating="4.9">
-                <img src="https://images.unsplash.com/photo-1622576890453-8e50b6f7d5b0?w=400&auto=format" class="menu-item-image" />
-                <div class="menu-item-content">
-                <div class="menu-item-header"><h3>Rainbow Cake</h3><span class="menu-item-price">Rs.7500</span></div>
-                <p class="menu-item-description">Colorful layers with vanilla buttercream</p>
-                <div class="menu-item-footer"><span class="menu-item-tag">2 kg</span><button type="button" class="menu-item-cart" onclick="quickView(this)" aria-label="Order Rainbow Cake" title="Order this product"><i class="fas fa-cart-plus" aria-hidden="true"></i></button></div>
-                </div>
-            </div>
-            <div class="menu-item" data-category="birthday-cakes" data-name="Princess Cake" data-price="9500" data-img="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?w=400&auto=format" data-desc="Elegant princess design" data-tag="2 kg" data-rating="4.9">
-                <img src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?w=400&auto=format" class="menu-item-image" />
-                <div class="menu-item-content">
-                <div class="menu-item-header"><h3>Princess Cake</h3><span class="menu-item-price">Rs.9500</span></div>
-                <p class="menu-item-description">Elegant princess design</p>
-                <div class="menu-item-footer"><span class="menu-item-tag">2 kg</span><button type="button" class="menu-item-cart" onclick="quickView(this)" aria-label="Order Princess Cake" title="Order this product"><i class="fas fa-cart-plus" aria-hidden="true"></i></button></div>
-                </div>
-            </div>
-            </div>
-        </div>
-        <!-- COOKIES -->
-        <div class="menu-category" data-category="cookies">
-            <div class="menu-category-title"><h2>🍪 Cookies</h2><div class="line"></div></div>
-            <div class="menu-grid">
-            <div class="menu-item" data-category="cookies" data-name="Chocolate Chip Cookies" data-price="1200" data-img="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&auto=format" data-desc="Soft baked with premium chips" data-tag="10 pcs" data-rating="4.7">
-                <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&auto=format" class="menu-item-image" />
-                <div class="menu-item-content">
-                <div class="menu-item-header"><h3>Chocolate Chip Cookies</h3><span class="menu-item-price">Rs.1200</span></div>
-                <p class="menu-item-description">Soft baked with premium chips</p>
-                <div class="menu-item-footer"><span class="menu-item-tag">10 pcs</span><button type="button" class="menu-item-cart" onclick="quickView(this)" aria-label="Order Chocolate Chip Cookies" title="Order this product"><i class="fas fa-cart-plus" aria-hidden="true"></i></button></div>
-                </div>
-            </div>
-            </div>
-        </div>
-        <!-- SPECIALS -->
-        <div class="menu-category" data-category="specials">
-            <div class="menu-category-title"><h2>✨ Specials</h2><div class="line"></div></div>
-            <div class="menu-grid">
-            <div class="menu-item" data-category="specials" data-name="Wedding Cake" data-price="10000" data-img="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=400&auto=format" data-desc="Elegant multi-tier custom cake" data-tag="3 kg" data-rating="5.0">
-                <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=400&auto=format" class="menu-item-image" />
-                <div class="menu-item-content">
-                <div class="menu-item-header"><h3>Wedding Cake</h3><span class="menu-item-price">From Rs.10,000</span></div>
-                <p class="menu-item-description">Elegant multi-tier custom cake</p>
-                <div class="menu-item-footer"><span class="menu-item-tag">3 kg</span><button type="button" class="menu-item-cart" onclick="quickView(this)" aria-label="Order Wedding Cake" title="Order this product"><i class="fas fa-cart-plus" aria-hidden="true"></i></button></div>
-                </div>
-            </div>
-            </div>
-        </div>
+          </div>
+        @endforeach
         </div>
     </div>
     </main>
 
     <!-- QUICK VIEW MODAL -->
     <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
-        <div class="modal-image-wrapper">
-        <img src="" alt="product" class="modal-image" id="modalImage" />
-        <span class="modal-badge" id="modalBadge">Best Seller</span>
-        </div>
-        <div class="modal-body">
-        <div class="modal-body-top">
-            <h2 id="modalTitle">Product</h2>
-            <span class="modal-price" id="modalPrice">Rs.0</span>
-        </div>
-        <p class="modal-description" id="modalDescription">Description</p>
-        <div class="size-selector" id="sizeSelector">
-            <button data-size="250g" data-multiplier="0.25">250g</button>
-            <button data-size="500g" data-multiplier="0.5">500g</button>
-            <button data-size="1kg" data-multiplier="1" class="active">1kg</button>
-            <button data-size="2kg" data-multiplier="2">2kg</button>
-            <button data-size="3kg" data-multiplier="3">3kg</button>
-        </div>
-        <div class="modal-details">
-            <div class="modal-detail-item"><i class="fas fa-tag"></i> <span id="modalTagDisplay">Tag</span></div>
-            <div class="modal-detail-item"><i class="fas fa-star"></i> <span id="modalRating">4.9</span></div>
-            <div class="modal-detail-item"><i class="fas fa-clock"></i> Ready in 24h</div>
-            <div class="modal-detail-item"><i class="fas fa-box"></i> <span id="modalSizeDisplay">1kg</span></div>
-        </div>
-        <button class="modal-order-btn" onclick="addFromModal()"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
-        </div>
-    </div>
+      <div class="modal-content" onclick="event.stopPropagation()">
+          <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+          <div class="modal-image-wrapper">
+          <img src="" alt="product" class="modal-image" id="modalImage" />
+          <span class="modal-badge" id="modalBadge">Best Seller</span>
+          </div>
+          <div class="modal-body">
+          <div class="modal-body-top">
+              <h2 id="modalTitle">Product</h2>
+              <span class="modal-price" id="modalPrice">Rs.0</span>
+          </div>
+          <p class="modal-description" id="modalDescription">Description</p>
+          <div class="size-selector" id="sizeSelector">
+              <button data-size="250g" data-multiplier="0.25">250g</button>
+              <button data-size="500g" data-multiplier="0.5">500g</button>
+              <button data-size="1kg" data-multiplier="1" class="active">1kg</button>
+              <button data-size="2kg" data-multiplier="2">2kg</button>
+              <button data-size="3kg" data-multiplier="3">3kg</button>
+          </div>
+          <div class="modal-details">
+              <div class="modal-detail-item"><i class="fas fa-tag"></i> <span id="modalTagDisplay">Tag</span></div>
+              <div class="modal-detail-item"><i class="fas fa-star"></i> <span id="modalRating">4.9</span></div>
+              <div class="modal-detail-item"><i class="fas fa-clock"></i> Ready in 24h</div>
+              <div class="modal-detail-item"><i class="fas fa-box"></i> <span id="modalSizeDisplay">1kg</span></div>
+          </div>
+          <button class="modal-order-btn" onclick="addFromModal()"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+          </div>
+      </div>
     </div>
 
     <!-- CART SIDEPANEL -->
     <div class="cart-overlay" id="cartOverlay">
-    <div class="cart-panel">
-        <div class="cart-header">
-        <h2><i class="fas fa-shopping-bag"></i> Your Cart</h2>
-        <button class="cart-close" onclick="toggleCart()"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="cart-items" id="cartItems">
-        <div class="empty-cart">Your cart is empty</div>
-        </div>
-        <div class="cart-total"><span>Total</span><span id="cartTotal">Rs.0</span></div>
-        <div class="cart-actions">
-        <button class="btn-clear" onclick="clearCart()">Clear</button>
-        <button class="btn-checkout" onclick="checkout()">Checkout</button>
-        </div>
-    </div>
+      <div class="cart-panel">
+          <div class="cart-header">
+          <h2><i class="fas fa-shopping-bag"></i> Your Cart</h2>
+          <button class="cart-close" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+          </div>
+          <div class="cart-items" id="cartItems">
+          <div class="empty-cart">Your cart is empty</div>
+          </div>
+          <div class="cart-total"><span>Total</span><span id="cartTotal">Rs.0</span></div>
+          <div class="cart-actions">
+          <button class="btn-clear" onclick="clearCart()">Clear</button>
+          <button class="btn-checkout" onclick="checkout()">Checkout</button>
+          </div>
+      </div>
     </div>
 
     <!-- TOAST -->
     <div class="toast-message" id="toastMessage">
-    <i class="fas fa-exclamation-circle"></i>
-    <span id="toastText">Added to cart</span>
-    <button class="toast-close" onclick="hideToast()"><i class="fas fa-times"></i></button>
+      <i class="fas fa-exclamation-circle"></i>
+      <span id="toastText">Added to cart</span>
+      <button class="toast-close" onclick="hideToast()"><i class="fas fa-times"></i></button>
     </div>
 
     <script>
-    // ----- DATA -----
-    let cart = [];
-    let currentProduct = null;
+      // ----- DATA -----
+      let cart = [];
+      let currentProduct = null;
 
-    // ----- FILTER -----
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        const filter = this.dataset.filter;
-        document.querySelectorAll('.menu-item').forEach(item => {
-            if (filter === 'all' || item.dataset.category === filter) {
-            item.style.display = 'flex';
-            } else {
-            item.style.display = 'none';
-            }
-        });
-        document.querySelectorAll('.menu-category').forEach(cat => {
-            const visible = Array.from(cat.querySelectorAll('.menu-item')).some(it => it.style.display !== 'none');
-            cat.style.display = visible ? 'block' : 'none';
-        });
-        });
-    });
+      // ----- FILTER -----
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          const filter = this.dataset.filter;
+          document.querySelectorAll('.menu-item').forEach(item => {
+              if (filter === 'all' || item.dataset.category === filter) {
+              item.style.display = 'flex';
+              } else {
+              item.style.display = 'none';
+              }
+          });
+          document.querySelectorAll('.menu-category').forEach(cat => {
+              const visible = Array.from(cat.querySelectorAll('.menu-item')).some(it => it.style.display !== 'none');
+              cat.style.display = visible ? 'block' : 'none';
+          });
+          });
+      });
 
-    // ----- QUICK VIEW (modal) -----
-    function quickView(el) {
-        const item = el.closest('.menu-item');
-        const name = item.dataset.name;
-        const price = parseInt(item.dataset.price);
-        const img = item.dataset.img;
-        const desc = item.dataset.desc;
-        const tag = item.dataset.tag;
-        const rating = item.dataset.rating || '4.8';
-        currentProduct = { name, price, img, desc, tag, rating, basePrice: price };
-        document.getElementById('modalImage').src = img;
-        document.getElementById('modalTitle').textContent = name;
-        document.getElementById('modalPrice').textContent = 'Rs.' + price;
-        document.getElementById('modalDescription').textContent = desc;
-        document.getElementById('modalBadge').textContent = tag;
-        document.getElementById('modalTagDisplay').textContent = tag;
-        document.getElementById('modalRating').textContent = rating;
-        document.getElementById('modalSizeDisplay').textContent = '1kg';
-        // reset size buttons
-        document.querySelectorAll('#sizeSelector button').forEach(b => b.classList.remove('active'));
-        document.querySelector('#sizeSelector button[data-size="1kg"]').classList.add('active');
-        document.getElementById('modalOverlay').classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
+      // ----- QUICK VIEW (modal) -----
+      function quickView(el) {
+          const item = el.closest('.menu-item');
+          const name = item.dataset.name;
+          const price = parseInt(item.dataset.price);
+          const img = item.dataset.img;
+          const desc = item.dataset.desc;
+          const tag = item.dataset.tag;
+          const rating = item.dataset.rating || '4.8';
+          currentProduct = { name, price, img, desc, tag, rating, basePrice: price };
+          document.getElementById('modalImage').src = img;
+          document.getElementById('modalTitle').textContent = name;
+          document.getElementById('modalPrice').textContent = 'Rs.' + price;
+          document.getElementById('modalDescription').textContent = desc;
+          document.getElementById('modalBadge').textContent = tag;
+          document.getElementById('modalTagDisplay').textContent = tag;
+          document.getElementById('modalRating').textContent = rating;
+          document.getElementById('modalSizeDisplay').textContent = '1kg';
+          // reset size buttons
+          document.querySelectorAll('#sizeSelector button').forEach(b => b.classList.remove('active'));
+          document.querySelector('#sizeSelector button[data-size="1kg"]').classList.add('active');
+          document.getElementById('modalOverlay').classList.add('active');
+          document.body.style.overflow = 'hidden';
+      }
 
-    function closeModal() {
-        document.getElementById('modalOverlay').classList.remove('active');
-        document.body.style.overflow = '';
-    }
-    function closeModalOutside(e) { if (e.target === document.getElementById('modalOverlay')) closeModal(); }
+      function closeModal() {
+          document.getElementById('modalOverlay').classList.remove('active');
+          document.body.style.overflow = '';
+      }
+      function closeModalOutside(e) { if (e.target === document.getElementById('modalOverlay')) closeModal(); }
 
-    // size selector in modal
-    document.querySelectorAll('#sizeSelector button').forEach(btn => {
-        btn.addEventListener('click', function() {
-        document.querySelectorAll('#sizeSelector button').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        const mult = parseFloat(this.dataset.multiplier);
-        if (currentProduct) {
-            const newPrice = Math.round(currentProduct.basePrice * mult);
-            document.getElementById('modalPrice').textContent = 'Rs.' + newPrice;
-            document.getElementById('modalSizeDisplay').textContent = this.dataset.size;
-            currentProduct.selectedSize = this.dataset.size;
-            currentProduct.selectedPrice = newPrice;
-            currentProduct.multiplier = mult;
-        }
-        });
-    });
+      // size selector in modal
+      document.querySelectorAll('#sizeSelector button').forEach(btn => {
+          btn.addEventListener('click', function() {
+          document.querySelectorAll('#sizeSelector button').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          const mult = parseFloat(this.dataset.multiplier);
+          if (currentProduct) {
+              const newPrice = Math.round(currentProduct.basePrice * mult);
+              document.getElementById('modalPrice').textContent = 'Rs.' + newPrice;
+              document.getElementById('modalSizeDisplay').textContent = this.dataset.size;
+              currentProduct.selectedSize = this.dataset.size;
+              currentProduct.selectedPrice = newPrice;
+              currentProduct.multiplier = mult;
+          }
+          });
+      });
 
-    // add from modal
-    function addFromModal() {
-        if (!currentProduct) return;
-        const size = currentProduct.selectedSize || '1kg';
-        const price = currentProduct.selectedPrice || currentProduct.basePrice;
-        const name = currentProduct.name;
-        const img = currentProduct.img;
-        const existing = cart.find(item => item.name === name && item.size === size);
-        if (existing) {
-        existing.qty += 1;
-        } else {
-        cart.push({ name, price, size, img, qty: 1, multiplier: currentProduct.multiplier || 1 });
-        }
-        updateCartUI();
-        showToast('Added ' + name + ' (' + size + ')');
-        closeModal();
-    }
+      // add from modal
+      function addFromModal() {
+          if (!currentProduct) return;
+          const size = currentProduct.selectedSize || '1kg';
+          const price = currentProduct.selectedPrice || currentProduct.basePrice;
+          const name = currentProduct.name;
+          const img = currentProduct.img;
+          const existing = cart.find(item => item.name === name && item.size === size);
+          if (existing) {
+          existing.qty += 1;
+          } else {
+          cart.push({ name, price, size, img, qty: 1, multiplier: currentProduct.multiplier || 1 });
+          }
+          updateCartUI();
+          showToast('Added ' + name + ' (' + size + ')');
+          closeModal();
+      }
 
-    // ----- CART UI -----
-    function toggleCart() {
-        document.getElementById('cartOverlay').classList.toggle('open');
-    }
-    document.getElementById('cartToggle').addEventListener('click', toggleCart);
-    document.getElementById('navbarCartToggle').addEventListener('click', toggleCart);
+      // ----- CART UI -----
+      function toggleCart() {
+          document.getElementById('cartOverlay').classList.toggle('open');
+      }
+      document.getElementById('cartToggle').addEventListener('click', toggleCart);
+      document.getElementById('navbarCartToggle').addEventListener('click', toggleCart);
 
-    function updateCartUI() {
-        const container = document.getElementById('cartItems');
-        const totalSpan = document.getElementById('cartTotal');
-        const countSpan = document.getElementById('cartCount');
-        const navbarCountSpan = document.getElementById('navbarCartCount');
-        if (cart.length === 0) {
-        container.innerHTML = '<div class="empty-cart">Your cart is empty</div>';
-        totalSpan.textContent = 'Rs.0';
-        countSpan.textContent = '0';
-        navbarCountSpan.textContent = '0';
-        return;
-        }
-        let html = '';
-        let total = 0;
-        let count = 0;
-        cart.forEach((item, idx) => {
-        total += item.price * item.qty;
-        count += item.qty;
-        html += `
-            <div class="cart-item">
-            <img src="${item.img}" alt="${item.name}" />
-            <div class="cart-item-info">
-                <h4>${item.name}</h4>
-                <div class="size-price">
-                <span>${item.size}</span>
-                <span>Rs.${item.price} × ${item.qty}</span>
-                <select onchange="changeSize(${idx}, this.value)">
-                    <option value="250g" ${item.size==='250g'?'selected':''}>250g</option>
-                    <option value="500g" ${item.size==='500g'?'selected':''}>500g</option>
-                    <option value="1kg" ${item.size==='1kg'?'selected':''}>1kg</option>
-                    <option value="2kg" ${item.size==='2kg'?'selected':''}>2kg</option>
-                    <option value="3kg" ${item.size==='3kg'?'selected':''}>3kg</option>
-                </select>
-                </div>
-            </div>
-            <button class="cart-item-remove" onclick="removeItem(${idx})"><i class="fas fa-trash-alt"></i></button>
-            </div>
-        `;
-        });
-        container.innerHTML = html;
-        totalSpan.textContent = 'Rs.' + total;
-        countSpan.textContent = count;
-        navbarCountSpan.textContent = count;
-    }
+      function updateCartUI() {
+          const container = document.getElementById('cartItems');
+          const totalSpan = document.getElementById('cartTotal');
+          const countSpan = document.getElementById('cartCount');
+          const navbarCountSpan = document.getElementById('navbarCartCount');
+          if (cart.length === 0) {
+          container.innerHTML = '<div class="empty-cart">Your cart is empty</div>';
+          totalSpan.textContent = 'Rs.0';
+          countSpan.textContent = '0';
+          navbarCountSpan.textContent = '0';
+          return;
+          }
+          let html = '';
+          let total = 0;
+          let count = 0;
+          cart.forEach((item, idx) => {
+          total += item.price * item.qty;
+          count += item.qty;
+          html += `
+              <div class="cart-item">
+              <img src="${item.img}" alt="${item.name}" />
+              <div class="cart-item-info">
+                  <h4>${item.name}</h4>
+                  <div class="size-price">
+                  <span>${item.size}</span>
+                  <span>Rs.${item.price} × ${item.qty}</span>
+                  <select onchange="changeSize(${idx}, this.value)">
+                      <option value="250g" ${item.size==='250g'?'selected':''}>250g</option>
+                      <option value="500g" ${item.size==='500g'?'selected':''}>500g</option>
+                      <option value="1kg" ${item.size==='1kg'?'selected':''}>1kg</option>
+                      <option value="2kg" ${item.size==='2kg'?'selected':''}>2kg</option>
+                      <option value="3kg" ${item.size==='3kg'?'selected':''}>3kg</option>
+                  </select>
+                  </div>
+              </div>
+              <button class="cart-item-remove" onclick="removeItem(${idx})"><i class="fas fa-trash-alt"></i></button>
+              </div>
+          `;
+          });
+          container.innerHTML = html;
+          totalSpan.textContent = 'Rs.' + total;
+          countSpan.textContent = count;
+          navbarCountSpan.textContent = count;
+      }
 
-    function removeItem(idx) {
-        cart.splice(idx, 1);
-        updateCartUI();
-        if (cart.length === 0) toggleCart();
-    }
+      function removeItem(idx) {
+          cart.splice(idx, 1);
+          updateCartUI();
+          if (cart.length === 0) toggleCart();
+      }
 
-    function changeSize(idx, newSize) {
-        const item = cart[idx];
-        const mult = { '250g':0.25, '500g':0.5, '1kg':1, '2kg':2, '3kg':3 }[newSize] || 1;
-        // use stored base price (or derive from current price / multiplier)
-        const base = item.price / (item.multiplier || 1);
-        item.price = Math.round(base * mult);
-        item.size = newSize;
-        item.multiplier = mult;
-        updateCartUI();
-    }
+      function changeSize(idx, newSize) {
+          const item = cart[idx];
+          const mult = { '250g':0.25, '500g':0.5, '1kg':1, '2kg':2, '3kg':3 }[newSize] || 1;
+          // use stored base price (or derive from current price / multiplier)
+          const base = item.price / (item.multiplier || 1);
+          item.price = Math.round(base * mult);
+          item.size = newSize;
+          item.multiplier = mult;
+          updateCartUI();
+      }
 
-    function clearCart() {
-        cart = [];
-        updateCartUI();
-        toggleCart();
-        showToast('Cart cleared');
-    }
+      function clearCart() {
+          cart = [];
+          updateCartUI();
+          toggleCart();
+          showToast('Cart cleared');
+      }
 
-    function checkout() {
-        if (cart.length === 0) { showToast('Cart is empty'); return; }
-        showToast('Proceeding to checkout...');
-        // redirect or simulate
-    }
+      function checkout() {
+          if (cart.length === 0) { showToast('Cart is empty'); return; }
+          showToast('Proceeding to checkout...');
+          // redirect or simulate
+      }
 
-    // ----- TOAST -----
-    let toastTimer;
-    function showToast(msg) {
-        const t = document.getElementById('toastMessage');
-        document.getElementById('toastText').textContent = msg;
-        t.classList.add('show');
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => { t.classList.remove('show'); }, 3000);
-    }
-    function hideToast() { document.getElementById('toastMessage').classList.remove('show'); }
+      // ----- TOAST -----
+      let toastTimer;
+      function showToast(msg) {
+          const t = document.getElementById('toastMessage');
+          document.getElementById('toastText').textContent = msg;
+          t.classList.add('show');
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => { t.classList.remove('show'); }, 3000);
+      }
+      function hideToast() { document.getElementById('toastMessage').classList.remove('show'); }
 
-    // ----- INIT -----
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelector('.filter-btn.active')?.click();
-        document.querySelector('#sizeSelector button[data-size="1kg"]')?.classList.add('active');
-    });
+      // ----- INIT -----
+      document.addEventListener('DOMContentLoaded', function() {
+          document.querySelector('.filter-btn.active')?.click();
+          document.querySelector('#sizeSelector button[data-size="1kg"]')?.classList.add('active');
+      });
 
-    document.getElementById('cartOverlay').addEventListener('click', function(e) {
-        if (e.target === this) toggleCart();
-    });
+      document.getElementById('cartOverlay').addEventListener('click', function(e) {
+          if (e.target === this) toggleCart();
+      });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
