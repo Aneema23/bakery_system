@@ -26,6 +26,8 @@ return new class extends Migration
 
             $table->integer('stock')->default(0);
 
+            $table->string('size')->nullable();
+
             $table->string('image')->nullable();
 
             $table->enum('status',['Active','Inactive'])

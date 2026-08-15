@@ -20,6 +20,7 @@ test('product updates redirect back to the admin dashboard products section', fu
         'description' => 'Fresh loaf',
         'price' => 12.00,
         'stock' => 8,
+        'size' => '1 kg',
         'status' => 'Active',
     ]);
 
@@ -30,11 +31,15 @@ test('product updates redirect back to the admin dashboard products section', fu
             'description' => 'Fresh loaf updated',
             'price' => 13.50,
             'stock' => 9,
+            'size' => '2 kg',
             'status' => 'Active',
         ])
         ->assertRedirect('/admin/dashboard')
         ->assertSessionHas('success', 'Product Updated Successfully ✨')
         ->assertSessionHas('activeSection', 'products');
+
+    $product->refresh();
+    expect($product->size)->toBe('2 kg');
 });
 
 test('admin dashboard renders the product edit modal with a form action setter', function () {
@@ -53,6 +58,7 @@ test('admin dashboard renders the product edit modal with a form action setter',
         'description' => 'Rich chocolate cake',
         'price' => 15.50,
         'stock' => 10,
+        'size' => '1 pcs',
         'status' => 'Active',
     ]);
 

@@ -1230,6 +1230,19 @@
       let cart = [];
       let currentProduct = null;
 
+      function loadCartFromStorage() {
+          try {
+              const stored = JSON.parse(localStorage.getItem('bakery_cart') || '[]');
+              cart = Array.isArray(stored) ? stored : [];
+          } catch (error) {
+              cart = [];
+          }
+      }
+
+      function saveCartToStorage() {
+          localStorage.setItem('bakery_cart', JSON.stringify(cart));
+      }
+
       // ----- FILTER -----
       document.querySelectorAll('.filter-btn').forEach(btn => {
           btn.addEventListener('click', function() {
@@ -1324,6 +1337,8 @@
       document.getElementById('navbarCartToggle').addEventListener('click', toggleCart);
 
       function updateCartUI() {
+          saveCartToStorage();
+
           const container = document.getElementById('cartItems');
           const totalSpan = document.getElementById('cartTotal');
           const countSpan = document.getElementById('cartCount');
@@ -1411,7 +1426,8 @@
 
       // ----- INIT -----
       document.addEventListener('DOMContentLoaded', function() {
-          document.querySelector('.filter-btn.active')?.click();
+        loadCartFromStorage();
+        updateCartUI();
           document.querySelector('#sizeSelector button[data-size="1kg"]')?.classList.add('active');
       });
 

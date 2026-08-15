@@ -482,7 +482,7 @@
                     <h5 class="mb-3 fw-bold"><i class="fas fa-bolt text-warning"></i> Quick Actions</h5>
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <a href="#" class="text-decoration-none">
+                            <a href="{{ route('custom-products.customer') }}" class="text-decoration-none">
                                 <div class="border rounded-3 p-3 hover-shadow transition">
                                     <i class="fas fa-cake-candles fa-2x text-warning mb-2"></i>
                                     <h6 class="mb-0 fw-bold">Browse Products</h6>
@@ -511,8 +511,8 @@
         <div class="container">
             <h1>Welcome to Sweet Bakery</h1>
             <p>Fresh, delicious baked goods made with love and passion</p>
-            <a href="#" class="btn btn-light btn-lg">Shop Now</a>
-            <a href="#" class="btn btn-outline-light btn-lg">Customize Your Cake</a>
+            <a href="{{ route('custom-products.customer') }}" class="btn btn-light btn-lg">Shop Now</a>
+            <a href="{{ route('custom-cake') }}" class="btn btn-outline-light btn-lg">Customize Your Cake</a>
         </div>
     </section>
 

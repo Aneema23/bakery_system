@@ -259,6 +259,20 @@
         .table tbody tr:hover {
             background: rgba(245, 158, 11, 0.05);
         }
+        .product-crud-panel {
+            background: linear-gradient(180deg, rgba(33, 26, 21, 0.98), rgba(23, 18, 15, 0.98));
+            border: 1px solid rgba(245, 158, 11, 0.22);
+            border-radius: 24px;
+            box-shadow: 0 18px 32px rgba(0, 0, 0, 0.25);
+        }
+        .product-crud-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
         .badge-status {
             padding: 5px 14px;
             border-radius: 40px;
@@ -320,22 +334,37 @@
         }
         #productModal .modal-header,
         #editProductModal .modal-header {
-            background: #2a1d16;
+            background: linear-gradient(135deg, rgba(46, 30, 22, 0.98), rgba(26, 18, 14, 0.98));
+            border-bottom: 1px solid rgba(245, 158, 11, 0.28);
+        }
+        #productModal .modal-title,
+        #editProductModal .modal-title,
+        #productModal h5,
+        #editProductModal h5 {
+            color: #fcd34d;
+            font-weight: 700;
+            letter-spacing: 0.02em;
         }
         #productModal label,
         #editProductModal label {
             display: block;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.45rem;
             color: #fcd34d;
             font-weight: 600;
+            font-size: 0.88rem;
+            letter-spacing: 0.02em;
         }
         #productModal .form-control,
         #productModal .form-select,
         #editProductModal .form-control,
         #editProductModal .form-select {
-            background-color: #34271f;
-            border-color: #806044;
+            background-color: #2f251f;
+            border: 1px solid rgba(245, 158, 11, 0.28);
+            border-radius: 14px;
             color: #fff7ed;
+            min-height: 46px;
+            padding: 0.7rem 0.9rem;
+            transition: all 0.25s ease;
         }
         #productModal .form-control::placeholder,
         #editProductModal .form-control::placeholder {
@@ -346,13 +375,31 @@
         #productModal .form-select:focus,
         #editProductModal .form-control:focus,
         #editProductModal .form-select:focus {
-            background-color: #3d2d23;
+            background-color: #3b2b25;
+            border-color: rgba(245, 158, 11, 0.7);
+            box-shadow: 0 0 0 0.2rem rgba(245, 158, 11, 0.18);
             color: #fff7ed;
+        }
+        #productModal textarea.form-control,
+        #editProductModal textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
         }
         #productModal option,
         #editProductModal option {
             background: #34271f;
             color: #fff7ed;
+        }
+        #productModal .modal-footer,
+        #editProductModal .modal-footer {
+            border-top: 1px solid rgba(245, 158, 11, 0.18);
+            padding-top: 1rem;
+        }
+        .success-alert {
+            background: rgba(34, 197, 94, 0.12);
+            border: 1px solid rgba(34, 197, 94, 0.42);
+            color: #dcfce7;
+            border-radius: 999px;
         }
         button.close-btn-light {
             background: none;
@@ -745,6 +792,7 @@
                 </div>
                 <div class="menu-item" data-section="products">
                     <i class="fas fa-cake-candles"></i> <span>Products</span>
+                    <span class="badge-menu">{{ $products->count() ?? 0 }}</span>
                 </div>
                 <div class="menu-item" data-section="categories">
                     <i class="fas fa-tags"></i> <span>Categories</span>
@@ -811,10 +859,10 @@
                         <div class="stat-card"><div class="icon"><i class="fas fa-shopping-cart"></i></div><div class="number">234</div><div>Total Orders</div><small class="text-success"><i class="fas fa-arrow-up"></i> +8 new today</small></div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="stat-card"><div class="icon"><i class="fas fa-users"></i></div><div class="number">1,234</div><div>Total Customers</div><small class="text-success"><i class="fas fa-arrow-up"></i> +45 this week</small></div>
+                        <div class="stat-card"><div class="icon"><i class="fas fa-users"></i></div><div class="number">{{ $customers->count() ?? 0 }}</div><div>Total Customers</div><small class="text-success"><i class="fas fa-arrow-up"></i> +45 this week</small></div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="stat-card"><div class="icon"><i class="fas fa-cake"></i></div><div class="number">45</div><div>Products</div><small class="text-warning"><i class="fas fa-exclamation-triangle"></i> 5 low stock</small></div>
+                        <div class="stat-card"><div class="icon"><i class="fas fa-cake"></i></div><div class="number">{{ $products->count() ?? 0 }}</div><div>Products</div><small class="text-warning"><i class="fas fa-exclamation-triangle"></i> 5 low stock</small></div>
                     </div>
                 </div>
                 <div class="row g-4 mt-1">
@@ -852,8 +900,8 @@
             <!-- Products section start-->
            <!-- Products Section -->
             <div id="productsSection" style="display:none;">
-                <div class="data-table">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="data-table product-crud-panel">
+                    <div class="product-crud-header">
                         <h5><i class="fas fa-cake-candles text-gold"></i>Product Management</h5>
 
                         @if (session('success'))
@@ -877,6 +925,7 @@
                                     <th>Category</th>
                                     <th>Price</th>
                                     <th>Stock</th>
+                                    <th>Size</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -897,6 +946,7 @@
                                 <td>{{ $product->category->name }}</td>
                                 <td>Rs. {{ number_format($product->price,2) }}</td>
                                 <td>{{ $product->stock }}</td>
+                                <td>{{ $product->size ?? '—' }}</td>
                                 <td>
                                     @if($product->status=="Active")
                                         <span class="badge bg-success"> Active </span>
@@ -906,7 +956,7 @@
                                 </td>
                                 <td>
                                     <button class="btn btn-warning-custom btn-sm" type="button"
-                                        onclick='editProduct({{ $product->id }}, @json($product->category_id), @json($product->name), @json($product->description), @json($product->price), @json($product->stock), @json($product->status), @json($product->image))'
+                                        onclick='editProduct({{ $product->id }}, @json($product->category_id), @json($product->name), @json($product->description), @json($product->price), @json($product->stock), @json($product->size), @json($product->status), @json($product->image))'
                                         data-bs-toggle="modal" data-bs-target="#editProductModal"> <i class="fas fa-edit"></i>
                                     </button>
 
@@ -923,7 +973,7 @@
 
                             @empty
 
-                            <tr> <td colspan="7" class="text-center"> No Products Found </td> </tr>
+                            <tr> <td colspan="8" class="text-center"> No Products Found </td> </tr>
 
                             @endforelse
 
@@ -972,6 +1022,11 @@
                                     <label>Stock</label>
                                     <input type="number"  name="stock" class="form-control">
                                 </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <label>Size</label>
+                                <input type="text" name="size" class="form-control" placeholder="e.g. 1 kg or 1 pcs">
                             </div>
 
                             <div class="mt-3">
@@ -1027,6 +1082,8 @@
                                 <input id="edit_price" type="number" step="0.01" name="price" class="form-control mb-3">
                                 <label for="edit_stock">Stock</label>
                                 <input id="edit_stock" type="number" name="stock" class="form-control mb-3">
+                                <label for="edit_size">Size</label>
+                                <input id="edit_size" type="text" name="size" class="form-control mb-3" placeholder="e.g. 1 kg or 1 pcs">
                                 <label for="edit_status">Status</label>
                                 <select id="edit_status" name="status" class="form-select mb-3">
                                     <option>Active</option> <option>Inactive</option>
@@ -1051,7 +1108,7 @@
                 </div>
             </div>
 
-            <!-- Customers Section start --> 
+            <!-- Categories Section start --> 
             <!-- Categories Section -->
             <div id="categoriesSection" style="display: none;">
                 <div class="data-table">
@@ -1077,7 +1134,7 @@
                                         <td>{{ $category->id }}</td>
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->description }}</td>
-                                        <td>0</td>
+                                        <td>{{ $category->products->count() }}</td>
                                         <td>
                                             <button class="btn btn-sm btn-warning-custom" onclick="editCategory({{ $category->id }}, '{{ $category->name }}', '{{ $category->description }}')" data-bs-toggle="modal" data-bs-target="#editCategoryModal">
                                                 <i class="fas fa-edit"></i>
@@ -1361,12 +1418,13 @@
         }
 
         // Edit product function
-        function editProduct(id, category, name, description, price, stock, status, image) {
+        function editProduct(id, category, name, description, price, stock, size, status, image) {
             document.getElementById('edit_category').value = category;
             document.getElementById('edit_product_name').value = name;
             document.getElementById('edit_product_description').value = description;
             document.getElementById('edit_price').value = price;
             document.getElementById('edit_stock').value = stock;
+            document.getElementById('edit_size').value = size || '';
             document.getElementById('edit_status').value = status;
 
             document.getElementById('editProductForm').action = "/products/" + id;
