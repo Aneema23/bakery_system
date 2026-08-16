@@ -866,7 +866,7 @@
                     </div>
                 </div>
                 <div class="row g-4 mt-1">
-                    <div class="col-md-4"><div class="stat-card"><div class="icon"><i class="fas fa-crown"></i></div><div class="number">2</div><div>Administrators</div></div></div>
+                    <div class="col-md-4"><div class="stat-card"><div class="icon"><i class="fas fa-crown"></i></div><div class="number">1</div><div>Administrators</div></div></div>
                     <div class="col-md-4"><div class="stat-card"><div class="icon"><i class="fas fa-user-friends"></i></div><div class="number">1,198</div><div>Active Customers</div></div></div>
                     <div class="col-md-4"><div class="stat-card"><div class="icon"><i class="fas fa-truck"></i></div><div class="number">8</div><div>Delivery Personnel</div></div></div>
                 </div>
@@ -1208,13 +1208,67 @@
             <!-- Orders Section -->
             <div id="ordersSection" style="display: none;">
                 <div class="data-table">
-                    <h5><i class="fas fa-shopping-cart text-gold"></i> All Orders</h5>
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-3 gap-2">
+                        <h5 class="mb-0"><i class="fas fa-shopping-cart text-gold"></i> All Orders</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <form method="GET" action="{{ route('admin.dashboard') }}" class="d-flex flex-wrap gap-2 align-items-center">
+                                <input type="hidden" name="section" value="orders">
+                                <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
+                                    <option value="all" {{ $selectedStatus === 'all' ? 'selected' : '' }}>All Status</option>
+                                    <option value="pending" {{ $selectedStatus === 'pending' ? 'selected' : '' }}>Pending</option>
+                                    <option value="processing" {{ $selectedStatus === 'processing' ? 'selected' : '' }}>Processing</option>
+                                    <option value="completed" {{ $selectedStatus === 'completed' ? 'selected' : '' }}>Completed</option>
+                                    <option value="delivered" {{ $selectedStatus === 'delivered' ? 'selected' : '' }}>Delivered</option>
+                                    <option value="cancel" {{ $selectedStatus === 'cancel' ? 'selected' : '' }}>Cancelled</option>
+                                </select>
+                                <select name="custom_type" class="form-select form-select-sm" onchange="this.form.submit()">
+                                    <option value="all" {{ $selectedCustomType === 'all' ? 'selected' : '' }}>All Orders</option>
+                                    <option value="custom_cake" {{ $selectedCustomType === 'custom_cake' ? 'selected' : '' }}>Custom Cake</option>
+                                    <option value="standard" {{ $selectedCustomType === 'standard' ? 'selected' : '' }}>Not Custom Cake</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+
                     <div class="table-responsive">
                         <table class="table">
-                            <thead><tr><th>Order #</th><th>Customer</th><th>Date</th><th>Total</th><th>Status</th><th>Update Status</th></tr></thead>
+                            <thead><tr><th>Order #</th><th>Customer</th><th>Type</th><th>Date</th><th>Total</th><th>Status</th><th>Update Status</th><th>Action</th></tr></thead>
                             <tbody>
-                                <tr><td>#ORD-101</td><td>John Doe</td><td>2024-11-20</td><td>$45.00</td><td><span class="badge-status bg-warning text-dark">Pending</span></td><td><select class="form-select form-select-sm" style="width:130px;" onchange="updateOrderStatus(this, 'ORD-101')"><option>Pending</option><option>Processing</option><option>Delivered</option></select></td></tr>
-                                <tr><td>#ORD-102</td><td>Jane Smith</td><td>2024-11-19</td><td>$32.50</td><td><span class="badge-status bg-success">Delivered</span></td><td><select class="form-select form-select-sm" style="width:130px;" onchange="updateOrderStatus(this, 'ORD-102')"><option>Pending</option><option>Processing</option><option selected>Delivered</option></select></td></tr>
+                                @forelse($orders as $order)
+                                    <tr>
+                                        <td>#{{ $order->id }}</td>
+                                        <td>{{ $order->customer_name }}</td>
+                                        <td>
+                                            @if(strtolower($order->product_name ?? '') === 'custom cake')
+                                                <span class="badge bg-warning text-dark">Custom Cake</span>
+                                            @else
+                                                <span class="badge bg-secondary">Standard</span>
+                                            @endif
+                                        </td>
+                                        <td>{{ $order->created_at->format('Y-m-d') }}</td>
+                                        <td>Rs. {{ number_format($order->total_price, 2) }}</td>
+                                        <td>
+                                            <span class="badge-status {{ strtolower($order->status) === 'pending' ? 'bg-warning text-dark' : (strtolower($order->status) === 'delivered' || strtolower($order->status) === 'completed' ? 'bg-success' : (strtolower($order->status) === 'cancel' ? 'bg-danger' : 'bg-primary')) }}">
+                                                {{ ucfirst($order->status ?? 'pending') }}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <form method="POST" action="{{ route('admin.orders.update-status', $order) }}" class="d-inline-block">
+                                                @csrf
+                                                <select name="status" class="form-select form-select-sm" style="width:130px;" onchange="this.form.submit()">
+                                                    <option value="pending" {{ strtolower($order->status) === 'pending' ? 'selected' : '' }}>Pending</option>
+                                                    <option value="processing" {{ strtolower($order->status) === 'processing' ? 'selected' : '' }}>Processing</option>
+                                                    <option value="completed" {{ strtolower($order->status) === 'completed' ? 'selected' : '' }}>Completed</option>
+                                                    <option value="delivered" {{ strtolower($order->status) === 'delivered' ? 'selected' : '' }}>Delivered</option>
+                                                    <option value="cancel" {{ strtolower($order->status) === 'cancel' ? 'selected' : '' }}>Cancelled</option>
+                                                </select>
+                                            </form>
+                                        </td>
+                                        <td><button class="btn btn-sm btn-warning-custom" type="button" onclick='viewOrder(@json($order))'>View</button></td>
+                                    </tr>
+                                @empty
+                                    <tr><td colspan="8" class="text-center">No orders found for this filter.</td></tr>
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
@@ -1270,6 +1324,21 @@
                 </div>
             </div>
         </div>       
+    </div>
+
+    <div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-labelledby="orderDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-gold" id="orderDetailsModalLabel">Order Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="orderDetailsBody"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -1407,8 +1476,42 @@
         window.showProductModal = () => new bootstrap.Modal(document.getElementById('productModal')).show();
         window.showCategoryModal = () => new bootstrap.Modal(document.getElementById('categoryModal')).show();
         window.approveCustomCake = () => alert('✨ Custom cake order approved! Customer will be notified.');
-        window.updateOrderStatus = (select, orderId) => alert(`✅ Order ${orderId} status → ${select.value}`);
-        window.viewOrder = (id) => alert(`🔍 View order details: ${id}`);
+        window.updateOrderStatus = (select, routeUrl) => {
+            if (select && select.form) {
+                select.form.submit();
+            }
+        };
+        window.viewOrder = (order) => {
+            const detailModal = new bootstrap.Modal(document.getElementById('orderDetailsModal'));
+            const modalBody = document.getElementById('orderDetailsBody');
+            const displayValue = (value) => value ?? 'N/A';
+            const safeStatus = (value) => (value ? String(value).charAt(0).toUpperCase() + String(value).slice(1) : 'Pending');
+            const storageBase = "{{ asset('storage') }}";
+            const designImage = order.design_image ? `${storageBase}/${order.design_image}` : '';
+            const designMarkup = designImage
+                ? `<div class="col-12"><div class="p-3 rounded" style="background:#2a221d;"><strong>Design Image</strong><br><img src="${designImage}" alt="Custom cake design" class="img-fluid rounded mt-2" style="max-height:260px; object-fit:cover; border:1px solid rgba(245,158,11,0.5);"></div></div>`
+                : `<div class="col-12"><div class="p-3 rounded" style="background:#2a221d;"><strong>Design Image</strong><br><span class="text-muted">No custom cake design uploaded.</span></div></div>`;
+
+            modalBody.innerHTML = `
+                <div class="row g-3">
+                    <div class="col-md-6"><div class="p-3 rounded" style="background:#2a221d;"><strong>Order #</strong><br>#${order.id}</div></div>
+                    <div class="col-md-6"><div class="p-3 rounded" style="background:#2a221d;"><strong>Status</strong><br><span class="badge-status bg-warning text-dark">${safeStatus(order.status)}</span></div></div>
+                    <div class="col-md-6"><div class="p-3 rounded" style="background:#2a221d;"><strong>Customer</strong><br>${displayValue(order.customer_name)}</div></div>
+                    <div class="col-md-6"><div class="p-3 rounded" style="background:#2a221d;"><strong>Phone</strong><br>${displayValue(order.phone)}</div></div>
+                    <div class="col-md-6"><div class="p-3 rounded" style="background:#2a221d;"><strong>Product</strong><br>${displayValue(order.product_name)}</div></div>
+                    <div class="col-md-6"><div class="p-3 rounded" style="background:#2a221d;"><strong>Delivery</strong><br>${displayValue(order.delivery_option)}</div></div>
+                    ${designMarkup}
+                    <div class="col-md-12"><div class="p-3 rounded" style="background:#2a221d;"><strong>Address</strong><br>${displayValue(order.address)}, ${displayValue(order.city)}, ${displayValue(order.postal_code)}</div></div>
+                    <div class="col-md-6"><div class="p-3 rounded" style="background:#2a221d;"><strong>Cake Size</strong><br>${displayValue(order.cake_size)}</div></div>
+                    <div class="col-md-6"><div class="p-3 rounded" style="background:#2a221d;"><strong>Flavor & Frosting</strong><br>${displayValue(order.flavor)} / ${displayValue(order.frosting)}</div></div>
+                    <div class="col-md-6"><div class="p-3 rounded" style="background:#2a221d;"><strong>Delivery Date</strong><br>${displayValue(order.delivery_date)}</div></div>
+                    <div class="col-md-6"><div class="p-3 rounded" style="background:#2a221d;"><strong>Total</strong><br>Rs. ${Number(order.total_price || 0).toFixed(2)}</div></div>
+                    <div class="col-md-12"><div class="p-3 rounded" style="background:#2a221d;"><strong>Message</strong><br>${displayValue(order.cake_message)}</div></div>
+                    <div class="col-md-12"><div class="p-3 rounded" style="background:#2a221d;"><strong>Notes</strong><br>${displayValue(order.special_notes)}</div></div>
+                </div>
+            `;
+            detailModal.show();
+        };
 
         // Edit category function
         function editCategory(id, name, description) {
@@ -1440,11 +1543,15 @@
                 }, 3000);
             });
 
-            // Show the intended section when redirected from CRUD actions
+            // Show the intended section when redirected from CRUD actions or filter submissions
             @if(session('activeSection') === 'categories')
                 showSection('categories');
             @elseif(session('activeSection') === 'products')
                 showSection('products');
+            @elseif(session('activeSection') === 'orders' || request('section') === 'orders')
+                showSection('orders');
+            @elseif(session('activeSection') === 'dashboard' || request('section') === 'dashboard')
+                showSection('dashboard');
             @endif
         });
     </script>

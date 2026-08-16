@@ -906,7 +906,7 @@
                                 <i class="fas fa-user-circle"></i> {{ Auth::user()->name }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-box"></i> My Orders</a></li>
+                                <li><a class="dropdown-item" href="{{ route('customer.orders') }}"><i class="fas fa-box"></i> My Orders</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-magic"></i> My Custom Cakes</a></li>
                                 <li>
                                     <a class="dropdown-item" href="{{ route('profile.edit') }}">
@@ -1082,6 +1082,50 @@
     .toast-message.show { opacity:1; transform:translateX(-50%) translateY(0); }
     .toast-close { background:none; border:none; color:rgba(255,255,255,0.6); cursor:pointer; font-size:1.2rem; }
 
+    /* checkout popup */
+    .checkout-modal-overlay {
+      position:fixed; inset:0; background:rgba(26,16,13,0.52); backdrop-filter:blur(4px);
+      z-index:2200; display:none; align-items:center; justify-content:center; padding:1.25rem;
+      opacity:0; visibility:hidden; pointer-events:none; transition:opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .checkout-modal-overlay.open {
+      display:flex; opacity:1; visibility:visible; pointer-events:auto;
+    }
+    .checkout-modal {
+      width:min(640px, 100%); max-height:92vh; overflow-y:auto;
+      background:#fffdfb; border-radius:24px; box-shadow:0 32px 80px rgba(48,30,19,0.22);
+      padding:1.5rem; border:1px solid #f0e5dd; animation:slideUp 0.35s ease;
+      transform:translateY(12px); transition:transform 0.25s ease;
+    }
+    .checkout-modal-overlay.open .checkout-modal { transform:translateY(0); }
+    .checkout-form-grid {
+      display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1rem;
+      margin-top:1rem;
+    }
+    .checkout-form-field { display:flex; flex-direction:column; gap:0.4rem; }
+    .checkout-form-field.full { grid-column:1 / -1; }
+    .checkout-form-field label {
+      font-size:0.8rem; font-weight:700; color:#6d5242; letter-spacing:0.02em;
+    }
+    .checkout-form-field input,
+    .checkout-form-field textarea,
+    .checkout-form-field select {
+      width:100%; border:1px solid #e6d7cc; border-radius:12px; padding:0.78rem 0.9rem;
+      background:#fff; color:#32241f; font-size:0.95rem; outline:none;
+    }
+    .checkout-form-field input:focus,
+    .checkout-form-field textarea:focus,
+    .checkout-form-field select:focus {
+      border-color:#e58d62; box-shadow:0 0 0 3px rgba(229,141,98,0.12);
+    }
+    .checkout-form-field textarea { min-height:92px; resize:vertical; }
+    .checkout-submit {
+      width:100%; margin-top:1.15rem; border:none; border-radius:999px; padding:0.9rem 1.2rem;
+      background:linear-gradient(135deg, #2f7d72, #1d5d55); color:white; font-weight:700; cursor:pointer;
+      transition:0.2s ease;
+    }
+    .checkout-submit:hover { transform:translateY(-1px); box-shadow:0 14px 28px rgba(47,125,114,0.22); }
+
     /* modal (quick view) */
     .modal-overlay {
       display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(10px);
@@ -1207,13 +1251,99 @@
           <h2><i class="fas fa-shopping-bag"></i> Your Cart</h2>
           <button class="cart-close" onclick="toggleCart()"><i class="fas fa-times"></i></button>
           </div>
-          <div class="cart-items" id="cartItems">
-          <div class="empty-cart">Your cart is empty</div>
+
+          <!-- CART ITEMS VIEW -->
+          <div id="cartItemsView">
+              <div class="cart-items" id="cartItems">
+              <div class="empty-cart">Your cart is empty</div>
+              </div>
+              <div class="cart-total"><span>Total</span><span id="cartTotal">Rs.0</span></div>
+              <div class="cart-actions">
+              <button class="btn-clear" onclick="clearCart()">Clear</button>
+              <button class="btn-checkout" onclick="showCheckoutForm()">Checkout</button>
+              </div>
           </div>
-          <div class="cart-total"><span>Total</span><span id="cartTotal">Rs.0</span></div>
-          <div class="cart-actions">
-          <button class="btn-clear" onclick="clearCart()">Clear</button>
-          <button class="btn-checkout" onclick="checkout()">Checkout</button>
+
+          <!-- CHECKOUT FORM VIEW -->
+          <div id="checkoutFormView" style="display:none;">
+              <button class="cart-close" style="position:absolute; top:1rem; right:1rem; background:white; border:1px solid #eee;" onclick="hideCheckoutForm()"><i class="fas fa-arrow-left"></i> Back</button>
+              <h3 style="margin-top:0; color:var(--ink);"><i class="fas fa-credit-card"></i> Checkout</h3>
+
+              <!-- Form -->
+              <form id="checkoutForm" method="POST" action="{{ route('custom-products.order') }}" style="margin-top:1.2rem;">
+                @csrf
+                <input type="hidden" name="total_price" id="checkoutTotalPrice" value="0">
+                <input type="hidden" name="product_name" id="checkoutProductName" value="">
+                <input type="hidden" name="cake_size" id="checkoutCakeSize" value="">
+                <input type="hidden" name="flavor" id="checkoutFlavor" value="">
+                <input type="hidden" name="frosting" id="checkoutFrosting" value="">
+
+                <!-- Grid -->
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem 1.2rem;">
+
+                  <!-- Customer Name (full width) -->
+                  <div style="grid-column:1/-1; display:flex; flex-direction:column; gap:0.3rem;">
+                    <label style="font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6b5b4e; margin-left:0.2rem;">Customer Name</label>
+                    <input type="text" name="customer_name" value="{{ auth()->user()?->name ?? '' }}" required style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e5dbd1; border-radius:18px; font-size:0.95rem; font-family:inherit; background:#fcfaf8; transition:0.2s; color:#2c241e; outline:none; box-shadow:inset 0 2px 4px rgba(0,0,0,0.01);">
+                  </div>
+
+                  <!-- Phone -->
+                  <div style="display:flex; flex-direction:column; gap:0.3rem;">
+                    <label style="font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6b5b4e; margin-left:0.2rem;">Phone</label>
+                    <input type="text" name="phone" value="{{ auth()->user()?->contact_number ?? '' }}" required style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e5dbd1; border-radius:18px; font-size:0.95rem; font-family:inherit; background:#fcfaf8; transition:0.2s; color:#2c241e; outline:none; box-shadow:inset 0 2px 4px rgba(0,0,0,0.01);">
+                  </div>
+
+                  <!-- City -->
+                  <div style="display:flex; flex-direction:column; gap:0.3rem;">
+                    <label style="font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6b5b4e; margin-left:0.2rem;">City</label>
+                    <input type="text" name="city" value="{{ auth()->user()?->city ?? '' }}" required style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e5dbd1; border-radius:18px; font-size:0.95rem; font-family:inherit; background:#fcfaf8; transition:0.2s; color:#2c241e; outline:none; box-shadow:inset 0 2px 4px rgba(0,0,0,0.01);">
+                  </div>
+
+                  <!-- Delivery Address (full) -->
+                  <div style="grid-column:1/-1; display:flex; flex-direction:column; gap:0.3rem;">
+                    <label style="font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6b5b4e; margin-left:0.2rem;">Delivery Address</label>
+                    <textarea name="address" required style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e5dbd1; border-radius:22px; font-size:0.95rem; font-family:inherit; background:#fcfaf8; transition:0.2s; color:#2c241e; outline:none; box-shadow:inset 0 2px 4px rgba(0,0,0,0.01); resize:vertical; min-height:75px;">{{ auth()->user()?->address ?? '' }}</textarea>
+                  </div>
+
+                  <!-- Postal Code -->
+                  <div style="display:flex; flex-direction:column; gap:0.3rem;">
+                    <label style="font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6b5b4e; margin-left:0.2rem;">Postal Code</label>
+                    <input type="text" name="postal_code" placeholder="10100" style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e5dbd1; border-radius:18px; font-size:0.95rem; font-family:inherit; background:#fcfaf8; transition:0.2s; color:#2c241e; outline:none; box-shadow:inset 0 2px 4px rgba(0,0,0,0.01);">
+                  </div>
+
+                  <!-- Delivery Date -->
+                  <div style="display:flex; flex-direction:column; gap:0.3rem;">
+                    <label style="font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6b5b4e; margin-left:0.2rem;">Delivery Date</label>
+                    <input type="date" name="delivery_date" required min="{{ date('Y-m-d', strtotime('+1 day')) }}" style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e5dbd1; border-radius:18px; font-size:0.95rem; font-family:inherit; background:#fcfaf8; color:#2c241e; outline:none;">
+                  </div>
+
+                  <!-- Want Delivery? -->
+                  <div style="display:flex; flex-direction:column; gap:0.3rem;">
+                    <label style="font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6b5b4e; margin-left:0.2rem;">Want Delivery?</label>
+                    <select name="delivery_option" style="width:100%; padding:0.7rem 2.8rem 0.7rem 1rem; border:1.5px solid #e5dbd1; border-radius:18px; font-size:0.95rem; font-family:inherit; background:#fcfaf8 url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2214%22 height=%2214%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23847262%22 stroke-width=%222%22><polyline points=%226 9 12 15 18 9%22/></svg>') no-repeat right 1rem center; background-size:14px; transition:0.2s; color:#2c241e; outline:none; box-shadow:inset 0 2px 4px rgba(0,0,0,0.01); cursor:pointer; appearance:none;">
+                      <option value="Delivery">Yes, Deliver</option>
+                      <option value="Pickup">Pickup</option>
+                    </select>
+                  </div>
+
+                  <!-- Message on Cake -->
+                  <div style="display:flex; flex-direction:column; gap:0.3rem;">
+                    <label style="font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6b5b4e; margin-left:0.2rem;">Message on Cake</label>
+                    <input type="text" name="cake_message" placeholder="Happy Birthday!" style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e5dbd1; border-radius:18px; font-size:0.95rem; font-family:inherit; background:#fcfaf8; transition:0.2s; color:#2c241e; outline:none; box-shadow:inset 0 2px 4px rgba(0,0,0,0.01);">
+                  </div>
+
+                  <!-- Special Notes (full) -->
+                  <div style="grid-column:1/-1; display:flex; flex-direction:column; gap:0.3rem;">
+                    <label style="font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6b5b4e; margin-left:0.2rem;">Special Notes</label>
+                    <textarea name="special_notes" placeholder="Extra notes for bakery staff" style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e5dbd1; border-radius:22px; font-size:0.95rem; font-family:inherit; background:#fcfaf8; transition:0.2s; color:#2c241e; outline:none; box-shadow:inset 0 2px 4px rgba(0,0,0,0.01); resize:vertical; min-height:75px;"></textarea>
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button class="checkout-submit" type="submit" style="width:100%; margin-top:1.8rem; padding:0.9rem 1.5rem; border:none; border-radius:60px; background:linear-gradient(105deg, #e6cdbb, #dbb8a2); color:#352b24; font-weight:700; font-size:1.1rem; letter-spacing:0.3px; cursor:pointer; transition:all 0.25s ease; display:flex; align-items:center; justify-content:center; gap:0.8rem; box-shadow:0 8px 18px -6px rgba(180,140,120,0.3); border:1px solid rgba(255,235,215,0.5);">
+                  <i class="fas fa-shopping-bag" style="font-size:1.1rem; opacity:0.8;"></i> Place Order
+                </button>
+              </form>
           </div>
       </div>
     </div>
@@ -1226,13 +1356,22 @@
     </div>
 
     <script>
+      window.userId = @json(auth()->id() ?? 'guest');
+
       // ----- DATA -----
       let cart = [];
       let currentProduct = null;
+      const cartKey = `bakery_cart_${window.userId}`;
+      const legacyCartKey = 'bakery_cart';
+
+      if (localStorage.getItem(legacyCartKey) && !localStorage.getItem(cartKey)) {
+          localStorage.setItem(cartKey, localStorage.getItem(legacyCartKey));
+          localStorage.removeItem(legacyCartKey);
+      }
 
       function loadCartFromStorage() {
           try {
-              const stored = JSON.parse(localStorage.getItem('bakery_cart') || '[]');
+              const stored = JSON.parse(localStorage.getItem(cartKey) || '[]');
               cart = Array.isArray(stored) ? stored : [];
           } catch (error) {
               cart = [];
@@ -1240,7 +1379,7 @@
       }
 
       function saveCartToStorage() {
-          localStorage.setItem('bakery_cart', JSON.stringify(cart));
+          localStorage.setItem(cartKey, JSON.stringify(cart));
       }
 
       // ----- FILTER -----
@@ -1281,7 +1420,6 @@
           document.getElementById('modalTagDisplay').textContent = tag;
           document.getElementById('modalRating').textContent = rating;
           document.getElementById('modalSizeDisplay').textContent = '1kg';
-          // reset size buttons
           document.querySelectorAll('#sizeSelector button').forEach(b => b.classList.remove('active'));
           document.querySelector('#sizeSelector button[data-size="1kg"]').classList.add('active');
           document.getElementById('modalOverlay').classList.add('active');
@@ -1294,7 +1432,6 @@
       }
       function closeModalOutside(e) { if (e.target === document.getElementById('modalOverlay')) closeModal(); }
 
-      // size selector in modal
       document.querySelectorAll('#sizeSelector button').forEach(btn => {
           btn.addEventListener('click', function() {
           document.querySelectorAll('#sizeSelector button').forEach(b => b.classList.remove('active'));
@@ -1311,7 +1448,6 @@
           });
       });
 
-      // add from modal
       function addFromModal() {
           if (!currentProduct) return;
           const size = currentProduct.selectedSize || '1kg';
@@ -1329,7 +1465,6 @@
           closeModal();
       }
 
-      // ----- CART UI -----
       function toggleCart() {
           document.getElementById('cartOverlay').classList.toggle('open');
       }
@@ -1338,7 +1473,6 @@
 
       function updateCartUI() {
           saveCartToStorage();
-
           const container = document.getElementById('cartItems');
           const totalSpan = document.getElementById('cartTotal');
           const countSpan = document.getElementById('cartCount');
@@ -1392,7 +1526,6 @@
       function changeSize(idx, newSize) {
           const item = cart[idx];
           const mult = { '250g':0.25, '500g':0.5, '1kg':1, '2kg':2, '3kg':3 }[newSize] || 1;
-          // use stored base price (or derive from current price / multiplier)
           const base = item.price / (item.multiplier || 1);
           item.price = Math.round(base * mult);
           item.size = newSize;
@@ -1407,13 +1540,32 @@
           showToast('Cart cleared');
       }
 
-      function checkout() {
+      function showCheckoutForm() {
           if (cart.length === 0) { showToast('Cart is empty'); return; }
-          showToast('Proceeding to checkout...');
-          // redirect or simulate
+          const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+          document.getElementById('checkoutTotalPrice').value = total;
+          document.getElementById('checkoutProductName').value = cart.map(item => `${item.name} x${item.qty}`).join(', ');
+          document.getElementById('checkoutCakeSize').value = cart.map(item => item.size).join(', ');
+          document.getElementById('checkoutFlavor').value = cart[0]?.name || 'Bakery Item';
+          document.getElementById('checkoutFrosting').value = cart[0]?.size || 'Classic';
+          document.getElementById('cartItemsView').style.display = 'none';
+          document.getElementById('checkoutFormView').style.display = 'block';
       }
 
-      // ----- TOAST -----
+      function hideCheckoutForm() {
+          document.getElementById('checkoutFormView').style.display = 'none';
+          document.getElementById('cartItemsView').style.display = 'block';
+      }
+
+      const checkoutForm = document.getElementById('checkoutForm');
+      if (checkoutForm) {
+          checkoutForm.addEventListener('submit', function(e) {
+              localStorage.removeItem(cartKey);
+              cart = [];
+              updateCartUI();
+          });
+      }
+
       let toastTimer;
       function showToast(msg) {
           const t = document.getElementById('toastMessage');
@@ -1424,11 +1576,10 @@
       }
       function hideToast() { document.getElementById('toastMessage').classList.remove('show'); }
 
-      // ----- INIT -----
       document.addEventListener('DOMContentLoaded', function() {
         loadCartFromStorage();
         updateCartUI();
-          document.querySelector('#sizeSelector button[data-size="1kg"]')?.classList.add('active');
+        document.querySelector('#sizeSelector button[data-size="1kg"]')?.classList.add('active');
       });
 
       document.getElementById('cartOverlay').addEventListener('click', function(e) {

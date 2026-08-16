@@ -22,6 +22,8 @@ Route::get('/menu', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     // Admin Dashboard
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/orders', [AdminDashboardController::class, 'index'])->name('admin.orders.index');
+    Route::post('/admin/orders/{order}/update-status', [AdminDashboardController::class, 'updateStatus'])->name('admin.orders.update-status');
 
     // Customer Dashboard
     Route::get('/customer/dashboard', function () {
@@ -75,5 +77,17 @@ Route::resource('products', ProductController::class);
 Route::post('/custom-cake/order', [OrderController::class, 'store'])
     ->middleware('auth')
     ->name('custom-cake.store');
-    
+
+Route::post('/custom-products/order', [OrderController::class, 'store'])
+    ->middleware('auth')
+    ->name('custom-products.order');
+
+Route::get('/customer/orders', [OrderController::class, 'index'])
+    ->middleware(['auth', 'role:customer'])
+    ->name('customer.orders');
+
+Route::post('/customer/orders/{order}/cancel', [OrderController::class, 'cancel'])
+    ->middleware(['auth', 'role:customer'])
+    ->name('customer.orders.cancel');
+
 require __DIR__.'/auth.php';

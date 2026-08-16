@@ -394,7 +394,7 @@
                                 <i class="fas fa-user-circle"></i> {{ Auth::user()->name }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-box"></i> My Orders</a></li>
+                                <li><a class="dropdown-item" href="{{ route('customer.orders') }}"><i class="fas fa-box"></i> My Orders</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-magic"></i> My Custom Cakes</a></li>
                                 <li>
                                     <a class="dropdown-item" href="{{ route('profile.edit') }}">
@@ -491,7 +491,7 @@
                             </a>
                         </div>
                         <div class="col-md-6">
-                            <a href="#" class="text-decoration-none">
+                            <a href="{{ route('customer.orders') }}" class="text-decoration-none">
                                 <div class="border rounded-3 p-3 hover-shadow transition">
                                     <i class="fas fa-truck fa-2x text-info mb-2"></i>
                                     <h6 class="mb-0 fw-bold">My Orders</h6>
