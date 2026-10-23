@@ -765,13 +765,13 @@
                             <img src="https://images.unsplash.com/photo-1589119908995-c6837fa14848?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D alt="Stawberry Cream Cake" class="menu-item-image">
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
-                                    <h3>Stawberry Cream Cake</h3>
+                                    <h3>Strawberry Cream Cake</h3>
                                     <span class="menu-item-price">Rs.5500</span>
                                 </div>
                                 <p class="menu-item-description">Light vanilla sponge layered with fresh strawberry filling and whipped cream, topped with juicy strawberries.</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">1 kg</span>
-                                    <button class="menu-item-cart" onclick="openModal('Stawberry Cream Cake', 5500, 'https://images.unsplash.com/photo-1589119908995-c6837fa14848?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Fresh strawberries layered with fluffy whipped cream and soft vanilla sponge. This refreshing 1kg cake is perfect for birthdays and special occasions.', '🍓 Seasonal Favorite', '⭐ 4.9', '🍓 Fresh Cream', '🎂 Vanilla Sponge')">
+                                    <button class="menu-item-cart" onclick="openModal('Strawberry Cream Cake', 5500, 'https://images.unsplash.com/photo-1589119908995-c6837fa14848?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Fresh strawberries layered with fluffy whipped cream and soft vanilla sponge. This refreshing 1kg cake is perfect for birthdays and special occasions.', '🍓 Seasonal Favorite', '⭐ 4.9', '🍓 Fresh Cream', '🎂 Vanilla Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -801,13 +801,13 @@
                             <img src="https://images.pexels.com/photos/24206908/pexels-photo-24206908.jpeg" alt="Caranel Crunch Cake" class="menu-item-image">
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
-                                    <h3>Caranel Crunch Cake</h3>
+                                    <h3>Caramel Crunch Cake</h3>
                                     <span class="menu-item-price">Rs.5800</span>
                                 </div>
                                 <p class="menu-item-description">Soft vanilla sponge layered with salted caramel cream and crunchy caramel pieces for the perfect sweet crunch.</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">1 kg</span>
-                                    <button class="menu-item-cart" onclick="openModal('Caranel Crunch Cake', 5800, 'https://images.pexels.com/photos/24206908/pexels-photo-24206908.jpeg', 'Soft vanilla sponge layered with salted caramel cream and crunchy caramel pieces for the perfect sweet crunch.', '✨ Chef''s Special', '⭐ 4.9', '🍮 Salted Caramel', '🎂 Vanilla Sponge')">
+                                    <button class="menu-item-cart" onclick="openModal('Caramel Crunch Cake', 5800, 'https://images.pexels.com/photos/24206908/pexels-photo-24206908.jpeg', 'Soft vanilla sponge layered with salted caramel cream and crunchy caramel pieces for the perfect sweet crunch.', '✨ Chef''s Special', '⭐ 4.9', '🍮 Salted Caramel', '🎂 Vanilla Sponge')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1146,10 +1146,10 @@
                                     <h3>Princess Cake</h3>
                                     <span class="menu-item-price">Rs.9500</span>
                                 </div>
-                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <p class="menu-item-description">Elegant vanilla cake decorated with soft pastel colors and beautiful princess-themed details, perfect for a magical celebration.</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">2 kg</span>
-                                    <button class="menu-item-cart" onclick="openModal('Princess Cake', 9500, 'https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', '2 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <button class="menu-item-cart" onclick="openModal('Princess Cake', 9500, 'https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Elegant vanilla cake decorated with soft pastel colors and beautiful princess-themed details, perfect for a magical celebration.', '2 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1164,10 +1164,10 @@
                                     <h3>Superhero Cake </h3>
                                     <span class="menu-item-price">Rs.9000</span>
                                 </div>
-                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <p class="menu-item-description">Rich chocolate cake decorated with bold superhero-themed details, perfect for young heroes and action-packed birthday celebrations.</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">2 kg</span>
-                                    <button class="menu-item-cart" onclick="openModal('Superhero Cake', 9000, 'https://images.unsplash.com/photo-1637724562261-5777b67c59b2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', '2 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <button class="menu-item-cart" onclick="openModal('Superhero Cake', 9000, 'https://images.unsplash.com/photo-1637724562261-5777b67c59b2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Rich chocolate cake decorated with bold superhero-themed details, perfect for young heroes and action-packed birthday celebrations.', '2 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1182,10 +1182,10 @@
                                     <h3>Unicorn Cake</h3>
                                     <span class="menu-item-price">Rs.10 500</span>
                                 </div>
-                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <p class="menu-item-description">Dreamy vanilla cake decorated with pastel colors, rainbow details, and a magical unicorn theme for a whimsical birthday.</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">2 kg</span>
-                                    <button class="menu-item-cart" onclick="openModal('Unicorn Cake', 10500, 'https://images.unsplash.com/photo-1697157202877-622683269d7c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', '2 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <button class="menu-item-cart" onclick="openModal('Unicorn Cake', 10500, 'https://images.unsplash.com/photo-1697157202877-622683269d7c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Dreamy vanilla cake decorated with pastel colors, rainbow details, and a magical unicorn theme for a whimsical birthday.', '2 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1200,10 +1200,10 @@
                                     <h3>Frozen Cake</h3>
                                     <span class="menu-item-price">Rs.10 000</span>
                                 </div>
-                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <p class="menu-item-description">Beautiful vanilla cake with icy blue decorations and Frozen-inspired details, perfect for a magical winter-themed birthday.</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">3 kg</span>
-                                    <button class="menu-item-cart" onclick="openModal('Frozen Cake', 10000, 'https://images.unsplash.com/photo-1671686400734-d9d0a4934f5a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', '2 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <button class="menu-item-cart" onclick="openModal('Frozen Cake', 10000, 'https://images.unsplash.com/photo-1671686400734-d9d0a4934f5a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Beautiful vanilla cake with icy blue decorations and Frozen-inspired details, perfect for a magical winter-themed birthday.', '3 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1218,10 +1218,10 @@
                                     <h3>Dinosour Cake</h3>
                                     <span class="menu-item-price">Rs.9500</span>
                                 </div>
-                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <p class="menu-item-description">Fun chocolate cake decorated with colorful dinosaur-themed details, perfect for adventurous little explorers.</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">3 kg</span>
-                                    <button class="menu-item-cart" onclick="openModal('Dinosour Cake', 9500, 'https://images.unsplash.com/photo-1695275673485-8d3ef4965615?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', '2 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <button class="menu-item-cart" onclick="openModal('Dinosour Cake', 9500, 'https://images.unsplash.com/photo-1695275673485-8d3ef4965615?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Fun chocolate cake decorated with colorful dinosaur-themed details, perfect for adventurous little explorers.', '3 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1236,10 +1236,10 @@
                                     <h3>Sports Theme Cake</h3>
                                     <span class="menu-item-price">Rs.8500</span>
                                 </div>
-                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <p class="menu-item-description">Customizable celebration cake decorated with sports-inspired details, perfect for athletes and sports-loving birthday stars.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">2 kg</span>
-                                    <button class="menu-item-cart" onclick="openModal('Sports Theme Cake', 8500, 'https://images.pexels.com/photos/4005315/pexels-photo-4005315.jpeg', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <span class="menu-item-tag">1 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Sports Theme Cake', 8500, 'https://images.pexels.com/photos/4005315/pexels-photo-4005315.jpeg', 'Customizable celebration cake decorated with sports-inspired details, perfect for athletes and sports-loving birthday stars.', '1 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1254,10 +1254,10 @@
                                     <h3>Number Cake</h3>
                                     <span class="menu-item-price">Rs.8000</span>
                                 </div>
-                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <p class="menu-item-description">A personalized number-shaped cake layered with creamy frosting and decorated with chocolates, fruits, and elegant toppings.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">2 kg</span>
-                                    <button class="menu-item-cart" onclick="openModal('Number Cake', 8000, 'https://images.unsplash.com/photo-1591519060886-27dd11ad7f5a?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <span class="menu-item-tag">1 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Number Cake', 8000, 'https://images.unsplash.com/photo-1591519060886-27dd11ad7f5a?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'A personalized number-shaped cake layered with creamy frosting and decorated with chocolates, fruits, and elegant toppings.', '1 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1272,10 +1272,10 @@
                                     <h3>Barbie Theme Cake</h3>
                                     <span class="menu-item-price">Rs.11 000</span>
                                 </div>
-                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <p class="menu-item-description">Pretty pink celebration cake with elegant Barbie-inspired decorations, perfect for a fun and glamorous birthday party.</p>
                                 <div class="menu-item-footer">
                                     <span class="menu-item-tag">3 kg</span>
-                                    <button class="menu-item-cart" onclick="openModal('Barbie Theme Cake', 11000, 'https://images.pexels.com/photos/13321665/pexels-photo-13321665.jpeg', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <button class="menu-item-cart" onclick="openModal('Barbie Theme Cake', 11000, 'https://images.pexels.com/photos/13321665/pexels-photo-13321665.jpeg', 'Pretty pink celebration cake with elegant Barbie-inspired decorations, perfect for a fun and glamorous birthday party.', '3 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1290,10 +1290,10 @@
                                     <h3>Photo Printed Cake</h3>
                                     <span class="menu-item-price">Rs.8500</span>
                                 </div>
-                                <p class="menu-item-description">36 macarons in 6 flavors, perfect for special occasions</p>
+                                <p class="menu-item-description">Personalized celebration cake featuring your favorite photo printed on top, making every birthday extra special and memorable.</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">2 kg</span>
-                                    <button class="menu-item-cart" onclick="openModal('Photo Printed Cake', 8500, 'https://images.unsplash.com/photo-1627274273203-84de3a4a49cf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '36 macarons in 6 flavors, perfect for special occasions', 'Premium', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
+                                    <span class="menu-item-tag">1 kg</span>
+                                    <button class="menu-item-cart" onclick="openModal('Photo Printed Cake', 8500, 'https://images.unsplash.com/photo-1627274273203-84de3a4a49cf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Personalized celebration cake featuring your favorite photo printed on top, making every birthday extra special and memorable.', '1 kg', '⭐ 4.9', '🎂 Special Occasion', '🌈 6 Flavors')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1315,12 +1315,12 @@
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
                                     <h3>Chocolate Chip Cookies</h3>
-                                    <span class="menu-item-price">Rs.1200</span>
+                                    <span class="menu-item-price">Rs.600</span>
                                 </div>
                                 <p class="menu-item-description">Classic soft-baked cookies with premium chocolate chips</p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">10 pcs</span>
-                                    <button class="menu-item-cart" onclick="openModal('Chocolate Chip Cookies', 1200, 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&auto=format', 'Classic soft-baked cookies with premium chocolate chips', 'Classic', '⭐ 4.7', '🍫 Premium Chips', '🍪 6 Pack')">
+                                    <span class="menu-item-tag">4 pcs</span>
+                                    <button class="menu-item-cart" onclick="openModal('Chocolate Chip Cookies', 600, 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&auto=format', 'Classic soft-baked cookies with premium chocolate chips', 'Classic', '⭐ 4.7', '🍫 Premium Chips', '🍪 6 Pack')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1333,12 +1333,12 @@
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
                                     <h3>Butter Cookies</h3>
-                                    <span class="menu-item-price">Rs.1000</span>
+                                    <span class="menu-item-price">Rs.500</span>
                                 </div>
                                 <p class="menu-item-description">White chocolate & macadamia nut cookies </p>
                                 <div class="menu-item-footer">
-                                    <span class="menu-item-tag">10 pcs</span>
-                                    <button class="menu-item-cart" onclick="openModal('Butter Cookies', 1000, 'https://images.unsplash.com/photo-1600625649542-f668edc636dc?q=80&w=895&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'White chocolate & macadamia nut cookies', 'Premium', '⭐ 4.8', '🥜 Macadamia Nuts', '🍪 6 Pack')">
+                                    <span class="menu-item-tag">4 pcs</span>
+                                    <button class="menu-item-cart" onclick="openModal('Butter Cookies', 500, 'https://images.unsplash.com/photo-1600625649542-f668edc636dc?q=80&w=895&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'White chocolate & macadamia nut cookies', 'Premium', '⭐ 4.8', '🥜 Macadamia Nuts', '🍪 6 Pack')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -1453,11 +1453,11 @@
             <div class="container">
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 2rem;">
                     <div><div style="display: flex; gap: 0.7rem; align-items: center; margin-bottom: 1rem;"><i class="fas fa-crown" style="color:#FFB5A7; font-size: 1.8rem;"></i><span style="font-weight: 800; font-size: 1.3rem;">Disna Cakes</span></div><p style="color:#7E6954;">Fresh pastel creations, custom orders & same-day treats.</p></div>
-                    <div><h4 style="font-weight: 600; margin-bottom: 1rem;">Explore</h4><ul style="list-style: none; line-height: 2;"><li><a href="#" class="footer-link">About</a></li><li><a href="#" class="footer-link">Cake Gallery</a></li><li><a href="#" class="footer-link">Custom Order</a></li></ul></div>
-                    <div><h4 style="font-weight: 600; margin-bottom: 1rem;">Contact</h4><ul style="list-style: none; line-height: 2; color:#7B6651;"><li><i class="fas fa-map-marker-alt" style="width: 20px;"></i> 22 Pastel Lane, Sweetsville</li><li><i class="fas fa-phone-alt"></i> +1 (555) 234-8890</li><li><i class="fas fa-envelope"></i> hello@disnacakes.com</li></ul></div>
+                    <div><h4 style="font-weight: 600; margin-bottom: 1rem;">Explore</h4><ul style="list-style: none; line-height: 2;"><li><a href="{{ url('/') }}" class="footer-link">About</a></li><li><a href="{{ route('menu') }}" class="footer-link">Cake Gallery</a></li></ul></div>
+                    <div><h4 style="font-weight: 600; margin-bottom: 1rem;">Contact</h4><ul style="list-style: none; line-height: 2; color:#7B6651;"><li><i class="fas fa-map-marker-alt" style="width: 20px;"></i> 39/A Pitipana North, Uduwana, Homagama</li><li><i class="fas fa-phone-alt"></i> 075 593 7147</li><li><i class="fas fa-envelope"></i> aspncake@gmail.com</li></ul></div>
                     <div><h4 style="font-weight: 600; margin-bottom: 1rem;">Sweet hours</h4><p>Mon-Fri: 9am – 8pm<br>Sat-Sun: 10am – 6pm</p></div>
                 </div>
-                <div style="text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #EBDBCA; color: #A48C72;">© 2025 Disna Cakes — where every bite is a pastel dream.</div>
+                <div style="text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #EBDBCA; color: #A48C72;">© 2026 Disna Cakes — where every bite is a pastel dream.</div>
             </div>
         </footer>
     </main>

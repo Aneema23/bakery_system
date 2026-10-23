@@ -20,7 +20,6 @@ public function up(): void
         $table->string('phone');
         $table->text('address');
         $table->string('city');
-        $table->string('postal_code')->nullable();
 
         $table->string('cake_size');
         $table->string('flavor');

@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Admin\DeliveryPersonController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -76,13 +77,21 @@ Route::middleware(['auth','role:admin'])->group(function () {
 
 Route::middleware(['auth','role:customer'])->group(function () {
     Route::get('/customer/dashboard', function () {
-        return view('customer.dashboard');
-    })->name('customer.dashboard');
-});
+        $orders = Order::where('user_id', auth()->id());
 
-Route::middleware(['auth','role:delivery_person'])->group(function () {
-    Route::get('/delivery/dashboard', function () {
-        return view('dashboard');
-    })->name('delivery.dashboard');
+        $totalOrders = (clone $orders)->count();
+        $completedOrders = (clone $orders)
+            ->whereRaw("LOWER(status) IN ('completed', 'delivered')")
+            ->count();
+        $pendingOrders = (clone $orders)
+            ->whereRaw('LOWER(status) = ?', ['pending'])
+            ->count();
+
+        return view('customer.dashboard', compact(
+            'totalOrders',
+            'completedOrders',
+            'pendingOrders'
+        ));
+    })->name('customer.dashboard');
 });
 

@@ -9,7 +9,7 @@
         <div class="max-w-md mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <form method="POST" action="{{ route('admin.delivery-persons.store') }}">
+                    <form method="POST" action="{{ route('admin.delivery-persons.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <!-- Name -->
@@ -17,6 +17,42 @@
                             <x-input-label for="name" :value="__('Name')" />
                             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                             <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="contact_number" :value="__('Phone Number')" />
+                            <x-text-input id="contact_number" class="block mt-1 w-full" type="text" name="contact_number" :value="old('contact_number')" autocomplete="tel" />
+                            <x-input-error :messages="$errors->get('contact_number')" class="mt-2" />
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="address" :value="__('Address')" />
+                            <x-text-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" autocomplete="street-address" />
+                            <x-input-error :messages="$errors->get('address')" class="mt-2" />
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="city" :value="__('City')" />
+                            <x-text-input id="city" class="block mt-1 w-full" type="text" name="city" :value="old('city')" autocomplete="address-level2" />
+                            <x-input-error :messages="$errors->get('city')" class="mt-2" />
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="nic" :value="__('NIC / ID Number')" />
+                            <x-text-input id="nic" class="block mt-1 w-full" type="text" name="nic" :value="old('nic')" />
+                            <x-input-error :messages="$errors->get('nic')" class="mt-2" />
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="vehicle_type" :value="__('Vehicle Type')" />
+                            <x-text-input id="vehicle_type" class="block mt-1 w-full" type="text" name="vehicle_type" :value="old('vehicle_type')" />
+                            <x-input-error :messages="$errors->get('vehicle_type')" class="mt-2" />
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="photo" :value="__('Profile Photo')" />
+                            <input id="photo" class="block mt-1 w-full" type="file" name="photo" accept="image/*" />
+                            <x-input-error :messages="$errors->get('photo')" class="mt-2" />
                         </div>
 
                         <!-- Email Address -->
@@ -29,14 +65,20 @@
                         <!-- Password -->
                         <div class="mt-4">
                             <x-input-label for="password" :value="__('Password')" />
-                            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                            <div class="relative mt-1">
+                                <x-text-input id="password" class="block w-full pr-10" type="password" name="password" required autocomplete="new-password" />
+                                <button type="button" class="absolute inset-y-0 right-0 px-3 text-gray-500" onclick="togglePassword('password', this)" aria-label="Show password">Show</button>
+                            </div>
                             <x-input-error :messages="$errors->get('password')" class="mt-2" />
                         </div>
 
                         <!-- Confirm Password -->
                         <div class="mt-4">
                             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-                            <x-text-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                            <div class="relative mt-1">
+                                <x-text-input id="password_confirmation" class="block w-full pr-10" type="password" name="password_confirmation" required autocomplete="new-password" />
+                                <button type="button" class="absolute inset-y-0 right-0 px-3 text-gray-500" onclick="togglePassword('password_confirmation', this)" aria-label="Show password">Show</button>
+                            </div>
                             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                         </div>
 
@@ -53,4 +95,13 @@
             </div>
         </div>
     </div>
+    <script>
+        function togglePassword(id, button) {
+            const input = document.getElementById(id);
+            const visible = input.type === 'text';
+            input.type = visible ? 'password' : 'text';
+            button.textContent = visible ? 'Show' : 'Hide';
+            button.setAttribute('aria-label', visible ? 'Show password' : 'Hide password');
+        }
+    </script>
 </x-app-layout>

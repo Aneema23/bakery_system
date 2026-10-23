@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Customer\OrderController;
+use App\Http\Controllers\DeliveryPersonDashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
@@ -23,17 +24,23 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Admin Dashboard
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/orders', [AdminDashboardController::class, 'index'])->name('admin.orders.index');
+    Route::post('/admin/products/{product}/stock', [AdminDashboardController::class, 'updateStock'])
+        ->middleware('role:admin')
+        ->name('admin.products.update-stock');
+    Route::post('/admin/orders', [AdminDashboardController::class, 'storeManualOrder'])
+        ->middleware('role:admin')
+        ->name('admin.orders.store');
     Route::post('/admin/orders/{order}/update-status', [AdminDashboardController::class, 'updateStatus'])->name('admin.orders.update-status');
+    Route::post('/admin/orders/{order}/assign-delivery', [AdminDashboardController::class, 'assignDelivery'])->name('admin.orders.assign-delivery');
+    Route::put('/admin/orders/{order}/reassign-delivery', [AdminDashboardController::class, 'reassignDelivery'])->name('admin.orders.reassign-delivery');
 
-    // Customer Dashboard
-    Route::get('/customer/dashboard', function () {
-        return view('customer.dashboard');
-    })->middleware('role:customer')->name('customer.dashboard');
-
-    // Delivery Person Dashboard (placeholder)
-    Route::get('/delivery/dashboard', function () {
-        return view('dashboard');
-    })->middleware('role:delivery_person')->name('delivery.dashboard');
+    // Delivery Person Dashboard
+    Route::get('/delivery/dashboard', [DeliveryPersonDashboardController::class, 'index'])
+        ->middleware('role:delivery_person')
+        ->name('delivery.dashboard');
+    Route::post('/delivery/orders/{order}/status', [DeliveryPersonDashboardController::class, 'updateStatus'])
+        ->middleware('role:delivery_person')
+        ->name('delivery.orders.status');
 
     // Redirect /dashboard to appropriate dashboard based on role
     Route::get('/dashboard', function () {
@@ -85,6 +92,10 @@ Route::post('/custom-products/order', [OrderController::class, 'store'])
 Route::get('/customer/orders', [OrderController::class, 'index'])
     ->middleware(['auth', 'role:customer'])
     ->name('customer.orders');
+
+Route::post('/customer/notifications/{notification}/dismiss', [OrderController::class, 'dismissNotification'])
+    ->middleware(['auth', 'role:customer'])
+    ->name('customer.notifications.dismiss');
 
 Route::post('/customer/orders/{order}/cancel', [OrderController::class, 'cancel'])
     ->middleware(['auth', 'role:customer'])

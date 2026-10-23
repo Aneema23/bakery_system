@@ -240,6 +240,67 @@
                 padding-top: 65px;
             }
         }
+
+
+        /* ============================================
+        Feedback & Rating System
+        ============================================ */
+
+        /* Star display inside review cards */
+        .review-stars {
+            color: #FFB5A7;
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+
+        /* Interactive star input */
+        .star-input {
+            display: flex;
+            gap: 6px;
+            font-size: 1.9rem;
+            color: #FFB5A7;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .star-input i {
+            transition: transform 0.15s ease, color 0.15s ease;
+        }
+
+        .star-input i:hover,
+        .star-input i:focus {
+            transform: scale(1.15);
+            outline: none;
+        }
+
+        .star-input i.active {
+            color: #FF9A8B;
+        }
+
+        /* Animate newly inserted review */
+        @keyframes reviewPop {
+            0%   { opacity: 0; transform: translateY(12px) scale(0.96); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .review-card.new {
+            animation: reviewPop 0.4s ease-out both;
+        }
+
+        /* Form focus rings to match pastel theme */
+        #feedbackForm input:focus,
+        #feedbackForm textarea:focus {
+            border-color: #FFB5A7 !important;
+            box-shadow: 0 0 0 4px rgba(255, 181, 167, 0.2);
+        }
+
+        /* Error state */
+        #feedbackForm input.error,
+        #feedbackForm textarea.error,
+        .star-input.error {
+            border-color: #E57373 !important;
+            box-shadow: 0 0 0 4px rgba(229, 115, 115, 0.15);
+        }
     </style>
 </head>
 <body>
@@ -362,17 +423,93 @@
             </div>
         </div>
 
-        <!-- Testimonials -->
-        <div style="background: #FDF8F4; padding: 4rem 0;">
+        <!-- Feedback System -->
+        <div style="background: #FDF8F4; padding: 4rem 0;" id="reviews">
             <div class="container">
                 <h2 style="text-align: center; font-size: 2rem; font-weight: 700; color:#4C3E30;">❤️ Sweet words</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                    <div class="card" style="padding: 1.6rem;"><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><p style="margin: 1rem 0; color: #685A48;">"The macaron box was gorgeous! Tastes like Paris in pastel. Highly recommend for gifts."</p><p style="font-weight: 600;">— Mia L.</p></div>
-                    <div class="card" style="padding: 1.6rem;"><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><p style="margin: 1rem 0; color: #685A48;">"My custom birthday cake with blush drip and mint accents was incredible. Thank you Disna!"</p><p style="font-weight: 600;">— Chloe R.</p></div>
-                    <div class="card" style="padding: 1.6rem;"><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><i class="fas fa-star" style="color: #FFB5A7;"></i><p style="margin: 1rem 0; color: #685A48;">"Super fast delivery & cupcakes were so light and airy. My new favorite bakery!"</p><p style="font-weight: 600;">— Daniel K.</p></div>
+
+                <!-- Average rating summary -->
+                <div style="text-align: center; margin-top: 0.75rem; margin-bottom: 1.5rem;">
+                    <div id="avgRatingStars" style="font-size: 1.4rem; color: #FFB5A7; letter-spacing: 3px;">★★★★★</div>
+                    <p id="avgRatingText" style="color: #8D7862; font-size: 0.9rem; margin-top: 0.35rem;">
+                        Based on 3 reviews
+                    </p>
+                </div>
+
+                <!-- Review grid -->
+                <div id="reviewsGrid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <!-- Static seed reviews -->
+                    <div class="card review-card" style="padding: 1.6rem;">
+                        <div class="review-stars">★★★★★</div>
+                        <p style="margin: 1rem 0; color: #685A48;">"The macaron box was gorgeous! Tastes like Paris in pastel. Highly recommend for gifts."</p>
+                        <p style="font-weight: 600;">— Mia L.</p>
+                    </div>
+                    <div class="card review-card" style="padding: 1.6rem;">
+                        <div class="review-stars">★★★★★</div>
+                        <p style="margin: 1rem 0; color: #685A48;">"My custom birthday cake with blush drip and mint accents was incredible. Thank you Disna!"</p>
+                        <p style="font-weight: 600;">— Chloe R.</p>
+                    </div>
+                    <div class="card review-card" style="padding: 1.6rem;">
+                        <div class="review-stars">★★★★★</div>
+                        <p style="margin: 1rem 0; color: #685A48;">"Super fast delivery & cupcakes were so light and airy. My new favorite bakery!"</p>
+                        <p style="font-weight: 600;">— Daniel K.</p>
+                    </div>
+                    <!-- Dynamic reviews will be inserted here -->
+                </div>
+
+                <!-- Leave a review form -->
+                <div class="card" style="margin-top: 3rem; padding: 2rem; max-width: 640px; margin-left: auto; margin-right: auto;">
+                    <h3 style="font-size: 1.4rem; font-weight: 700; color: #4C3E30; margin-bottom: 0.25rem;">
+                        <i class="fas fa-pen-fancy" style="color:#FFB5A7;"></i> Share your experience
+                    </h3>
+                    <p style="color: #8D7862; font-size: 0.9rem; margin-bottom: 1.25rem;">
+                        Your feedback helps us bake even sweeter treats.
+                    </p>
+
+                    <form id="feedbackForm" novalidate>
+                        <!-- Star rating input -->
+                        <label class="form-label" style="display:block; font-weight:600; color:#5E4B3A; margin-bottom:0.4rem;">
+                            Your rating
+                        </label>
+                        <div class="star-input" id="starInput" role="radiogroup" aria-label="Star rating">
+                            <i class="far fa-star" data-value="1" role="radio" aria-label="1 star" tabindex="0"></i>
+                            <i class="far fa-star" data-value="2" role="radio" aria-label="2 stars" tabindex="0"></i>
+                            <i class="far fa-star" data-value="3" role="radio" aria-label="3 stars" tabindex="0"></i>
+                            <i class="far fa-star" data-value="4" role="radio" aria-label="4 stars" tabindex="0"></i>
+                            <i class="far fa-star" data-value="5" role="radio" aria-label="5 stars" tabindex="0"></i>
+                        </div>
+                        <input type="hidden" id="ratingValue" name="rating" value="0">
+
+                        <!-- Name -->
+                        <label class="form-label" for="reviewerName" style="display:block; font-weight:600; color:#5E4B3A; margin:0.9rem 0 0.4rem;">
+                            Your name
+                        </label>
+                        <input type="text" id="reviewerName" class="form-control" maxlength="40"
+                            placeholder="e.g. John Doe" required
+                            style="width:100%; padding:0.7rem 1rem; border:1px solid #E8D9C8; border-radius:12px; font-family:inherit; font-size:0.95rem; outline:none; background:#FFFDFB;">
+
+                        <!-- Comment -->
+                        <label class="form-label" for="reviewerComment" style="display:block; font-weight:600; color:#5E4B3A; margin:0.9rem 0 0.4rem;">
+                            Your review
+                        </label>
+                        <textarea id="reviewerComment" class="form-control" rows="4" maxlength="300"
+                                placeholder="Tell us what you loved…" required
+                                style="width:100%; padding:0.7rem 1rem; border:1px solid #E8D9C8; border-radius:12px; font-family:inherit; font-size:0.95rem; outline:none; resize:vertical; background:#FFFDFB;"></textarea>
+
+                        <!-- Feedback message -->
+                        <p id="feedbackMsg" style="display:none; font-size:0.85rem; margin-top:0.75rem;"></p>
+
+                        <!-- Submit -->
+                        <button type="submit" class="btn-primary" style="margin-top:1rem; width:100%; justify-content:center;">
+                            <i class="fas fa-paper-plane"></i> Submit Review
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
+
+
     </main>
 
     <!-- Footer: creamy vanilla & pastel touches -->
@@ -380,11 +517,11 @@
         <div class="container">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 2rem;">
                 <div><div style="display: flex; gap: 0.7rem; align-items: center; margin-bottom: 1rem;"><i class="fas fa-crown" style="color:#FFB5A7; font-size: 1.8rem;"></i><span style="font-weight: 800; font-size: 1.3rem;">Disna Cakes</span></div><p style="color:#7E6954;">Fresh pastel creations, custom orders & same-day treats.</p></div>
-                <div><h4 style="font-weight: 600; margin-bottom: 1rem;">Explore</h4><ul style="list-style: none; line-height: 2;"><li><a href="#" class="footer-link">About</a></li><li><a href="#" class="footer-link">Cake Gallery</a></li><li><a href="#" class="footer-link">Custom Order</a></li></ul></div>
-                <div><h4 style="font-weight: 600; margin-bottom: 1rem;">Contact</h4><ul style="list-style: none; line-height: 2; color:#7B6651;"><li><i class="fas fa-map-marker-alt" style="width: 20px;"></i> 22 Pastel Lane, Sweetsville</li><li><i class="fas fa-phone-alt"></i> +1 (555) 234-8890</li><li><i class="fas fa-envelope"></i> hello@disnacakes.com</li></ul></div>
-                <div><h4 style="font-weight: 600; margin-bottom: 1rem;">Sweet hours</h4><p>Mon-Fri: 9am – 8pm<br>Sat-Sun: 10am – 6pm</p></div>
+                <div><h4 style="font-weight: 600; margin-bottom: 1rem;">Explore</h4><ul style="list-style: none; line-height: 2;"><li><a href="{{ url('/') }}" class="footer-link">About</a></li><li><a href="{{ route('menu') }}" class="footer-link">Cake Gallery</a></li></ul></div>
+                <div><h4 style="font-weight: 600; margin-bottom: 1rem;">Contact</h4><ul style="list-style: none; line-height: 2; color:#7B6651;"><li><i class="fas fa-map-marker-alt" style="width: 20px;"></i> 39/A Pitipana North, Uduwana, Homagama</li><li><i class="fas fa-phone-alt"></i> 075 593 7147</li><li><i class="fas fa-envelope"></i> aspncake@gmail.com</li></ul></div>
+                <div><h4 style="font-weight: 600; margin-bottom: 1rem;">Sweet hours</h4><p>Mon-Fri: 9am – 6pm<br>Sat-Sun: 10am – 5pm</p></div>
             </div>
-            <div style="text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #EBDBCA; color: #A48C72;">© 2025 Disna Cakes — where every bite is a pastel dream.</div>
+            <div style="text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #EBDBCA; color: #A48C72;">©  2026 Disna Cakes — where every bite is a pastel dream.</div>
         </div>
     </footer>
 
@@ -398,6 +535,190 @@
                 header.classList.remove('scrolled');
             }
         });
+
+
+        /* ============================================
+        Feedback & Rating System
+        ============================================ */
+        (function () {
+            'use strict';
+
+            const STORAGE_KEY = 'disnaCakesReviews';
+            const form        = document.getElementById('feedbackForm');
+            const starInput   = document.getElementById('starInput');
+            const ratingValue = document.getElementById('ratingValue');
+            const nameInput   = document.getElementById('reviewerName');
+            const commentInput= document.getElementById('reviewerComment');
+            const feedbackMsg = document.getElementById('feedbackMsg');
+            const grid        = document.getElementById('reviewsGrid');
+            const avgStars    = document.getElementById('avgRatingStars');
+            const avgText     = document.getElementById('avgRatingText');
+
+            /* ---------- Star input behaviour ---------- */
+            const stars = starInput.querySelectorAll('i');
+
+            function paintStars(value) {
+                stars.forEach((s) => {
+                    const v = Number(s.dataset.value);
+                    s.classList.toggle('fas', v <= value);
+                    s.classList.toggle('far', v > value);
+                    s.classList.toggle('active', v <= value);
+                });
+            }
+
+            function setRating(value) {
+                ratingValue.value = value;
+                paintStars(value);
+                starInput.classList.remove('error');
+            }
+
+            stars.forEach((star) => {
+                star.addEventListener('mouseenter', () => paintStars(Number(star.dataset.value)));
+                star.addEventListener('click',      () => setRating(Number(star.dataset.value)));
+                star.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setRating(Number(star.dataset.value));
+                    }
+                });
+            });
+
+            starInput.addEventListener('mouseleave', () => paintStars(Number(ratingValue.value) || 0));
+
+            /* ---------- Helpers ---------- */
+            function escapeHtml(str) {
+                return String(str)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+            }
+
+            function starsMarkup(n) {
+                const full = '★'.repeat(n);
+                const empty = '☆'.repeat(5 - n);
+                return full + empty;
+            }
+
+            function getReviews() {
+                try {
+                    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+                } catch {
+                    return [];
+                }
+            }
+
+            function saveReviews(list) {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+                } catch (e) {
+                    console.warn('Could not save review:', e);
+                }
+            }
+
+            /* ---------- Render a single review card ---------- */
+            function buildReviewCard(review, isNew) {
+                const card = document.createElement('div');
+                card.className = 'card review-card' + (isNew ? ' new' : '');
+                card.style.padding = '1.6rem';
+                card.innerHTML =
+                    '<div class="review-stars">' + starsMarkup(review.rating) + '</div>' +
+                    '<p style="margin: 1rem 0; color: #685A48;">"' + escapeHtml(review.comment) + '"</p>' +
+                    '<p style="font-weight: 600;">— ' + escapeHtml(review.name) + '</p>';
+                return card;
+            }
+
+            /* ---------- Update average rating ---------- */
+            function updateAverage(allRatings) {
+                if (!allRatings.length) {
+                    avgStars.textContent = '★★★★★';
+                    avgText.textContent = 'Be the first to review!';
+                    return;
+                }
+                const avg = allRatings.reduce((a, b) => a + b, 0) / allRatings.length;
+                const rounded = Math.round(avg);
+                avgStars.textContent = starsMarkup(rounded);
+                avgText.textContent =
+                    'Average ' + avg.toFixed(1) + ' / 5 · based on ' +
+                    allRatings.length + ' review' + (allRatings.length === 1 ? '' : 's');
+            }
+
+            /* ---------- Seed + load all reviews ---------- */
+            // Static seed reviews already in HTML — gather their ratings for the average
+            const seedRatings = [5, 5, 5];
+
+            function loadAndRender() {
+                const stored = getReviews();
+                stored.forEach((r) => grid.appendChild(buildReviewCard(r, false)));
+                updateAverage(seedRatings.concat(stored.map((r) => r.rating)));
+            }
+
+            /* ---------- Form submission ---------- */
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                feedbackMsg.style.display = 'none';
+
+                const rating  = Number(ratingValue.value);
+                const name    = nameInput.value.trim();
+                const comment = commentInput.value.trim();
+
+                // Reset error classes
+                nameInput.classList.remove('error');
+                commentInput.classList.remove('error');
+                starInput.classList.remove('error');
+
+                // Validation
+                if (rating < 1) {
+                    starInput.classList.add('error');
+                    return showMessage('Please choose a star rating.', 'error');
+                }
+                if (name.length < 2) {
+                    nameInput.classList.add('error');
+                    return showMessage('Please enter your name (at least 2 characters).', 'error');
+                }
+                if (comment.length < 5) {
+                    commentInput.classList.add('error');
+                    return showMessage('Please write a slightly longer review (5+ characters).', 'error');
+                }
+
+                // Save
+                const review = {
+                    rating,
+                    name,
+                    comment,
+                    date: new Date().toISOString()
+                };
+
+                const all = getReviews();
+                all.unshift(review);
+                saveReviews(all);
+
+                // Render new card at top of grid
+                grid.insertBefore(buildReviewCard(review, true), grid.firstChild);
+
+                // Update average
+                updateAverage(seedRatings.concat(all.map((r) => r.rating)));
+
+                // Reset form
+                form.reset();
+                setRating(0);
+                showMessage('Thank you! Your review has been added. 🍰', 'success');
+
+                // Scroll new review into view
+                grid.firstChild.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+
+            function showMessage(text, type) {
+                feedbackMsg.textContent = text;
+                feedbackMsg.style.color = type === 'error' ? '#C0392B' : '#3E7A4E';
+                feedbackMsg.style.display = 'block';
+            }
+
+            /* ---------- Init ---------- */
+            paintStars(0);
+            loadAndRender();
+        })();
     </script>
 
 </body>

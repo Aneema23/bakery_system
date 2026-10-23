@@ -440,8 +440,8 @@
             <div class="bakery-icon">
                 <img src="{{ asset('images/logo.png') }}" alt="Disna Bakery Logo" style="width: 42px; height: 42px;">
             </div>
-            <h2>Join the Disna Bakery ✨</h2>
-            <p>create your account & enjoy pastel treats</p>
+            <h2>Join the Disna Bakery </h2>
+            <p>Create Your Account & Enjoy Pastel Treats</p>
         </div>
 
         <div class="register-content">
@@ -460,7 +460,7 @@
                 <!-- Contact Number -->
                 <div class="form-group">
                     <label>Contact number <span class="required">*</span></label>
-                    <input id="contact_number" class="form-control" type="tel" name="contact_number" value="{{ old('contact_number') }}" required autocomplete="tel" placeholder="+94 77 123 4567">
+                    <input id="contact_number" class="form-control" type="tel" name="contact_number" value="{{ old('contact_number') }}" required autocomplete="tel" placeholder="077 123 4567">
                     @error('contact_number')
                         <div class="error-message">{{ $message }}</div>
                     @enderror
@@ -540,12 +540,12 @@
                 </div>
 
                 <button type="submit" class="btn-register">
-                    🧁 create sweet account 🧁
+                    🧁 Create Sweet Account 🧁
                 </button>
 
                 <div class="login-link">
                     <a href="{{ route('login') }}">
-                        already have an account? sign in →
+                        Already have an account? sign in →
                     </a>
                 </div>
             </form>

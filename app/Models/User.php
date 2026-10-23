@@ -24,6 +24,10 @@ class User extends Authenticatable
         'email',
         'address',
         'city',
+        'nic',
+        'vehicle_type',
+        'status',
+        'photo',
         'password',
         'role',
     ];

@@ -540,7 +540,7 @@
                 </div>
 
                 <button type="submit" class="btn-confirm" id="confirmButton">
-                    <span class="btn-text">✨ confirm & continue ✨</span>
+                    <span class="btn-text">✨ Confirm & Continue ✨</span>
                     <span class="loading-spinner"></span>
                 </button>
 

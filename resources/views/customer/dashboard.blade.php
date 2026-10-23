@@ -367,7 +367,7 @@
     </style>
 </head>
 <body>
-    <!-- Navigation - Laravel Compatible -->
+    <!-- Navigation  -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -395,7 +395,6 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" href="{{ route('customer.orders') }}"><i class="fas fa-box"></i> My Orders</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-magic"></i> My Custom Cakes</a></li>
                                 <li>
                                     <a class="dropdown-item" href="{{ route('profile.edit') }}">
                                         <i class="fas fa-user-cog"></i> Profile Settings
@@ -426,7 +425,7 @@
         </div>
     </nav>
 
-    <!-- Customer Dashboard Section (only visible when authenticated) -->
+    <!-- Customer Dashboard Section -->
     @auth
     <div class="container mt-5 pt-4">
         <div class="row">
@@ -517,108 +516,188 @@
     </section>
 
     <!-- Featured Categories -->
-    <div class="container mt-5">
-        <h2 class="section-title">Shop by Category</h2>
-        <div class="row">
-            <div class="col-md-2 col-sm-4 col-6">
-                <a href="#" class="text-decoration-none">
-                    <div class="category-card">
-                        <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=400" alt="Cakes">
-                        <div class="info">
-                            <h4>Cakes</h4>
-                            <p class="text-muted small">24 items</p>
-                        </div>
-                    </div>
-                </a>
+    <div style="max-width: 1140px; margin: 3rem auto 0; padding: 0 1.5rem;">
+
+        <!-- Section Title -->
+        <h2 style="font-family: Georgia, 'Times New Roman', serif; font-size: 2.2rem; font-weight: 700; color: #2c241f; text-align: center; margin-bottom: 2.5rem; position: relative; display: inline-block; width: 100%;">
+            <span style="background: linear-gradient(135deg, #d4a373 0%, #b5835a 100%); display: inline-block; padding: 0 1.5rem; border-radius: 50px; color: white; line-height: 1.4;">Shop by Category</span>
+        </h2>
+
+        <!-- Category Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.8rem;">
+
+            <!-- 1. Birthday Cakes -->
+            <div onclick="window.location.href='{{ route('custom-products.customer') }}?category=birthday-cakes'" 
+                style="background: #ffffff; border-radius: 20px; padding: 1.5rem 1rem; text-align: center; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(83, 55, 40, 0.08); border: 1px solid #eadfd4;"
+                onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 40px rgba(83, 55, 40, 0.15)'; this.style.borderColor='#d4a373';"
+                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(83, 55, 40, 0.08)'; this.style.borderColor='#eadfd4';">
+                <div style="width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 1rem; overflow: hidden; border: 3px solid #d4a373; box-shadow: 0 4px 12px rgba(212, 163, 115, 0.25);">
+                    <img src="https://plus.unsplash.com/premium_photo-1663839412026-51a44cfadfb8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Birthday Cakes" 
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3 style="font-size: 1.05rem; font-weight: 700; color: #2c241f; margin: 0; letter-spacing: 0.02em;">Birthday Cakes</h3>
+                <span style="font-size: 0.75rem; color: #8a7a6e; font-weight: 500; display: inline-block; margin-top: 4px;">Celebrate in style</span>
             </div>
-            <div class="col-md-2 col-sm-4 col-6">
-                <a href="#" class="text-decoration-none">
-                    <div class="category-card">
-                        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400" alt="Pastries">
-                        <div class="info">
-                            <h4>Pastries</h4>
-                            <p class="text-muted small">18 items</p>
-                        </div>
-                    </div>
-                </a>
+
+            <!-- 2. CupCakes -->
+            <div onclick="window.location.href='{{ route('custom-products.customer') }}?category=cupcakes'" 
+                style="background: #ffffff; border-radius: 20px; padding: 1.5rem 1rem; text-align: center; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(83, 55, 40, 0.08); border: 1px solid #eadfd4;"
+                onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 40px rgba(83, 55, 40, 0.15)'; this.style.borderColor='#d4a373';"
+                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(83, 55, 40, 0.08)'; this.style.borderColor='#eadfd4';">
+                <div style="width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 1rem; overflow: hidden; border: 3px solid #d4a373; box-shadow: 0 4px 12px rgba(212, 163, 115, 0.25);">
+                    <img src="https://images.unsplash.com/photo-1566864399117-22c449669089?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Cupcakes" 
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3 style="font-size: 1.05rem; font-weight: 700; color: #2c241f; margin: 0; letter-spacing: 0.02em;">CupCakes</h3>
+                <span style="font-size: 0.75rem; color: #8a7a6e; font-weight: 500; display: inline-block; margin-top: 4px;">Perfect little treats</span>
             </div>
-            <div class="col-md-2 col-sm-4 col-6">
-                <a href="#" class="text-decoration-none">
-                    <div class="category-card">
-                        <img src="https://images.unsplash.com/photo-1587393855524-087f83d95bc9?w=300" alt="Cupcakes">
-                        <div class="info">
-                            <h4>Cupcakes</h4>
-                            <p class="text-muted small">32 items</p>
-                        </div>
-                    </div>
-                </a>
+
+            <!-- 3. Cakes -->
+            <div onclick="window.location.href='{{ route('custom-products.customer') }}?category=cakes'" 
+                style="background: #ffffff; border-radius: 20px; padding: 1.5rem 1rem; text-align: center; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(83, 55, 40, 0.08); border: 1px solid #eadfd4;"
+                onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 40px rgba(83, 55, 40, 0.15)'; this.style.borderColor='#d4a373';"
+                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(83, 55, 40, 0.08)'; this.style.borderColor='#eadfd4';">
+                <div style="width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 1rem; overflow: hidden; border: 3px solid #d4a373; box-shadow: 0 4px 12px rgba(212, 163, 115, 0.25);">
+                    <img src="https://plus.unsplash.com/premium_photo-1669245220400-6c04752ec08a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Cakes" 
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3 style="font-size: 1.05rem; font-weight: 700; color: #2c241f; margin: 0; letter-spacing: 0.02em;">Cakes</h3>
+                <span style="font-size: 0.75rem; color: #8a7a6e; font-weight: 500; display: inline-block; margin-top: 4px;">Classic favorites</span>
             </div>
-            <div class="col-md-2 col-sm-4 col-6">
-                <a href="#" class="text-decoration-none">
-                    <div class="category-card">
-                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=300" alt="Bread">
-                        <div class="info">
-                            <h4>Bread</h4>
-                            <p class="text-muted small">15 items</p>
-                        </div>
-                    </div>
-                </a>
+
+            <!-- 4. Cookies -->
+            <div onclick="window.location.href='{{ route('custom-products.customer') }}?category=cookies'" 
+                style="background: #ffffff; border-radius: 20px; padding: 1.5rem 1rem; text-align: center; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(83, 55, 40, 0.08); border: 1px solid #eadfd4;"
+                onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 40px rgba(83, 55, 40, 0.15)'; this.style.borderColor='#d4a373';"
+                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(83, 55, 40, 0.08)'; this.style.borderColor='#eadfd4';">
+                <div style="width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 1rem; overflow: hidden; border: 3px solid #d4a373; box-shadow: 0 4px 12px rgba(212, 163, 115, 0.25);">
+                    <img src="https://images.unsplash.com/photo-1590080874088-eec64895b423?q=80&w=894&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Cookies" 
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3 style="font-size: 1.05rem; font-weight: 700; color: #2c241f; margin: 0; letter-spacing: 0.02em;">Cookies</h3>
+                <span style="font-size: 0.75rem; color: #8a7a6e; font-weight: 500; display: inline-block; margin-top: 4px;">Crunchy & delicious</span>
             </div>
-            <div class="col-md-2 col-sm-4 col-6">
-                <a href="#" class="text-decoration-none">
-                    <div class="category-card">
-                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=300" alt="Drinks">
-                        <div class="info">
-                            <h4>Drinks</h4>
-                            <p class="text-muted small">12 items</p>
-                        </div>
-                    </div>
-                </a>
+
+            <!-- 5. Specials -->
+            <div onclick="window.location.href='{{ route('custom-products.customer') }}?category=specials'" 
+                style="background: #ffffff; border-radius: 20px; padding: 1.5rem 1rem; text-align: center; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(83, 55, 40, 0.08); border: 1px solid #eadfd4;"
+                onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 40px rgba(83, 55, 40, 0.15)'; this.style.borderColor='#d4a373';"
+                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(83, 55, 40, 0.08)'; this.style.borderColor='#eadfd4';">
+                <div style="width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 1rem; overflow: hidden; border: 3px solid #d4a373; box-shadow: 0 4px 12px rgba(212, 163, 115, 0.25);">
+                    <img src="https://images.unsplash.com/photo-1629389861081-43cc4f172b0c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Specials" 
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3 style="font-size: 1.05rem; font-weight: 700; color: #2c241f; margin: 0; letter-spacing: 0.02em;">Specials</h3>
+                <span style="font-size: 0.75rem; color: #8a7a6e; font-weight: 500; display: inline-block; margin-top: 4px;">Seasonal delights</span>
             </div>
-            <div class="col-md-2 col-sm-4 col-6">
-                <a href="#" class="text-decoration-none">
-                    <div class="category-card">
-                        <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=300" alt="Cookies">
-                        <div class="info">
-                            <h4>Cookies</h4>
-                            <p class="text-muted small">20 items</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+
         </div>
     </div>
 
     <!-- Featured Products -->
-    <div class="container mt-5">
-        <h2 class="section-title">Featured Products</h2>
-        <div class="row">
-            @php
-                $featuredProducts = [
-                    ['name' => 'Chocolate Cake', 'desc' => 'Rich chocolate cake with creamy frosting', 'price' => 25.99, 'image' => 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=300'],
-                    ['name' => 'Vanilla Cupcake', 'desc' => 'Light vanilla cupcake with buttercream', 'price' => 3.99, 'image' => 'https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=400'],
-                    ['name' => 'Butter Croissant', 'desc' => 'Flaky, buttery French croissant', 'price' => 2.99, 'image' => 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400'],
-                    ['name' => 'Red Velvet Cake', 'desc' => 'Classic red velvet with cream cheese', 'price' => 29.99, 'image' => 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=300'],
-                ];
-            @endphp
-            @foreach($featuredProducts as $product)
-            <div class="col-md-3 col-sm-6">
-                <div class="product-card">
-                    <img src="{{ $product['image'] }}" alt="{{ $product['name'] }}">
-                    <div class="info">
-                        <h5>{{ $product['name'] }}</h5>
-                        <p class="text-muted small">{{ $product['desc'] }}</p>
-                        <div class="price">${{ number_format($product['price'], 2) }}</div>
-                        <form action="#" method="POST">
-                            @csrf
-                            <input type="hidden" name="product_name" value="{{ $product['name'] }}">
-                            <input type="hidden" name="price" value="{{ $product['price'] }}">
-                            <button type="submit" class="btn-add mt-2">Add to Cart</button>
-                        </form>
+    <div style="max-width: 1140px; margin: 3.5rem auto 0; padding: 0 1.5rem;">
+
+        <!-- Section Title -->
+        <h2 style="font-family: Georgia, 'Times New Roman', serif; font-size: 2.2rem; font-weight: 700; color: #2c241f; text-align: center; margin-bottom: 2.8rem; position: relative;">
+            <span style="background: linear-gradient(135deg, #d4a373 0%, #b5835a 100%); display: inline-block; padding: 0 1.8rem; border-radius: 50px; color: white; line-height: 1.4;">Featured Products</span>
+        </h2>
+
+        <!-- Products Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+
+            <!-- Product 1: Strawberry Cream Cake -->
+            <div style="background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 20px rgba(83, 55, 40, 0.08); border: 1px solid #eadfd4; transition: all 0.3s ease;"
+                onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 50px rgba(83, 55, 40, 0.15)'; this.style.borderColor='#d4a373';"
+                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(83, 55, 40, 0.08)'; this.style.borderColor='#eadfd4';">
+                
+                <div style="position: relative; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&auto=format" 
+                        alt="Strawberry Cream Cake" 
+                        style="width:100%; height:240px; object-fit:cover; transition: transform 0.5s ease;"
+                        onmouseover="this.style.transform='scale(1.05)'"
+                        onmouseout="this.style.transform='scale(1)'">
+                    <!-- Badge -->
+                    <span style="position: absolute; top: 12px; left: 12px; background: linear-gradient(135deg, #d4a373, #b5835a); color: white; font-size: 0.7rem; font-weight: 700; padding: 0.3rem 0.8rem; border-radius: 50px; letter-spacing: 0.04em; text-transform: uppercase;">Best Seller</span>
+                </div>
+
+                <div style="padding: 1.5rem 1.5rem 1.8rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.2rem; font-weight: 700; color: #2c241f; margin: 0;">Strawberry Cream Cake</h3>
+                        <span style="font-size: 0.8rem; color: #8a7a6e; background: #f7efe9; padding: 0.2rem 0.7rem; border-radius: 50px; font-weight: 600;">⭐ 4.9</span>
                     </div>
+                    <p style="color: #6C5B4A; font-size: 0.85rem; line-height: 1.6; margin: 0.5rem 0 1.2rem; min-height: 60px;">Soft vanilla sponge layered with fresh strawberries and whipped cream</p>
+                    <button onclick="window.location.href='{{ route('custom-products.customer') }}?category=cakes'" 
+                            style="width:100%; padding: 0.8rem; border: none; border-radius: 50px; background: linear-gradient(135deg, #d4a373 0%, #b5835a 100%); color: white; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.6rem; box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);"
+                            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(212, 163, 115, 0.45)';"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(212, 163, 115, 0.3)';">
+                        <i class="fas fa-eye"></i> View Product
+                    </button>
                 </div>
             </div>
-            @endforeach
+
+            <!-- Product 2: Chocolate Cake -->
+            <div style="background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 20px rgba(83, 55, 40, 0.08); border: 1px solid #eadfd4; transition: all 0.3s ease;"
+                onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 50px rgba(83, 55, 40, 0.15)'; this.style.borderColor='#d4a373';"
+                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(83, 55, 40, 0.08)'; this.style.borderColor='#eadfd4';">
+                
+                <div style="position: relative; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1621868402792-a5c9fa6866a3?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Chocolate Cake" 
+                        style="width:100%; height:240px; object-fit:cover; transition: transform 0.5s ease;"
+                        onmouseover="this.style.transform='scale(1.05)'"
+                        onmouseout="this.style.transform='scale(1)'">
+                    <span style="position: absolute; top: 12px; left: 12px; background: #2c241f; color: white; font-size: 0.7rem; font-weight: 700; padding: 0.3rem 0.8rem; border-radius: 50px; letter-spacing: 0.04em; text-transform: uppercase;">Popular</span>
+                </div>
+
+                <div style="padding: 1.5rem 1.5rem 1.8rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.2rem; font-weight: 700; color: #2c241f; margin: 0;">Chocolate Cake</h3>
+                        <span style="font-size: 0.8rem; color: #8a7a6e; background: #f7efe9; padding: 0.2rem 0.7rem; border-radius: 50px; font-weight: 600;">⭐ 4.8</span>
+                    </div>
+                    <p style="color: #6C5B4A; font-size: 0.85rem; line-height: 1.6; margin: 0.5rem 0 1.2rem; min-height: 60px;">Rich chocolate layered with smooth chocolate ganache and topped with decadent chocolate shavings</p>
+                    <button onclick="window.location.href='{{ route('custom-products.customer') }}?category=cakes'" 
+                            style="width:100%; padding: 0.8rem; border: none; border-radius: 50px; background: linear-gradient(135deg, #d4a373 0%, #b5835a 100%); color: white; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.6rem; box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);"
+                            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(212, 163, 115, 0.45)';"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(212, 163, 115, 0.3)';">
+                        <i class="fas fa-eye"></i> View Product
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3: Blueberry Cake -->
+            <div style="background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 20px rgba(83, 55, 40, 0.08); border: 1px solid #eadfd4; transition: all 0.3s ease;"
+                onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 50px rgba(83, 55, 40, 0.15)'; this.style.borderColor='#d4a373';"
+                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(83, 55, 40, 0.08)'; this.style.borderColor='#eadfd4';">
+                
+                <div style="position: relative; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1741812553483-7b15e74aeb07?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Blueberry Cake" 
+                        style="width:100%; height:240px; object-fit:cover; transition: transform 0.5s ease;"
+                        onmouseover="this.style.transform='scale(1.05)'"
+                        onmouseout="this.style.transform='scale(1)'">
+                    <span style="position: absolute; top: 12px; left: 12px; background: #2f7d72; color: white; font-size: 0.7rem; font-weight: 700; padding: 0.3rem 0.8rem; border-radius: 50px; letter-spacing: 0.04em; text-transform: uppercase;">New</span>
+                </div>
+
+                <div style="padding: 1.5rem 1.5rem 1.8rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.2rem; font-weight: 700; color: #2c241f; margin: 0;">Blueberry Cake</h3>
+                        <span style="font-size: 0.8rem; color: #8a7a6e; background: #f7efe9; padding: 0.2rem 0.7rem; border-radius: 50px; font-weight: 600;">⭐ 4.7</span>
+                    </div>
+                    <p style="color: #6C5B4A; font-size: 0.85rem; line-height: 1.6; margin: 0.5rem 0 1.2rem; min-height: 60px;">Light vanilla sponge filled with sweet blueberry compote and smooth cream, topped with fresh berries</p>
+                    <button onclick="window.location.href='{{ route('custom-products.customer') }}?category=cakes'" 
+                            style="width:100%; padding: 0.8rem; border: none; border-radius: 50px; background: linear-gradient(135deg, #d4a373 0%, #b5835a 100%); color: white; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.6rem; box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);"
+                            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(212, 163, 115, 0.45)';"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(212, 163, 115, 0.3)';">
+                        <i class="fas fa-eye"></i> View Product
+                    </button>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -638,32 +717,26 @@
                 <div class="col-md-4 mb-4">
                     <h5><i class="fas fa-birthday-cake"></i> Sweet Bakery</h5>
                     <p>Fresh baked goods delivered to your doorstep with love.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
                 </div>
                 <div class="col-md-2 mb-4">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Products</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Custom Cake</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+                        <li><a href="{{ route('custom-products.customer') }}" class="text-white text-decoration-none">Products</a></li>
+                        <li><a href="{{ route('custom-cake') }}" class="text-white text-decoration-none">Custom Cake</a></li>
+
                     </ul>
                 </div>
                 <div class="col-md-3 mb-4">
                     <h5>Contact Info</h5>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Bakery Street, Food City</p>
-                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
-                    <p><i class="fas fa-envelope"></i> info@sweetbakery.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 39/A Pitipana North, Uduwana, Homagama</p>
+                    <p><i class="fas fa-phone"></i> 075 593 7147</p>
+                    <p><i class="fas fa-envelope"></i> aspncake@gmail.com</p>
                 </div>
                 <div class="col-md-3 mb-4">
                     <h5>Opening Hours</h5>
-                    <p>Mon-Fri: 8:00 AM - 8:00 PM<br>
-                    Sat-Sun: 9:00 AM - 6:00 PM</p>
+                    <p>Mon-Fri: 9:00 AM - 6:00 PM<br>
+                    Sat-Sun: 10:00 AM - 5:00 PM</p>
                 </div>
             </div>
             <hr class="mt-2">

@@ -484,8 +484,8 @@
             <div class="bakery-icon">
                 <img src="{{ asset('images/logo.png') }}" alt="Disna Bakery Logo" style="width: 42px; height: 42px;">
             </div>
-            <h2>sweet return ✨</h2>
-            <p>sign in to your Disna Bakery Account</p>
+            <h2>Sweet Return </h2>
+            <p>Sign in to Your Disna Bakery Account</p>
         </div>
 
         <div class="login-content">
@@ -539,7 +539,7 @@
                 </div>
 
                 <button type="submit" class="btn-login">
-                    🧁 sign in 🧁
+                    🧁 Sign in 🧁
                 </button>
 
                 <div class="login-footer">
@@ -575,7 +575,7 @@
             }
         }
 
-        // Optional: subtle demo hint (can be removed)
+        // Optional: subtle demo
         console.log('🍰 Welcome to Disna Cakes — pastel login ready');
     </script>
 </body>

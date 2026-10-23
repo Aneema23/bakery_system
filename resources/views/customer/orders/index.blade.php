@@ -57,6 +57,43 @@
             margin-bottom: 1.5rem;
         }
 
+        .order-update-alert {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.1rem;
+            margin-bottom: 0.75rem;
+            background: #eaf6f3;
+            border: 1px solid #b8ddd5;
+            border-left: 5px solid var(--teal);
+            border-radius: 12px;
+            color: var(--ink);
+        }
+
+        .order-update-message {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .order-update-message:hover {
+            color: var(--teal);
+        }
+
+        .dismiss-update {
+            flex: 0 0 auto;
+            padding: 0.35rem 0.55rem;
+            color: var(--cocoa);
+            background: transparent;
+            border: 0;
+            border-radius: 6px;
+        }
+
+        .dismiss-update:hover {
+            color: #9c352d;
+            background: rgba(156, 53, 45, 0.08);
+        }
+
         .page-title {
             margin: 0;
             font-family: Georgia, 'Times New Roman', serif;
@@ -69,7 +106,7 @@
             border: 1px solid var(--line);
             border-radius: 18px;
             box-shadow: var(--shadow);
-            padding: 1.5rem;
+            padding: 1.1rem 1.5rem;
             margin-bottom: 1rem;
         }
 
@@ -79,9 +116,7 @@
             align-items: center;
             gap: 1rem;
             flex-wrap: wrap;
-            border-bottom: 1px solid var(--line);
-            padding-bottom: 0.85rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0;
         }
 
         .order-id {
@@ -118,6 +153,118 @@
         .order-status.cancel {
             background: #fdeaea;
             color: #b63e3e;
+        }
+
+        .view-order-btn {
+            background: var(--teal);
+            border: none;
+            border-radius: 999px;
+            color: white;
+            padding: 0.55rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .view-order-btn:hover {
+            background: #225f58;
+            transform: translateY(-1px);
+        }
+
+        .receipt-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(35, 24, 21, 0.58);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 1900;
+        }
+
+        .receipt-modal.show {
+            display: flex;
+        }
+
+        .receipt {
+            background: var(--paper);
+            width: min(620px, 100%);
+            max-height: min(760px, 92vh);
+            overflow-y: auto;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            box-shadow: 0 24px 70px rgba(60, 35, 24, 0.25);
+            animation: popupIn 0.2s ease;
+        }
+
+        .receipt-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-bottom: 1px dashed var(--line);
+        }
+
+        .receipt-brand {
+            color: var(--cocoa);
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .receipt-meta {
+            color: #7d6458;
+            font-size: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .receipt-close {
+            background: transparent;
+            border: none;
+            color: #7d6458;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .receipt-body {
+            padding: 1.5rem;
+        }
+
+        .receipt-section {
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .receipt-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .receipt-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.35rem 0;
+            color: #715d53;
+        }
+
+        .receipt-row strong {
+            color: var(--ink);
+            text-align: right;
+        }
+
+        .receipt-total {
+            color: var(--teal) !important;
+            font-size: 1.15rem;
+        }
+
+        .receipt-cancel {
+            margin-top: 1rem;
+            width: 100%;
         }
 
         .cancel-order-btn {
@@ -270,6 +417,66 @@
             color: white;
         }
 
+        /* ---------- Alerts ---------- */
+        .alert {
+            border-radius: 999px;
+            border: none;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .alert-success {
+            background: #e4f5eb;
+            color: #0b7a4d;
+        }
+
+        .alert-danger {
+            background: #fdeaea;
+            color: #b63e3e;
+        }
+
+         /* ---------- Filter Buttons ---------- */
+        .status-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .filter-btn {
+            background: #fff;
+            border: 2px solid var(--line);
+            color: var(--cocoa);
+            border-radius: 999px;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .filter-btn i {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--apricot);
+            color: white;
+            border-color: var(--apricot);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 163, 115, 0.35);
+        }
+
+        .filter-btn.active i,
+        .filter-btn:hover i {
+            opacity: 1;
+        }
+
         @media (max-width: 768px) {
             .page-wrap {
                 margin-top: 90px;
@@ -278,6 +485,7 @@
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{{ route('customer.dashboard') }}">
@@ -292,6 +500,7 @@
     </nav>
 
     <div class="page-wrap">
+        <!-- Page Header -->
         <div class="top-card d-flex justify-content-between align-items-center flex-wrap gap-3">
             <div>
                 <p class="mb-1 text-uppercase text-muted" style="letter-spacing:0.12em; font-size:0.72rem; font-weight:700;">Customer Portal</p>
@@ -300,6 +509,61 @@
             <a href="{{ route('custom-products.customer') }}" class="btn-primary-custom">
                 <i class="fas fa-bag-shopping"></i> Shop More
             </a>
+        </div>
+
+        <!-- Alerts -->
+        @if (session('success'))
+            <div class="alert alert-success rounded-pill border-0 mb-3" role="alert" data-auto-dismiss>
+                <i class="fas fa-check-circle me-2"></i> {{ session('success') }}
+            </div>
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-danger rounded-pill border-0 mb-3" role="alert" data-auto-dismiss>
+                <i class="fas fa-exclamation-circle me-2"></i> {{ session('error') }}
+            </div>
+        @endif
+
+        @if($notifications->isNotEmpty())
+            <section aria-label="New order updates" class="mb-4">
+                @foreach($notifications as $notification)
+                    <div class="order-update-alert" role="alert">
+                        <a class="order-update-message" href="{{ route('customer.orders', ['status' => 'all', 'notification' => $notification->id]) }}">
+                            <strong><i class="fas fa-bell me-2"></i>New order update</strong>
+                            <span class="d-block">{{ $notification->data['message'] ?? 'Your order status was updated.' }}</span>
+                            <small class="text-muted">Order #{{ $notification->data['order_id'] ?? '' }} · {{ $notification->created_at->diffForHumans() }} · View full order</small>
+                        </span>
+                        </a>
+                        <form method="POST" action="{{ route('customer.notifications.dismiss', $notification->id) }}">
+                            @csrf
+                            <button type="submit" class="dismiss-update" aria-label="Dismiss order update" title="Dismiss">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </form>
+                    </div>
+                @endforeach
+            </section>
+        @endif
+
+        <!-- Filter Bar -->
+        <div class="top-card">
+            <div class="status-filter">
+                <a href="{{ route('customer.orders', ['status' => 'all']) }}" class="filter-btn {{ $selectedStatus === 'all' ? 'active' : '' }}">
+                    <i class="fas fa-list"></i> All
+                </a>
+                <a href="{{ route('customer.orders', ['status' => 'pending']) }}" class="filter-btn {{ $selectedStatus === 'pending' ? 'active' : '' }}">
+                    <i class="fas fa-clock"></i> Pending
+                </a>
+                <a href="{{ route('customer.orders', ['status' => 'processing']) }}" class="filter-btn {{ $selectedStatus === 'processing' ? 'active' : '' }}">
+                    <i class="fas fa-spinner"></i> Processing
+                </a>
+                <a href="{{ route('customer.orders', ['status' => 'completed']) }}" class="filter-btn {{ $selectedStatus === 'completed' ? 'active' : '' }}">
+                    <i class="fas fa-check-circle"></i> Completed
+                </a>
+                <a href="{{ route('customer.orders', ['status' => 'cancel']) }}" class="filter-btn {{ $selectedStatus === 'cancel' ? 'active' : '' }}">
+                    <i class="fas fa-ban"></i> Cancelled
+                </a>
+            </div>
         </div>
 
         @if($orders->isEmpty())
@@ -318,74 +582,106 @@
                             <span class="order-status {{ strtolower($order->status ?? 'pending') }}">
                                 {{ ucfirst($order->status ?? 'pending') }}
                             </span>
+                            <button type="button" class="view-order-btn" data-receipt="receipt-{{ $order->id }}">
+                                <i class="fas fa-receipt me-1"></i> View More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="receipt-modal" id="receipt-{{ $order->id }}" aria-hidden="true">
+                    <div class="receipt" role="dialog" aria-modal="true" aria-labelledby="receipt-title-{{ $order->id }}">
+                        <div class="receipt-header">
+                            <div>
+                                <div class="receipt-brand" id="receipt-title-{{ $order->id }}">Disna Bakery</div>
+                                <div class="receipt-meta">Order #{{ $order->id }}<br>{{ $order->created_at?->format('d M Y, h:i A') }}</div>
+                            </div>
+                            <button type="button" class="receipt-close" aria-label="Close receipt"><i class="fas fa-times"></i></button>
+                        </div>
+
+                        <div class="receipt-body">
+                            <div class="receipt-section">
+                                <div class="receipt-row"><span>Status</span><strong><span class="order-status {{ strtolower($order->status ?? 'pending') }}">{{ ucfirst($order->status ?? 'pending') }}</span></strong></div>
+                                <div class="receipt-row"><span>Customer</span><strong>{{ $order->customer_name ?: 'N/A' }}</strong></div>
+                                <div class="receipt-row"><span>Phone</span><strong>{{ $order->phone ?: 'N/A' }}</strong></div>
+                            </div>
+
+                            <div class="receipt-section">
+                                <div class="receipt-row"><span>Product</span><strong>{{ $order->product_name ?: $order->flavor }}</strong></div>
+                                <div class="receipt-row"><span>Size</span><strong>{{ $order->cake_size ?: 'N/A' }}</strong></div>
+                                <div class="receipt-row"><span>Flavor</span><strong>{{ $order->flavor ?: 'N/A' }}</strong></div>
+                                <div class="receipt-row"><span>Frosting</span><strong>{{ $order->frosting ?: 'N/A' }}</strong></div>
+                            </div>
+
+                            <div class="receipt-section">
+                                <div class="receipt-row"><span>Delivery option</span><strong>{{ $order->delivery_option ?: 'Not specified' }}</strong></div>
+                                <div class="receipt-row"><span>Delivery date</span><strong>{{ $order->delivery_date ? \Carbon\Carbon::parse($order->delivery_date)->format('d M Y') : 'Not set' }}</strong></div>
+                                <div class="receipt-row"><span>Address</span><strong>{{ $order->address ?: 'N/A' }}, {{ $order->city ?: 'N/A' }}</strong></div>
+                            </div>
+
+                            <div class="receipt-section">
+                                <div class="receipt-row"><span>Cake message</span><strong>{{ $order->cake_message ?: 'No message' }}</strong></div>
+                                <div class="receipt-row"><span>Special notes</span><strong>{{ $order->special_notes ?: 'No notes' }}</strong></div>
+                                <div class="receipt-row"><span>Online transaction</span><strong>{{ $order->transaction_id ?: 'Not provided' }}</strong></div>
+                                <div class="receipt-row"><span>Payment method</span><strong>{{ $order->payment_method ?: 'Not specified' }}</strong></div>
+                                <div class="receipt-row"><span>Card</span><strong>{{ $order->card_type && $order->card_last_four ? $order->card_type . ' ending ' . $order->card_last_four : 'Not provided' }}</strong></div>
+                                @if($order->advance_amount)
+                                    <div class="receipt-row"><span>Advance paid</span><strong>Rs. {{ number_format($order->advance_amount, 2) }}</strong></div>
+                                @endif
+                            </div>
+
+                            <div class="receipt-row"><span class="fw-bold">Total</span><strong class="receipt-total">Rs. {{ number_format($order->total_price, 2) }}</strong></div>
+
                             @if(strtolower($order->status ?? '') === 'pending')
-                                <button type="button" class="cancel-order-btn" data-action="{{ route('customer.orders.cancel', $order) }}">
+                                <button type="button" class="cancel-order-btn receipt-cancel" data-action="{{ route('customer.orders.cancel', $order) }}">
                                     <i class="fas fa-ban"></i> Cancel Order
                                 </button>
                             @endif
-                        </div>
-                    </div>
-
-                    <div class="order-grid">
-                        <div class="info-box">
-                            <span class="info-label">Product</span>
-                            <div class="info-value">{{ $order->product_name ?: $order->flavor }}</div>
-                        </div>
-
-                        <div class="info-box">
-                            <span class="info-label">Size</span>
-                            <div class="info-value">{{ $order->cake_size ?: 'N/A' }}</div>
-                        </div>
-
-                        <div class="info-box">
-                            <span class="info-label">Flavor</span>
-                            <div class="info-value">{{ $order->flavor ?: 'N/A' }}</div>
-                        </div>
-
-                        <div class="info-box">
-                            <span class="info-label">Frosting</span>
-                            <div class="info-value">{{ $order->frosting ?: 'N/A' }}</div>
-                        </div>
-
-                        <div class="info-box">
-                            <span class="info-label">Total Price</span>
-                            <div class="info-value">Rs. {{ number_format($order->total_price, 2) }}</div>
-                        </div>
-
-                        <div class="info-box">
-                            <span class="info-label">Delivery Option</span>
-                            <div class="info-value">{{ $order->delivery_option ?: 'Not specified' }}</div>
-                        </div>
-
-                        <div class="info-box">
-                            <span class="info-label">Delivery Date</span>
-                            <div class="info-value">{{ $order->delivery_date ? \Carbon\Carbon::parse($order->delivery_date)->format('d M Y') : 'Not set' }}</div>
-                        </div>
-
-                        <div class="info-box">
-                            <span class="info-label">Phone</span>
-                            <div class="info-value">{{ $order->phone ?: 'N/A' }}</div>
-                        </div>
-
-                        <div class="info-box" style="grid-column:1 / -1;">
-                            <span class="info-label">Address</span>
-                            <div class="info-value">{{ $order->address ?: 'N/A' }}</div>
-                        </div>
-
-                        <div class="info-box" style="grid-column:1 / -1;">
-                            <span class="info-label">Cake Message</span>
-                            <div class="info-value">{{ $order->cake_message ?: 'No message' }}</div>
-                        </div>
-
-                        <div class="info-box" style="grid-column:1 / -1;">
-                            <span class="info-label">Special Notes</span>
-                            <div class="info-value">{{ $order->special_notes ?: 'No notes' }}</div>
                         </div>
                     </div>
                 </div>
             @endforeach
         @endif
     </div>
+
+    <script>
+        document.querySelectorAll('.view-order-btn').forEach((button) => {
+            button.addEventListener('click', function () {
+                const receipt = document.getElementById(this.dataset.receipt);
+                receipt.classList.add('show');
+                receipt.setAttribute('aria-hidden', 'false');
+            });
+        });
+
+        const openOrderId = @json($openOrderId);
+        if (openOrderId) {
+            document.querySelector(`[data-receipt="receipt-${openOrderId}"]`)?.click();
+        }
+
+        document.querySelectorAll('.receipt-modal').forEach((modal) => {
+            const closeButton = modal.querySelector('.receipt-close');
+            const closeReceipt = () => {
+                modal.classList.remove('show');
+                modal.setAttribute('aria-hidden', 'true');
+            };
+
+            closeButton.addEventListener('click', closeReceipt);
+            modal.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    closeReceipt();
+                }
+            });
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.receipt-modal.show').forEach((modal) => {
+                    modal.classList.remove('show');
+                    modal.setAttribute('aria-hidden', 'true');
+                });
+            }
+        });
+    </script>
 
     <div class="confirm-modal" id="cancelOrderModal" aria-hidden="true">
         <div class="confirm-modal-card" role="dialog" aria-modal="true" aria-labelledby="cancelOrderTitle">
@@ -429,6 +725,14 @@
             if (event.target === cancelModal) {
                 closeCancelModal();
             }
+        });
+
+        document.querySelectorAll('[data-auto-dismiss]').forEach((alert) => {
+            window.setTimeout(() => {
+                alert.style.transition = 'opacity 300ms ease';
+                alert.style.opacity = '0';
+                window.setTimeout(() => alert.remove(), 300);
+            }, 5000);
         });
     </script>
 </body>
